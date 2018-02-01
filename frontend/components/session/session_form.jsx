@@ -4,6 +4,12 @@ import { Link, withRouter } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
+    // this.state = {
+    //   name: "Name",
+    //   email: "Email",
+    //   password: "Password"
+    // };
+
     this.state = {
       name: "",
       email: "",
@@ -20,7 +26,8 @@ class SessionForm extends React.Component {
   // }
 
   handleSubmit(e) {
-    e.preventDefault;
+    console.log("handleSubmit works!");
+    e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
   }
