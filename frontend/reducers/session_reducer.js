@@ -5,6 +5,8 @@ const sessionReducer = (oldState = {currentUser: null, errors: []}, action) => {
   Object.freeze(oldState);
   let newState;
 
+  console.log("Hit the reducer");
+
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
       newState = merge({}, oldState);

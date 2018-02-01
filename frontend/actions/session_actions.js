@@ -14,14 +14,14 @@ const receiveErrors = errors => ({
 });
 
 export const signin = user => dispatch => (
-  SessionApiUtil.login(user).then(
+  SessionApiUtil.signin(user).then(
     (currentUser) => dispatch(receiveCurrentUser(currentUser)),
     err => dispatch(receiveErrors(err))
   )
 );
 
 export const signout = () => dispatch => (
-  SessionApiUtil.logout().then(
+  SessionApiUtil.signout().then(
     () => dispatch(receiveCurrentUser(null)),
     err => dispatch(receiveErrors(err))
   )
