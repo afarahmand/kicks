@@ -7,6 +7,10 @@ h2 {
   font-size: 32px;
 }
 
+.error-display {
+  color: red;
+}
+
 .signin-form-container {
   margin-top: 60px;
 }

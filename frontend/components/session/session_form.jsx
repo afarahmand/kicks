@@ -23,7 +23,12 @@ class SessionForm extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.formType !== this.props.formType) {
-      // this.props.clearSessionErrors();
+      this.props.clearSessionErrors();
+      this.state = {
+        name: "",
+        email: "",
+        password: ""
+      };
     }
     // if (nextProps.loggedIn) {
     //   this.props.history.push('/');
@@ -46,7 +51,39 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-  renderConditionalFormElements() {
+  renderButtonText() {
+    if (this.props.formType === "Sign up") {
+      return "Create account";
+    } else {
+      return "Log me in!";
+    }
+  }
+
+  renderDemoSigninButton() {
+    if (this.props.formType === 'Sign in') {
+      return (
+        <button id="demo" name="demo" onClick={this.demoSignin}>
+          Sign In as Demo User
+        </button>
+      );
+    }
+  }
+
+  renderErrors() {
+    return(
+      <div className="error-display">
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+
+  renderNameInput() {
     if (this.props.formType === 'Sign up') {
       return (
         <label>Name:
@@ -57,12 +94,6 @@ class SessionForm extends React.Component {
             className="signin-input"
           />
         </label>
-      );
-    } else {
-      return (
-        <button id="demo" name="demo" onClick={this.demoSignin}>
-          Sign In as Demo User
-        </button>
       );
     }
   }
@@ -83,35 +114,6 @@ class SessionForm extends React.Component {
     }
   }
 
-  update(field) {
-    return e => this.setState({
-      // [field]: e.currentTarget.value === "" ? field : e.currentTarget.value
-      [field]: e.currentTarget.value
-    });
-  }
-
-  renderErrors() {
-    return(
-      <div className="error-display">
-        <ul>
-          {this.props.errors.map((error, i) => (
-            <li key={`error-${i}`}>
-              {error}
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
-  }
-
-  renderButtonText() {
-    if (this.props.formType === "Sign up") {
-      return "Create account";
-    } else {
-      return "Log me in!";
-    }
-  }
-
   renderTopText() {
     let text = "Sign in";
     if (this.props.formType === "Sign up") {
@@ -122,6 +124,13 @@ class SessionForm extends React.Component {
         <h2>{text}</h2>
       </div>
     );
+  }
+
+  update(field) {
+    return e => this.setState({
+      // [field]: e.currentTarget.value === "" ? field : e.currentTarget.value
+      [field]: e.currentTarget.value
+    });
   }
 
   render() {
@@ -156,11 +165,16 @@ class SessionForm extends React.Component {
               </li>
 
               <li>
-                {this.renderConditionalFormElements()}
+                {this.renderNameInput()}
               </li>
+
+              <li>
+                <input type="submit" value={this.renderButtonText()}/>
+              </li>
+
+              {this.renderDemoSigninButton()}
             </ul>
 
-            <input type="submit" value={this.renderButtonText()}/>
           </form>
         </div>
     );

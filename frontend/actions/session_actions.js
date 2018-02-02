@@ -13,27 +13,23 @@ export const receiveSessionErrors = errors => ({
   errors
 });
 
-// export const clearSessionErrors = () => dispatch => (
-//   () => dispatch(receiveSessionErrors([]))
-// );
-
 export const signin = user => dispatch => (
   SessionApiUtil.signin(user).then(
     currentUser => dispatch(receiveCurrentUser(currentUser)),
-    err => dispatch(receiveSessionErrors(err))
+    err => dispatch(receiveSessionErrors(err.responseJSON))
   )
 );
 
 export const signout = () => dispatch => (
   SessionApiUtil.signout().then(
     () => dispatch(receiveCurrentUser(null)),
-    err => dispatch(receiveSessionErrors(err))
+    err => dispatch(receiveSessionErrors(err.responseJSON))
   )
 );
 
 export const signup = user => dispatch => (
   SessionApiUtil.signup(user).then(
     currentUser => dispatch(receiveCurrentUser(currentUser)),
-    err => dispatch(receiveSessionErrors(err))
+    err => dispatch(receiveSessionErrors(err.responseJSON))
   )
 );
