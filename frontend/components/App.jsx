@@ -1,7 +1,8 @@
 import React from 'react';
 import GreetingContainer from './greeting/greeting_container';
 import SessionFormContainer from './session/session_form_container';
-import { Route } from 'react-router';
+import { Route, Switch } from 'react-router';
+import { AuthRoute } from '../utils/route_util';
 
 // <GreetingContainer/>
 
@@ -11,8 +12,10 @@ const App = () => (
       <h1>Quickstarter: React is rendering App</h1>
     </header>
 
-    <Route path="/signin" component={SessionFormContainer} />
-    <Route path="/signup" component={SessionFormContainer} />
+    <Switch>
+      <AuthRoute exact path="/signin" component={SessionFormContainer} />
+      <AuthRoute exact path="/signup" component={SessionFormContainer} />
+    </Switch>
   </div>
 );
 
