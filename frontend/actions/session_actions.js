@@ -8,14 +8,18 @@ const receiveCurrentUser = user => ({
   user
 });
 
-const receiveSessionErrors = errors => ({
+export const receiveSessionErrors = errors => ({
   type: RECEIVE_SESSION_ERRORS,
   errors
 });
 
+// export const clearSessionErrors = () => dispatch => (
+//   () => dispatch(receiveSessionErrors([]))
+// );
+
 export const signin = user => dispatch => (
   SessionApiUtil.signin(user).then(
-    (currentUser) => dispatch(receiveCurrentUser(currentUser)),
+    currentUser => dispatch(receiveCurrentUser(currentUser)),
     err => dispatch(receiveSessionErrors(err))
   )
 );

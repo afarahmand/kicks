@@ -1,0 +1,38 @@
+body {
+  background-color: rgb(236,236,236);
+  font-family: "lucida grande";
+}
+
+.signin-form {
+  padding: 20px;
+  margin-top: 60px;
+  margin: 0 auto;
+  width: 400px;
+  background-color: white;
+}
+
+#div-above-signin-form {
+  padding: 20px;
+  margin: 0 auto;
+  background-color: rgb(251, 251, 251);
+}
+
+a {
+  color: rgb(29,51,253);
+}
+
+.signin-input, button, input {
+  border: 1px rgb(213,213,213) solid;
+  display: block;
+  width: 93.5%;
+  padding: 12px;
+  height: 16px;
+}
+
+input[type="text"].signin-input {
+
+}
+
+input:focus {
+  border: 1px solid rgb(18, 143, 96);
+}

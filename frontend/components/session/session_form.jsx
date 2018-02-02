@@ -4,11 +4,6 @@ import { Link, withRouter, Redirect } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = {
-    //   name: "Name",
-    //   email: "Email",
-    //   password: "Password"
-    // };
 
     this.state = {
       name: "",
@@ -17,13 +12,27 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoSignin = this.demoSignin.bind(this);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.loggedIn) {
-  //     this.props.history.push('/');
-  //   }
-  // }
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.formType !== this.props.formType) {
+      // this.props.clearSessionErrors();
+    }
+    // if (nextProps.loggedIn) {
+    //   this.props.history.push('/');
+    // }
+  }
+
+  demoSignin(e) {
+    e.preventDefault();
+    const demoUser = {
+      name: "Demo_User",
+      email: "demo@quickstarter.com",
+      password: "password"
+    };
+    this.props.processForm(demoUser);
+  }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -31,7 +40,7 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
-  nameInput() {
+  renderConditionalFormElements() {
     if (this.props.formType === 'Sign up') {
       return (
         <label>Name:
@@ -43,21 +52,27 @@ class SessionForm extends React.Component {
           />
         </label>
       );
+    } else {
+      return (
+        <button id="demo" name="demo" onClick={this.demoSignin}>
+          Sign In as Demo User
+        </button>
+      );
     }
   }
 
   navLink() {
     if (this.props.formType === 'Sign in') {
       return (
-        <span>
+        <div id="div-above-signin-form" className="signin-form">
            New to Quickstarter? <Link to="/signup">Sign up!</Link>
-        </span>
+       </div>
       );
     } else {
       return (
-        <span>
+        <div id="div-above-signin-form" className="signin-form">
           Have an account? <Link to="/signin">Sign in</Link>
-        </span>
+        </div>
       );
     }
   }
@@ -80,11 +95,20 @@ class SessionForm extends React.Component {
     );
   }
 
+  renderButtonText() {
+    if (this.props.formType === "Sign up") {
+      return "Create account";
+    } else {
+      return "Log me in!";
+    }
+  }
+
   render() {
     return (
         <div className="signin-form-container">
           {this.navLink()}
           <form className="signin-form" onSubmit={this.handleSubmit}>
+            <div className=""></div>
             <div className="error-display">
               {this.renderErrors()}
             </div>
@@ -107,9 +131,9 @@ class SessionForm extends React.Component {
               />
             </label>
 
-            {this.nameInput()}
+            {this.renderConditionalFormElements()}
 
-            <input type="submit" value={this.props.formType}/>
+            <input type="submit" value={this.renderButtonText()}/>
           </form>
         </div>
     );
