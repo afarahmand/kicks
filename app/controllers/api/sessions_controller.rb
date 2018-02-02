@@ -7,7 +7,6 @@ class Api::SessionsController < ApplicationController
 
     if @user
       sign_in(@user)
-      #render :json ['Successfully logged in'], status: 200
       render "api/users/show"
     else
       render json: ['Invalid email or password'], status: 401

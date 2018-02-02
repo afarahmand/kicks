@@ -4,12 +4,11 @@ import SessionFormContainer from './session/session_form_container';
 import { Route, Switch, Redirect } from 'react-router';
 import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 
-// <GreetingContainer/>
-
-const App = () => (
+const App = (store) => (
   <div>
     <header>
       <h1>Quickstarter: React is rendering App</h1>
+      <GreetingContainer/>
     </header>
 
     <Switch>

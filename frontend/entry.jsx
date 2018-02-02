@@ -18,11 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore();
   }
 
-  window.signin = signin;
-  window.signout = signout;
-  window.signup = signup;
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
+  // window.signin = signin;
+  // window.signout = signout;
+  // window.signup = signup;
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
 
   ReactDOM.render(<Root store={ store } />, root);
 });
