@@ -24,11 +24,11 @@ class SessionForm extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.formType !== this.props.formType) {
       this.props.clearSessionErrors();
-      this.state = {
+      this.setState({
         name: "",
         email: "",
         password: ""
-      };
+      });
     }
     // if (nextProps.loggedIn) {
     //   this.props.history.push('/');

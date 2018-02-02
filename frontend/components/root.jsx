@@ -15,5 +15,4 @@ const Root = ({ store }) => (
 export default Root;
 
 
-// componentWillRcvProps(clear errors) ?
 // non-existent routes ?
