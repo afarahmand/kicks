@@ -5,6 +5,12 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
 
+    // this.state = {
+    //   name: "Name",
+    //   email: "Email",
+    //   password: "Password"
+    // };
+
     this.state = {
       name: "",
       email: "",
@@ -61,7 +67,7 @@ class SessionForm extends React.Component {
     }
   }
 
-  navLink() {
+  renderNavLink() {
     if (this.props.formType === 'Sign in') {
       return (
         <div id="div-above-signin-form" className="signin-form">
@@ -79,19 +85,22 @@ class SessionForm extends React.Component {
 
   update(field) {
     return e => this.setState({
+      // [field]: e.currentTarget.value === "" ? field : e.currentTarget.value
       [field]: e.currentTarget.value
     });
   }
 
   renderErrors() {
     return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
+      <div className="error-display">
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      </div>
     );
   }
 
@@ -103,35 +112,53 @@ class SessionForm extends React.Component {
     }
   }
 
+  renderTopText() {
+    let text = "Sign in";
+    if (this.props.formType === "Sign up") {
+      text = "Sign up";
+    }
+    return(
+      <div className="signin-form-top-text">
+        <h2>{text}</h2>
+      </div>
+    );
+  }
+
   render() {
     return (
         <div className="signin-form-container">
-          {this.navLink()}
+          {this.renderNavLink()}
           <form className="signin-form" onSubmit={this.handleSubmit}>
-            <div className=""></div>
-            <div className="error-display">
-              {this.renderErrors()}
-            </div>
+            {this.renderTopText()}
+            {this.renderErrors()}
 
-            <label>Email:
-              <input
-                type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                className="signin-input"
-              />
-            </label>
+            <ul>
+              <li>
+                <label>Email:
+                  <input
+                    type="text"
+                    value={this.state.email}
+                    onChange={this.update('email')}
+                    className="signin-input"
+                  />
+                </label>
+              </li>
 
-            <label>Password:
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="signin-input"
-              />
-            </label>
+              <li>
+                <label>Password:
+                  <input
+                    type="password"
+                    value={this.state.password}
+                    onChange={this.update('password')}
+                    className="signin-input"
+                  />
+                </label>
+              </li>
 
-            {this.renderConditionalFormElements()}
+              <li>
+                {this.renderConditionalFormElements()}
+              </li>
+            </ul>
 
             <input type="submit" value={this.renderButtonText()}/>
           </form>
