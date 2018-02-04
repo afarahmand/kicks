@@ -7,7 +7,7 @@ import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 const App = (store) => (
   <div>
     <header>
-      <h1>Quickstarter: React is rendering App</h1>
+      <h1>Quikstarter: React is rendering App</h1>
       <GreetingContainer/>
     </header>
 

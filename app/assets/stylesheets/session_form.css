@@ -13,6 +13,7 @@ h2 {
 
 .signin-form-container {
   margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .signin-form {
@@ -51,7 +52,6 @@ a {
 }
 
 input[type="submit"], button {
-  /* margin-top: 30px; */
   background-color: rgb(19, 159, 118);
   color: white;
   font-size: 16px;
