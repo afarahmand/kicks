@@ -5,7 +5,8 @@ class Api::UsersController < ApplicationController
     if @user.save
       render "api/users/show"
     else
-      render json: ['Invalid name, email, or password'], status: 401
+      #render json: ['Invalid name, email, or password'], status: 401
+      render json: @user.errors.full_messages, status: 401
     end
   end
 

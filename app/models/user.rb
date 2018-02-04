@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
   attr_reader :password
 
+  has_many :projects
+
   def password=(pw)
     @password = pw
     self.password_digest = BCrypt::Password.create(pw)
