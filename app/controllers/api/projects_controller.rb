@@ -42,8 +42,11 @@ class Api::ProjectsController < ApplicationController
     @project = current_user.projects.find(params[:id])
 
     if @project
-      @project.destroy
-      render "api/projects/show"
+      if @project.destroy
+        render "api/projects/show"
+      else
+        render json: @project.errors.full_messages, status: 404
+      end
     else
       render json: @project.errors.full_messages, status: 404
     end
