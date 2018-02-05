@@ -17,20 +17,13 @@ User.create!(name: "Okonzu", email: "Okonzu@hotmail.com", password: "password");
 User.create!(name: "Mustafa", email: "Mustafa@hotmail.com", password: "password");
 User.create!(name: "Snoop Dogg", email: "snoop@bigblunt.com", password: "password");
 
-Category.create!(name: "Art");
-Category.create!(name: "Fashion");
-Category.create!(name: "Film");
-Category.create!(name: "Food");
-Category.create!(name: "Games");
-Category.create!(name: "Technology");
-
 Project.create!(title: "Test",
   short_blurb: "blurb",
   description: "description",
   funding_amount: 1,
   funding_end_date: new_datetime(),
   image_url: "https://imgur.com/a/ZgBj0",
-  category_id: 1,
+  category: "Art",
   user_id: 1
 );
 Project.create!(title: "Yotel",
@@ -39,7 +32,7 @@ Project.create!(title: "Yotel",
   funding_amount: 1000000,
   funding_end_date: new_datetime(),
   image_url: "https://imgur.com/a/ZgBj0",
-  category_id: 6,
+  category: "Technology",
   user_id: 2
 );
 Project.create!(
@@ -58,7 +51,7 @@ Project.create!(
   funding_amount: 8444,
   funding_end_date: new_datetime(),
   image_url: "https://imgur.com/a/HSWiY",
-  category_id: 6,
+  category: "Technology",
   user_id: 3
 );
 Project.create!(
@@ -75,7 +68,7 @@ Project.create!(
   funding_amount: 1000,
   funding_end_date: new_datetime(),
   image_url: "https://imgur.com/a/OpHUq",
-  category_id: 4,
+  category: "Food",
   user_id: 3
 );
 Project.create!(
@@ -96,7 +89,7 @@ Project.create!(
   funding_amount: 750000,
   funding_end_date: new_datetime(),
   image_url: "https://imgur.com/a/DxtDS",
-  category_id: 6,
+  category: "Technology",
   user_id: 6
 );
 Project.create!(
@@ -109,6 +102,6 @@ Project.create!(
   funding_amount: 999,
   funding_end_date: new_datetime(),
   image_url: "https://imgur.com/a/N1CyA",
-  category_id: 1,
+  category: "Art",
   user_id: 5
 );
