@@ -3,13 +3,6 @@ class Api::ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.user_id = current_user.id
 
-    # p params
-    # p "!!!"
-    # p project_params
-    # p "!!!"
-    # p @project
-    # debugger
-
     if @project.save
       render "api/projects/show"
     else

@@ -1,0 +1,107 @@
+div.project-form-page h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h4, .project-form-container p {
+  margin: 0;
+  padding: 10px;
+  padding-right: 5px;
+}
+
+.project-form-container p {
+  font-size: 12px;
+}
+
+div.page-subtitle {
+  text-align: center;
+  font-size: 22px;
+  width: 960px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+
+.project-form-container {
+  background-color: white;
+  width: 960px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 16px;
+  margin: 12px auto;
+}
+
+.project-form-container li {
+  background-color: rgb(248, 259, 253);
+  /* background-color: yellow; */
+  width: 960px;
+  margin-bottom: 18px;
+  display: flex;
+}
+
+.project-form-label-section {
+  width: 300px;
+  font-size: 13px;
+}
+
+.project-form-input-section {
+  width: 650px;
+  padding: 10px;
+}
+
+.project-input, textarea {
+  width: 97%;
+  background-color: white;
+  margin: 0 auto;
+}
+
+/* .project-form textarea {
+  resize: none;
+} */
+
+.project-form textarea.short_blurb {
+  height: 35px;
+  resize: none;
+}
+
+.project-form textarea.description {
+  min-height: 100px;
+  max-width: 97%;
+  min-width: 97%;
+}
+
+.project-form-input-section img {
+  width: 500px;
+  height: 350px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.project-form-container input[type="submit"] {
+  width: 97%;
+  margin: 0 auto;
+}
+
+.project-form-input-section select {
+  font-size: 14px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 10px;
+  width: 101%;
+}
+
+.project-form input,
+.project-form textarea,
+.project-form select {
+  -webkit-transition-property: border;
+  transition-property: border;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+  transition-delay: initial;
+}
+
+.project-form input:focus,
+.project-form textarea:focus,
+.project-form select:focus {
+  border: 1px solid black;
+}

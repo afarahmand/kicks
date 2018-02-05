@@ -37,6 +37,16 @@ class ProjectForm extends React.Component {
     );
   }
 
+  renderLabelSection(text) {
+    return (
+      <div className="project-form-label-section">
+        <h4 className="project-field-label">
+          {text}
+        </h4>
+      </div>
+    );
+  }
+
   update(field) {
     return e => this.setState({
       // [field]: e.currentTarget.value === "" ? field : e.currentTarget.value
@@ -44,155 +54,187 @@ class ProjectForm extends React.Component {
     });
   }
 
-  // <option value="volvo">Volvo</option>
-  // <option value="saab">Saab</option>
-  // <option value="fiat">Fiat</option>
-  // <option value="audi">Audi</option>
-  // <img width="50px" height="50px" src={this.state.image_url}></img>
-  // <img src={this.state.image_url}></img>
-
   render() {
     return (
-      <div className="project-form-container">
+      <div className="project-form-page">
+        <h2>Let's get started.</h2>
+        <div className="page-subtitle">
+          Make a great first impression with your project’s title and
+          image, and set your funding goal, campaign duration, and
+          project category.
+        </div>
+        <div className="project-form-container">
+          <form className="project-form" onSubmit={this.handleSubmit}>
+            {this.renderErrors()}
+            <ul>
+              <li>
+                <div className="project-form-label-section">
+                  <h4 className="project-field-label">
+                    Project image
+                  </h4>
+                </div>
+                <div className="project-form-input-section">
+                  <img src={this.state.image_url}></img>
+                  <input
+                    type="text"
+                    value={this.state.image_url}
+                    onChange={this.update('image_url')}
+                    className="project-input"
+                  />
+                </div>
+              </li>
 
-        <form className="project-form" onSubmit={this.handleSubmit}>
-          {this.renderErrors()}
-          <ul>
-            <li>
-              <div className="project-form-label-section">
-                <span className="project-field-label">
-                  Project title
-                </span>
-              </div>
-              <div className="project-form-input-section">
-                <input
-                  type="text"
-                  value={this.state.title}
-                  onChange={this.update('title')}
-                  className="project-input"
-                />
-              </div>
-            </li>
+              <li>
+                {this.renderLabelSection("Project title")}
+                <div className="project-form-input-section">
+                  <input
+                    type="text"
+                    value={this.state.title}
+                    onChange={this.update('title')}
+                    className="project-input"
+                  />
+                  <p>
+                    Our search looks through words from your project title
+                    and blurb, so make them clear and descriptive of what
+                    you’re making. Your profile name will be searchable,
+                    too.
+                  </p>
 
-            <li>
-              <div className="project-form-label-section">
-                <span className="project-field-label">
-                  Short blurb
-                </span>
-              </div>
-              <div className="project-form-input-section">
-                <textarea
-                  maxLength="135"
-                  onChange={this.update('short_blurb')}
-                  className="project-input"
-                  value={this.state.short_blurb}
-                >
-                </textarea>
-              </div>
-            </li>
+                  <p>
+                    These words will help people find your project, so
+                    choose them wisely! Your name will be searchable too.
+                  </p>
+                </div>
+              </li>
 
-            <li>
-              <div className="project-form-label-section">
-                <span className="project-field-label">
-                  Description
-                </span>
-              </div>
-              <div className="project-form-input-section">
-                <textarea
-                  onChange={this.update('description')}
-                  className="project-input"
-                  value={this.state.description}
-                >
-                </textarea>
-              </div>
-            </li>
+              <li>
+                {this.renderLabelSection("Short blurb")}
+                <div className="project-form-input-section">
+                  <textarea
+                    maxLength="135"
+                    onChange={this.update('short_blurb')}
+                    className="project-input short_blurb"
+                    value={this.state.short_blurb}
+                  >
+                  </textarea>
+                  <p>
+                    Give people a sense of what you’re doing. Skip
+                    “Help me” and focus on what you’re making.
+                  </p>
+                </div>
+              </li>
 
-            <li>
-              <div className="project-form-label-section">
-                <span className="project-field-label">
-                  Category
-                </span>
-              </div>
-              <div className="project-form-input-section">
-                <select
-                  onChange={this.update('category')}
-                  className="project-input"
-                >
-                  {
-                    Object.keys(this.props.categories).map(
-                      (id) => {
-                        if (this.state.category === this.props.categories[id]) {
-                          return (
-                            <option
-                              key={id}
-                              value={this.props.categories[id]}
-                              selected
-                            >
-                              {this.props.categories[id]}
-                            </option>
-                          );
-                        } else {
-                          return (
-                            <option
-                              key={id}
-                              value={this.props.categories[id]}
-                            >
-                              {this.props.categories[id]}
-                            </option>
-                          );
+              <li>
+                {this.renderLabelSection("Description")}
+                <div className="project-form-input-section">
+                  <textarea
+                    onChange={this.update('description')}
+                    className="project-input description"
+                    value={this.state.description}
+                  >
+                  </textarea>
+                </div>
+              </li>
+
+              <li>
+                {this.renderLabelSection("Category")}
+                <div className="project-form-input-section">
+                  <select
+                    onChange={this.update('category')}
+                    className="project-input"
+                  >
+                    {
+                      Object.keys(this.props.categories).map(
+                        (id) => {
+                          if (this.state.category === this.props.categories[id]) {
+                            return (
+                              <option
+                                key={id}
+                                value={this.props.categories[id]}
+                                selected
+                              >
+                                {this.props.categories[id]}
+                              </option>
+                            );
+                          } else {
+                            return (
+                              <option
+                                key={id}
+                                value={this.props.categories[id]}
+                              >
+                                {this.props.categories[id]}
+                              </option>
+                            );
+                          }
                         }
-                      }
-                    )
-                  }
-                </select>
-              </div>
-            </li>
+                      )
+                    }
+                  </select>
+                </div>
+              </li>
 
-            <li>
-              <div className="project-form-label-section">
-                <span className="project-field-label">
-                  Funding end date
-                </span>
-              </div>
-              <div className="project-form-input-section">
-                <input
-                  type="date"
-                  value={this.state.funding_end_date}
-                  onChange={this.update('funding_end_date')}
-                  className="project-input"
-                />
-              </div>
-            </li>
+              <li>
+                {this.renderLabelSection("Funding end date")}
+                <div className="project-form-input-section">
+                  <input
+                    type="date"
+                    value={this.state.funding_end_date}
+                    onChange={this.update('funding_end_date')}
+                    className="project-input"
+                  />
+                  <p>
+                    Projects with shorter durations have higher success
+                    rates. You won’t be able to adjust your duration
+                    after you launch.
+                  </p>
+                </div>
+              </li>
 
-            <li>
-              <div className="project-form-label-section">
-                <span className="project-field-label">
-                  Funding goal
-                </span>
-              </div>
-              <div className="project-form-input-section">
-                <input
-                  type="text"
-                  value={this.state.funding_amount}
-                  onChange={this.update('funding_amount')}
-                  className="project-input"
-                />
-              </div>
-            </li>
+              <li>
+                {this.renderLabelSection("Funding goal ($)")}
+                <div className="project-form-input-section">
+                  <input
+                    type="text"
+                    value={this.state.funding_amount}
+                    onChange={this.update('funding_amount')}
+                    className="project-input"
+                  />
+                <p>
+                  Funding on Kickstarter is all-or-nothing. It’s okay
+                  to raise more than your goal, but if your goal isn’t
+                  met, no money will be collected. Your goal should
+                  reflect the minimum amount of funds you need to
+                  complete your project and send out rewards, and
+                  include a buffer for payments processing fees.
+                </p>
+                <p>
+                  If your project is successfully funded, the following
+                  fees will be collected from your funding total:
+                  Quikstarter’s 5% fee, and payment processing fees
+                  (between 3% and 5%). If funding isn’t successful,
+                  there are no fees.
+                </p>
+                </div>
+              </li>
 
-            <li>
-              <input
-                type="submit"
-                value={
-                  this.props.formType === 'new'
-                  ? 'Create project'
-                  : 'Update project'
-                }
-              />
-            </li>
-          </ul>
+              <li>
+                <div className="project-form-label-section">
+                </div>
+                <div className="project-form-input-section">
+                  <input
+                    type="submit"
+                    value={
+                      this.props.formType === 'new'
+                      ? 'Create project'
+                      : 'Update project'
+                    }
+                  />
+                </div>
+              </li>
+            </ul>
 
-        </form>
+          </form>
+        </div>
       </div>
     );
   }

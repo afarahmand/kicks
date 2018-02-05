@@ -39,7 +39,7 @@ a {
   color: rgb(29,51,253);
 }
 
-.signin-input, button, input {
+.signin-input, button, input, textarea, select {
   border: 1px rgb(213,213,213) solid;
   display: block;
   width: 93.5%;
