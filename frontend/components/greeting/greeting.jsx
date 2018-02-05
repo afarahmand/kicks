@@ -5,7 +5,13 @@ const greetingSignedin = (currentUser, signout) => {
   return (
     <div>
       <span>Hi, {currentUser.name}</span>
+      <br></br>
+      <Link to="/projects/new">/projects/new</Link>
+      <br></br>
       <button onClick={() => signout()}>Sign Out</button>
+      <br></br>
+      <br></br>
+      <br></br>
     </div>
   );
 };
