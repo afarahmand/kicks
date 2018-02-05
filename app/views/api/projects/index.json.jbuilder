@@ -7,6 +7,6 @@ json.array! @projects do |project|
     :funding_amount,
     :funding_end_date,
     :image_url,
-    :category_id,
+    :category,
     :user_id
 end
