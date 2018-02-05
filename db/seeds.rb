@@ -37,9 +37,8 @@ Project.create!(title: "Yotel",
 );
 Project.create!(
   title: "Snowball Maker",
-  short_blurb: "In an era of smartphones and video games, many children
-  fail to acquire the art of snowball making in their youth.  We have
-  invented a new snowball maker to allow children to make snowballs.",
+  short_blurb: "We have invented a new snowball maker to allow
+  children to make snowballs.",
   description: "As global warming looms on the horizon, leading
   scientists warn about significantly higher temperatures in the future.
   The increased temperatures could prevent snow from forming during the
