@@ -87,7 +87,8 @@ div.page-subtitle {
   -moz-appearance: none;
   appearance: none;
   padding: 10px;
-  width: 101%;
+  width: 98%;
+  border-radius: 0px;
 }
 
 .project-form input,
