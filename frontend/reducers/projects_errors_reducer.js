@@ -15,7 +15,7 @@ const projectsErrorsReducer = (oldState = [], action) => {
     case REMOVE_PROJECT:
       return [];
     case RECEIVE_PROJECT_ERRORS:
-      return action.errors;
+      return action.errors.responseJSON;
     default:
       return oldState;
   }

@@ -1,8 +1,10 @@
 import React from 'react';
-import GreetingContainer from './greeting/greeting_container';
-import SessionFormContainer from './session/session_form_container';
 import { Route, Switch, Redirect } from 'react-router';
 import { AuthRoute, ProtectedRoute } from '../utils/route_util';
+
+import GreetingContainer from './greeting/greeting_container';
+import ProjectFormContainer from './project/project_form_container';
+import SessionFormContainer from './session/session_form_container';
 
 const App = (store) => (
   <div>
@@ -14,6 +16,7 @@ const App = (store) => (
     <Switch>
       <AuthRoute exact path="/signin" component={SessionFormContainer} />
       <AuthRoute exact path="/signup" component={SessionFormContainer} />
+      <ProtectedRoute exact path="/projects/new" component={ProjectFormContainer} />
       // this.props.history.push('/');
       <Route path="/"/>
     </Switch>

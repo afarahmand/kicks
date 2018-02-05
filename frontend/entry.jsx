@@ -25,13 +25,26 @@ import {
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
   let store;
+  let preloadedState = {
+    session: {},
+    entities: {
+      categories: {
+        1: "Art",
+        2: "Fashion",
+        3: "Film",
+        4: "Food",
+        5: "Games",
+        6: "Technology"
+      }
+    }
+  };
 
   if (window.currentUser) {
-    const preloadedState = { session: { currentUser: window.currentUser } };
+    preloadedState.session.currentUser = window.currentUser;
     store = configureStore(preloadedState);
     delete window.currentUser;
   } else {
-    store = configureStore();
+    store = configureStore(preloadedState);
   }
 
   // window.signin = signin;
@@ -44,9 +57,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.updateProject = updateProject;
   window.deleteProject = deleteProject;
   window.firstProject = {
-    category_id: 1,
+    category: "Art",
     description: "description",
-    funding_amount: 2,
+    funding_amount: 1,
     funding_end_date: "2018-09-04T13:12:52.594Z",
     id: 1,
     image_url: "https://imgur.com/a/ZgBj0",
