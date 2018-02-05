@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     clearSessionErrors: () => dispatch(receiveSessionErrors([])),
     signout: () => dispatch(signout()),
-    processForm: (user) => dispatch(action(user))
+    processForm: user => dispatch(action(user))
   };
 };
 
