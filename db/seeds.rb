@@ -22,7 +22,7 @@ Project.create!(title: "Test",
   description: "description",
   funding_amount: 1,
   funding_end_date: new_datetime(),
-  image_url: "https://imgur.com/a/ZgBj0",
+  image_url: "https://i.imgur.com/4gPJoG6.jpg",
   category: "Art",
   user_id: 1
 );
@@ -31,7 +31,7 @@ Project.create!(title: "Yotel",
   description: "Hotels and motels succeeded in the circumstances of the past.  In an era where automobile ownership was spreading around the US, they presented affordable family accomodations for vacationers.  However, in more recent times, peer-to-peer services and the sharing economy have introduced such alternatives such as AirStayAndSee and WaterBnB.  In light of today's new competitive market and the changing tastes of millenial vacationers, a new form of competitive accomodations are needed necessitating the creation of our Yotel.",
   funding_amount: 1000000,
   funding_end_date: new_datetime(),
-  image_url: "https://imgur.com/a/ZgBj0",
+  image_url: "https://i.imgur.com/4gPJoG6.jpg",
   category: "Technology",
   user_id: 2
 );
@@ -49,7 +49,7 @@ Project.create!(
   to create snowballs.  Ws must act now!",
   funding_amount: 8444,
   funding_end_date: new_datetime(),
-  image_url: "https://imgur.com/a/HSWiY",
+  image_url: "https://i.imgur.com/sD7KdpV.jpg",
   category: "Technology",
   user_id: 3
 );
@@ -66,7 +66,7 @@ Project.create!(
   to solve tomorrow's big problems.",
   funding_amount: 1000,
   funding_end_date: new_datetime(),
-  image_url: "https://imgur.com/a/OpHUq",
+  image_url: "https://i.imgur.com/DckXqBn.jpg",
   category: "Food",
   user_id: 3
 );
@@ -87,7 +87,7 @@ Project.create!(
   us to share this invention with the You!",
   funding_amount: 750000,
   funding_end_date: new_datetime(),
-  image_url: "https://imgur.com/a/DxtDS",
+  image_url: "https://i.imgur.com/adyrbjz.jpg",
   category: "Technology",
   user_id: 6
 );
@@ -100,7 +100,7 @@ Project.create!(
   to interested viewers around the world!",
   funding_amount: 999,
   funding_end_date: new_datetime(),
-  image_url: "https://imgur.com/a/N1CyA",
+  image_url: "https://i.imgur.com/2gbqrPn.jpg",
   category: "Art",
   user_id: 5
 );
