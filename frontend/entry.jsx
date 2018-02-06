@@ -3,9 +3,6 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 
-// import { signin, signout, signup }
-//   from './actions/session_actions';
-
 import {
   fetchProjects,
   fetchProject,
@@ -13,14 +10,6 @@ import {
   updateProject,
   deleteProject
 } from './actions/project_actions';
-
-// import {
-//   fetchProjects,
-//   fetchProject,
-//   createProject,
-//   updateProject,
-//   deleteProject
-// } from './utils/project_api_util';
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
@@ -46,10 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore(preloadedState);
   }
-
-  // window.signin = signin;
-  // window.signout = signout;
-  // window.signup = signup;
 
   window.fetchProjects = fetchProjects;
   window.fetchProject = fetchProject;
