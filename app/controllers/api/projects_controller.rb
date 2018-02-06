@@ -35,7 +35,6 @@ class Api::ProjectsController < ApplicationController
   def index
     @projects = Project.all
     render "api/projects/index"
-    #replace with render home page or some other page
   end
 
   def destroy
