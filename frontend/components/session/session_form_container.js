@@ -8,7 +8,6 @@ import {
 } from '../../actions/session_actions';
 
 const mapStateToProps = (state, ownProps) => ({
-  signedIn: state.session.currentUser !== null,
   errors: state.errors.session,
   formType: ownProps.location.pathname === '/signup' ? 'Sign up' : 'Sign in'
 });
