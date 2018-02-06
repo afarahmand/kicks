@@ -18,7 +18,6 @@ class ProjectForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // This function needs changing?
   handleSubmit(e) {
     e.preventDefault();
     let project = Object.assign({}, this.state);

@@ -22,9 +22,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
       processForm: project => dispatch(createProject(project))
     };
   } else {
-    console.log("map dispatch");
-    console.log(ownProps.match.params);
-    console.log(ownProps.match.params.keys);
     return {
       fetchProject: id => dispatch(fetchProject(id)),
       processForm: project => dispatch(updateProject(project))
