@@ -37,6 +37,11 @@ section.home-main .category-title {
   margin-right: 10px;
 }
 
+section.title-bar a span {
+  font-size: 14px;
+  font-weight: 300;
+}
+
 .fa-long-arrow-alt-right {
   margin-left: 10px;
 }

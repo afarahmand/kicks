@@ -1,6 +1,7 @@
 import React from 'react';
 
 const StatBar = props => {
+  // let today = new Date();
   return (
     <section className="stat-bar content-wide">
       <ul className="content-narrow">
