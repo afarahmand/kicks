@@ -17,4 +17,13 @@ class Project < ApplicationRecord
   # has_many :rewards
   # has_many :backers,
   #   through: :backings
+
+  def self.search_results(query)
+    param = '%' + query.downcase + '%'
+    #Project.where('lower(title) LIKE ? or lower(description) LIKE ?', param, param).limit(5)
+    Project.where('
+      lower(title) LIKE ? or
+      lower(short_blurb) LIKE ?
+    ', param, param)
+  end
 end

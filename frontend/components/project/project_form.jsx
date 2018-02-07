@@ -100,8 +100,7 @@ class ProjectForm extends React.Component {
                   <p>
                     Our search looks through words from your project title
                     and blurb, so make them clear and descriptive of what
-                    you’re making. Your profile name will be searchable,
-                    too.
+                    you’re making.
                   </p>
 
                   <p>

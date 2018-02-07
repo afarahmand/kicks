@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import configureStore from './store/store';
 
+import { fetchSearchResults } from './utils/project_api_util';
+
 import {
   fetchProjects,
   fetchProject,
@@ -36,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     store = configureStore(preloadedState);
   }
 
+  window.fetchSearchResults = fetchSearchResults;
   window.fetchProjects = fetchProjects;
   window.fetchProject = fetchProject;
   window.createProject = createProject;

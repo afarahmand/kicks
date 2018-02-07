@@ -6,9 +6,8 @@ import { AuthRoute, ProtectedRoute } from '../utils/route_util';
 import HomePageContainer from './home/home_page_container';
 import NavbarContainer from './navbar/navbar_container';
 import ProjectFormContainer from './project/project_form_container';
-import ProjectIndexContainer from './project/project_index_container';
 import ProjectShowPageContainer from './project/project_show_page_container';
-// import SearchPage from './search/search_page';
+import SearchPage from './search/search_page';
 import SessionFormContainer from './session/session_form_container';
 
 const App = (store) => (
@@ -21,7 +20,8 @@ const App = (store) => (
       <AuthRoute exact path="/signin" component={SessionFormContainer} />
       <AuthRoute exact path="/signup" component={SessionFormContainer} />
       <ProtectedRoute exact path="/projects/new" component={ProjectFormContainer} />
-
+      // <Route path="/search?:searchString" component={SearchPage} />
+      <Route path="/search" component={SearchPage} />
       <Route path="/projects/:projectId" component={ProjectShowPageContainer} />
       <Route path="/" component={HomePageContainer} />
     </Switch>
@@ -29,8 +29,3 @@ const App = (store) => (
 );
 
 export default App;
-
-// <Route
-//   path="/search?:searchString"
-//   component={SearchPage}
-// />
