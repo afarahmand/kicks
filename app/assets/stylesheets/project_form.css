@@ -32,7 +32,6 @@ div.page-subtitle {
 
 .project-form-container li {
   background-color: rgb(248, 259, 253);
-  /* background-color: yellow; */
   width: 960px;
   margin-bottom: 18px;
   display: flex;
@@ -53,10 +52,6 @@ div.page-subtitle {
   background-color: white;
   margin: 0 auto;
 }
-
-/* .project-form textarea {
-  resize: none;
-} */
 
 .project-form textarea.short_blurb {
   height: 35px;
