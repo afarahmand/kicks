@@ -58,7 +58,7 @@ class SessionForm extends React.Component {
   renderDemoSigninButton() {
     if (this.props.formType === 'Sign in') {
       return (
-        <button id="demo" name="demo" onClick={this.demoSignin}>
+        <button id="demo" name="demo" className="signin-input" onClick={this.demoSignin}>
           Sign In as Demo User
         </button>
       );

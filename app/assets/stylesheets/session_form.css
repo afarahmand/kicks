@@ -8,7 +8,8 @@ div.project-form-page {
 }
 
 .signin-form {
-  font-family: "lucid grande";
+  font-family: Helvetica neue;
+  font-weight: 200;
   padding: 20px;
   margin: 0 auto;
   width: 400px;
@@ -17,6 +18,8 @@ div.project-form-page {
 
 .signin-form-top-text {
   margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 300;
 }
 
 #div-above-signin-form {
@@ -27,7 +30,7 @@ div.project-form-page {
   font-size: 14px;
 }
 
-a {
+.signin-form-container a {
   color: rgb(29,51,253);
 }
 
