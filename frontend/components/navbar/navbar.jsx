@@ -28,19 +28,21 @@ const Navbar = ({ currentUser, signout }) => {
           Start a project
         </Link>
       </div>
-      <h1>
-        <span id="one"   >Q</span>
-        <span id="two"   >u</span>
-        <span id="three" >i</span>
-        <span id="four"  >k</span>
-        <span id="five"  >s</span>
-        <span id="six"   >t</span>
-        <span id="seven" >a</span>
-        <span id="eight" >r</span>
-        <span id="nine"  >t</span>
-        <span id="ten"   >e</span>
-        <span id="eleven">r</span>
-      </h1>
+      <Link to="/">
+        <h1>
+          <span id="one"   >Q</span>
+          <span id="two"   >u</span>
+          <span id="three" >i</span>
+          <span id="four"  >k</span>
+          <span id="five"  >s</span>
+          <span id="six"   >t</span>
+          <span id="seven" >a</span>
+          <span id="eight" >r</span>
+          <span id="nine"  >t</span>
+          <span id="ten"   >e</span>
+          <span id="eleven">r</span>
+        </h1>
+      </Link>
       <div className="right-nav">
         <div className="search">
           <Link to="/search">
