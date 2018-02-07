@@ -74,6 +74,11 @@ class ProjectForm extends React.Component {
                 </div>
                 <div className="project-form-input-section">
                   <img src={this.state.image_url}></img>
+                  <p>
+                    This is the first thing that people will see when
+                    they come across your project. Choose an image
+                    that’s crisp and text-free.
+                  </p>
                   <input
                     type="text"
                     value={this.state.image_url}
