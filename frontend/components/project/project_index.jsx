@@ -97,7 +97,7 @@ class ProjectIndex extends React.Component {
               </ul>
             </div>
           </aside>
-          
+
         </div>
       </section>
     );
