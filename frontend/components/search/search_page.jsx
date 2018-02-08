@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectIndexDisplay from '../project/project_index_display';
+import SearchIndex from './search_index';
 import { fetchSearchResults } from '../../utils/project_api_util';
 
 class SearchPage extends React.Component {
@@ -45,8 +46,6 @@ class SearchPage extends React.Component {
   }
 
   render() {
-    console.log("this.state.searchResults");
-    console.log(this.state.searchResults);
     return (
       <section className="search-page">
         <div className="search-form">
@@ -60,7 +59,7 @@ class SearchPage extends React.Component {
         </div>
         <div className="results content-narrow">
           {this.renderNoResults()}
-          <ProjectIndexDisplay projects={this.state.searchResults}/>
+          <SearchIndex projects={this.state.searchResults}/>
         </div>
       </section>
     );
