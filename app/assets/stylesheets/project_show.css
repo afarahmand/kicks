@@ -1,0 +1,93 @@
+.project-show-page img {
+  width: 500px;
+  height: 500px;
+}
+
+.project-show-page {
+  margin-top: 64px;
+  font-family: Helvetica neue;
+}
+
+.project-show-page .title {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.project-show-page div.creator {
+  width: 200px;
+  height: 150px;
+}
+
+.project-show-page h2 {
+  /* font-family: Helvetica neue; */
+  /* font-family: "lucida grande"; */
+  font-weight: 300;
+  font-size: 36px;
+  margin-bottom: 18px;
+}
+
+.project-show-page .subtitle {
+  font-size: 20px;
+  font-weight: 200;
+  color: rgb(115,115,115);
+}
+
+section.show-status {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-status img {
+  padding-right: 18px;
+}
+
+.show-status > div {
+  margin-left: 18px;
+}
+
+.project-show-page .status {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-show-page .status .one {
+  font-size: 24px;
+}
+
+.project-show-page .status .two {
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 80px;
+  color: rgb(165,165,165);
+}
+
+.project-show-page .status {
+  border-top: 3px solid rgb(0,158,118);
+  padding-top: 80px;
+}
+
+.project-show-page .status .goal {
+  color: rgb(0,158,118);
+}
+
+.project-show-page .status .all-nothing {
+  text-decoration: underline;
+  margin-right: 5px;
+}
+
+.all-nothing-container span {
+  font-size: 12px;
+  font-family: Helvetica neue;
+}
+
+.project-show-page h3 {
+  font-family: Helvetica neue;
+  font-size: 24px;
+  font-weight: 200;
+  margin-bottom: 30px;
+}
+
+main.description {
+  line-height: 2;
+  margin-bottom: 80px;
+}
