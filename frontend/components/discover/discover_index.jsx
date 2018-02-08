@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ProjectIndexDisplayItem from './project_index_display_item';
+import DiscoverIndexItem from './discover_index_item';
 
-const ProjectIndexDisplay = ({ projects }) => {
+const DiscoverIndex = ({ projects }) => {
   return (
     <section className="project-index-display">
       <ul>
       {
         Object.keys(projects).map(id => (
           <li>
-            <ProjectIndexDisplayItem key={id} project={projects[id]} />
+            <DiscoverIndexItem key={id} project={projects[id]} />
           </li>
         ))
       }
@@ -18,4 +18,4 @@ const ProjectIndexDisplay = ({ projects }) => {
   );
 };
 
-export default ProjectIndexDisplay;
+export default DiscoverIndex;

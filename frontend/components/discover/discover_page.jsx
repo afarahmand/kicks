@@ -1,5 +1,5 @@
 import React from 'react';
-import ProjectIndexDisplay from '../project/project_index_display';
+import DiscoverIndex from '../discover/discover_index';
 import { fetchDiscoveryResults } from '../../utils/project_api_util';
 
 class DiscoverPage extends React.Component {
@@ -29,8 +29,9 @@ class DiscoverPage extends React.Component {
   render() {
     return (
       <section className="discover">
-        <section className="discover-form">
+        <section className="discover-form content-narrow">
           <form>
+            Show me
             <select
               onChange={this.update('chosenCategory')}
               className="discover-input"
@@ -51,6 +52,7 @@ class DiscoverPage extends React.Component {
                 )
               }
             </select>
+            projects sorted by
 
             <select
               onChange={this.update('sort')}
@@ -63,27 +65,13 @@ class DiscoverPage extends React.Component {
             </select>
           </form>
         </section>
-        <section className="discover-results">
-        </section>
         <hr></hr>
+        <section className="discover-results content-narrow">
+          <DiscoverIndex projects={this.state.searchResults} />
+        </section>
       </section>
     );
   }
 }
-
-// <div className="search-form">
-//   <h2>Search</h2>
-//   <input
-//     id="search-input"
-//     type="text"
-//     value={this.state.chosenCategory}
-//     onChange={this.update('chosenCategory')}
-//   />
-// </div>
-// <hr></hr>
-// <div className="results">
-//   <ProjectIndexDisplay projects={{}}/>
-// </div>
-
 
 export default DiscoverPage;
