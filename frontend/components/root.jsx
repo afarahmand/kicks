@@ -13,6 +13,3 @@ const Root = ({ store }) => (
 );
 
 export default Root;
-
-
-// non-existent routes ?
