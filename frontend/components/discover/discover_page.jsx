@@ -13,17 +13,11 @@ class DiscoverPage extends React.Component {
     };
   }
 
-  // fetchDiscoveryResults(this.state.chosenCategory, this.state.sort).then(
-  //   projects => this.setState({
-  //     searchResults: projects
-  //   })
-  // );
-
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     }, () => {
-      fetchDiscoveryResults(this.state.chosenCategory, this.state.sort).then(
+      fetchDiscoveryResults(this.state.chosenCategory, this.state.sort, 9).then(
         projects => this.setState({
           searchResults: projects
         })
@@ -33,8 +27,6 @@ class DiscoverPage extends React.Component {
   }
 
   render() {
-    console.log("this.state.searchResults");
-    console.log(this.state.searchResults);
     return (
       <section className="discover">
         <section className="discover-form">

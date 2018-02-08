@@ -1,11 +1,12 @@
-export const fetchDiscoveryResults = (category, sort) => (
+export const fetchDiscoveryResults = (category, sort, numProjects) => (
   $.ajax({
     url: '/api/project_discovery',
     method: 'GET',
     data: {
       discovery: {
         category: category,
-        sort: sort
+        sort: sort,
+        numProjects: numProjects
       }
     }
   })
