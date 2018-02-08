@@ -55,7 +55,12 @@ class SessionForm extends React.Component {
   renderDemoSigninButton() {
     if (this.props.formType === 'Sign in') {
       return (
-        <button id="demo" name="demo" className="signin-input" onClick={this.demoSignin}>
+        <button
+          id="demo"
+          name="demo"
+          className="signin-input"
+          onClick={this.demoSignin}
+        >
           Sign In as Demo User
         </button>
       );
@@ -120,7 +125,6 @@ class SessionForm extends React.Component {
 
   update(field) {
     return e => this.setState({
-      // [field]: e.currentTarget.value === "" ? field : e.currentTarget.value
       [field]: e.currentTarget.value
     });
   }
