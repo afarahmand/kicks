@@ -2,12 +2,25 @@
   margin: 0 auto;
   width: 100%;
   border-bottom: 1px solid black;
-  padding-top: 25px;
-  padding-bottom: 25px;
   font-family: Helvetica neue;
   font-size: 14px;
   display: flex;
   justify-content: space-between;
+}
+
+.left-nav, .right-nav {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+#nav-bar a {
+  padding-top: 12px;
+}
+
+#nav-bar h1 {
+  font-family: Modak;
+  font-size: 30px;
+  color: rgb(0, 71, 81);
 }
 
 #nav-bar button {

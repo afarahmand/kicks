@@ -30,17 +30,7 @@ const Navbar = ({ currentUser, signout }) => {
       </div>
       <Link to="/">
         <h1>
-          <span id="one"   >Q</span>
-          <span id="two"   >u</span>
-          <span id="three" >i</span>
-          <span id="four"  >k</span>
-          <span id="five"  >s</span>
-          <span id="six"   >t</span>
-          <span id="seven" >a</span>
-          <span id="eight" >r</span>
-          <span id="nine"  >t</span>
-          <span id="ten"   >e</span>
-          <span id="eleven">r</span>
+          QUIKSTARTER
         </h1>
       </Link>
       <div className="right-nav">
@@ -57,3 +47,15 @@ const Navbar = ({ currentUser, signout }) => {
 };
 
 export default Navbar;
+
+// <span id="one"   >Q</span>
+// <span id="two"   >u</span>
+// <span id="three" >i</span>
+// <span id="four"  >k</span>
+// <span id="five"  >s</span>
+// <span id="six"   >t</span>
+// <span id="seven" >a</span>
+// <span id="eight" >r</span>
+// <span id="nine"  >t</span>
+// <span id="ten"   >e</span>
+// <span id="eleven">r</span>
