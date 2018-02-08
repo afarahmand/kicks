@@ -3,8 +3,9 @@ div.project-form-page {
 }
 
 .signin-form-container {
-  margin-top: 60px;
-  margin-bottom: 60px;
+  padding-top: 60px;
+  padding-bottom: 150px;
+  background-color: rgb(240, 240, 240);
 }
 
 .signin-form {
@@ -13,6 +14,11 @@ div.project-form-page {
   padding: 20px;
   margin: 0 auto;
   width: 400px;
+  background-color: white;
+  /* background-color: yellow; */
+}
+
+form.signin-form {
   background-color: white;
 }
 
