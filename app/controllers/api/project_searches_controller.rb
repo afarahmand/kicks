@@ -1,38 +1,20 @@
 class Api::ProjectSearchesController < ApplicationController
   def index
-    if (search_params === "")
-      @projects = Project.all
+    # Navigate whether
+    if (search_params[:query] == "")
+      @projects = Project.all.limit(9)
     else
-      @projects = Project.search_results(search_params)
+      @projects = Project.search_results(
+        search_params[:query]
+      ).limit(9)
     end
 
     render "api/projects/index"
   end
 
-  # def search
-  #   p params
-  #   p params[:searchQuery]
-  #   searchQuery = params[:searchQuery].downcase
-  #   all_projects = Project.all
-  #
-  #   # @projects = all_projects.select{
-  #   #   |project|
-  #   #   (project.title.downcase.include?(searchQuery) ||
-  #   #   project.creator.downcase.include?(searchQuery) ||
-  #   #   project.short_blurb.downcase.include?(searchQuery))
-  #   # }
-  #
-  #   @projects = all_projects.select do |project|
-  #     project.title.downcase.include?(searchQuery)
-  #   end
-  #
-  #   render "api/projects/index"
-  # end
-
   private
 
   def search_params
-    # params.require(:search).permit(:searchQuery)
-    params.require(:search)
+    params.require(:search).permit(:category, :query, :sort)
   end
 end
