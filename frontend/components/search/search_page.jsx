@@ -29,23 +29,38 @@ class SearchPage extends React.Component {
     });
   }
 
+  renderNoResults() {
+    if (this.state.searchResults.length === 0) {
+      return (
+        <div className="noresults">
+          <span className="top-noresults-text">
+            Oops! We couldn't find any results.
+          </span>
+          <span className="bottom-noresults-text">
+            Why not change some things around or broaden your search?
+          </span>
+        </div>
+      );
+    }
+  }
+
   render() {
     console.log("this.state.searchResults");
     console.log(this.state.searchResults);
     return (
-      <section>
+      <section className="search-page">
         <div className="search-form">
-          <h2>Search</h2>
           <input
             id="search-input"
             type="text"
             value={this.state.searchQuery}
             onChange={this.update('searchQuery')}
+            placeholder="Search"
           />
         </div>
-        <hr></hr>
-        <div className="results">
-          <ProjectIndexDisplay projects={{}}/>
+        <div className="results content-narrow">
+          {this.renderNoResults()}
+          <ProjectIndexDisplay projects={this.state.searchResults}/>
         </div>
       </section>
     );

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const ProjectIndexDisplayItem = ({ project }) => {
   let linkHref = `/projects/${project.id}`;
   return (
-    <li>
+    <div>
       <Link to={linkHref}>
         <img src={project.image_url}></img>
         <span className="project-title">{project.title}</span>
@@ -15,7 +15,7 @@ const ProjectIndexDisplayItem = ({ project }) => {
         <div>days to go</div>
         <div>{project.category}</div>
       </Link>
-    </li>
+    </div>
   );
 };
 

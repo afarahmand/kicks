@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import StatBar from './stat_bar';
 import HomePageItem from './home_page_item';
+import { fetchDiscoveryResults } from '../../utils/project_api_util';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -12,6 +13,26 @@ class HomePage extends React.Component {
       displayedProjects: []
     };
   }
+
+  // componentDidMount() {
+  //   fetchDiscoveryResults(this.state.chosenCategory, "Random", 5).then(
+  //     projects => this.setState({
+  //       displayedProjects: projects
+  //     })
+  //   );
+  // }
+
+  // selectCategory(category) {
+  //   return e => this.setState({
+  //     chosenCategory: category
+  //   }, () => {
+  //     fetchDiscoveryResults(this.state.chosenCategory, "Random", 5).then(
+  //       projects => this.setState({
+  //         displayedProjects: projects
+  //       })
+  //     );
+  //   });
+  // }
 
   componentDidMount() {
     this.props.fetchProjects();
@@ -109,26 +130,3 @@ class HomePage extends React.Component {
 }
 
 export default HomePage;
-
-
-
-// podjpoadpokpdokapsodka
-
-// import React from 'react';
-// import StatBar from './stat_bar';
-// import HomePageContainer from './home_page_container';
-//
-//
-//
-// export default HomePage;
-
-
-
-//   return (
-//     <div>
-//       <StatBar/>
-//       <ProjectIndexContainer/>
-//       <hr></hr>
-//     </div>
-//   );
-// };

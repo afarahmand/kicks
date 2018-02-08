@@ -8,7 +8,9 @@ const ProjectIndexDisplay = ({ projects }) => {
       <ul>
       {
         Object.keys(projects).map(id => (
-          <ProjectIndexItem key={id} project={projects[id]} />
+          <li>
+            <ProjectIndexItem key={id} project={projects[id]} />
+          </li>
         ))
       }
       </ul>
