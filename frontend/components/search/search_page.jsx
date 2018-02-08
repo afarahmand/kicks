@@ -8,6 +8,7 @@ class SearchPage extends React.Component {
     super(props);
 
     this.state = {
+      initialSearchPerformed: false,
       searchQuery: "",
       searchResults: []
     };
@@ -24,14 +25,17 @@ class SearchPage extends React.Component {
     searchInputTextBox.addEventListener('keyup', () => {
       fetchSearchResults(this.state.searchQuery).then(
         projects => this.setState({
+          initialSearchPerformed: true,
           searchResults: projects
         })
       );
     });
+    searchInputTextBox.focus();
   }
 
   renderNoResults() {
-    if (this.state.searchResults.length === 0) {
+    if ((this.state.initialSearchPerformed) &&
+    (this.state.searchResults.length === 0)) {
       return (
         <div className="noresults">
           <span className="top-noresults-text">
