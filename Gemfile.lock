@@ -73,6 +73,9 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
+    date_validator (0.9.0)
+      activemodel
+      activesupport
     debug_inspector (0.0.3)
     em-websocket (0.5.1)
       eventmachine (>= 0.12.9)
@@ -229,6 +232,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
+  date_validator
   guard (>= 2.2.2)
   guard-livereload
   jbuilder (~> 2.5)
