@@ -25,7 +25,6 @@ const App = () => (
         path="/projects/new"
         component={ProjectFormContainer}
       />
-      // <Route path="/search?:searchString" component={SearchPage} />
       <Route path="/discover" component={DiscoverContainer} />
       <Route path="/search" component={SearchPage} />
       <Route
