@@ -26,9 +26,6 @@ class SessionForm extends React.Component {
         password: ""
       });
     }
-    // if (nextProps.loggedIn) {
-    //   this.props.history.push('/');
-    // }
   }
 
   demoSignin(e) {
@@ -97,7 +94,7 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'Sign in') {
       return (
         <div id="div-above-signin-form" className="signin-form">
-           New to Quickstarter? <Link to="/signup">Sign up!</Link>
+           New to Quikstarter? <Link to="/signup">Sign up!</Link>
        </div>
       );
     } else {
