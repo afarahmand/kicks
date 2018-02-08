@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :users, only: [:create]
     resources :projects
+    resources :project_discovery, only: [:index]
     resources :project_searches, only: [:index]
   end
 

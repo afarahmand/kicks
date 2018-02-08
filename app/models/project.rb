@@ -18,12 +18,39 @@ class Project < ApplicationRecord
   # has_many :backers,
   #   through: :backings
 
+  def self.discovery_results(category, sort)
+    currQuery = Project.all
+
+    if category != "All"
+      currQuery = currQuery.where(category: category)
+    end
+
+    if sort != "Random"
+      case sort
+      when "Funding Goal"
+        currQuery = currQuery.order(:funding_amount)
+      when "End Date"
+        currQuery = currQuery.order(:funding_end_date)
+      when "Newest"
+        currQuery = currQuery.order(:created_at)
+      when ""
+      end
+    end
+
+    currQuery.limit(9)
+  end
+
   def self.search_results(query)
-    param = '%' + query.downcase + '%'
-    #Project.where('lower(title) LIKE ? or lower(description) LIKE ?', param, param).limit(5)
-    Project.where('
-      lower(title) LIKE ? or
-      lower(short_blurb) LIKE ?
-    ', param, param)
+    if query == ""
+      currQuery = Project.all
+    else
+      param = '%' + query.downcase + '%'
+      currQuery = Project.where('
+        lower(title) LIKE ? or
+        lower(short_blurb) LIKE ?
+      ', param, param)
+    end
+
+    currQuery
   end
 end

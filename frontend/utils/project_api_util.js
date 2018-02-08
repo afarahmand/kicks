@@ -1,8 +1,25 @@
+export const fetchDiscoveryResults = (category, sort) => (
+  $.ajax({
+    url: '/api/project_discovery',
+    method: 'GET',
+    data: {
+      discovery: {
+        category: category,
+        sort: sort
+      }
+    }
+  })
+);
+
 export const fetchSearchResults = searchQuery => (
   $.ajax({
     url: '/api/project_searches',
     method: 'GET',
-    data: { search: searchQuery }
+    data: {
+      search: {
+        query: searchQuery
+      }
+    }
   })
 );
 
