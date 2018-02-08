@@ -14,26 +14,6 @@ class HomePage extends React.Component {
     };
   }
 
-  // componentDidMount() {
-  //   fetchDiscoveryResults(this.state.chosenCategory, "Random", 5).then(
-  //     projects => this.setState({
-  //       displayedProjects: projects
-  //     })
-  //   );
-  // }
-
-  // selectCategory(category) {
-  //   return e => this.setState({
-  //     chosenCategory: category
-  //   }, () => {
-  //     fetchDiscoveryResults(this.state.chosenCategory, "Random", 5).then(
-  //       projects => this.setState({
-  //         displayedProjects: projects
-  //       })
-  //     );
-  //   });
-  // }
-
   componentDidMount() {
     this.props.fetchProjects();
   }
@@ -49,20 +29,17 @@ class HomePage extends React.Component {
       return null;
     }
 
-    // console.log("Should have data pulled now");
-    // console.log(this.props.projects);
-
     // Determine which 5 projects will become displayedProjects
     // based on selected tabs
-
-    if (this.state.displayedProjects.length > 0) {
-      for (let i=0; i<5; i++) {
-        this.state.displayedProjects[i] = this.props.projects[i];
+    let keys = Object.keys(this.props.projects);
+    let count = 0;
+    let i = 0;
+    while (count < 5 && i < keys.length) {
+      if (this.props.projects[keys[i]].category === this.state.chosenCategory) {
+        this.state.displayedProjects[count] = this.props.projects[keys[i]];
+        count++;
       }
-    } else {
-      for (let i=0; i<5; i++) {
-        this.state.displayedProjects.push(this.props.projects[i]);
-      }
+      i++;
     }
 
     return (
