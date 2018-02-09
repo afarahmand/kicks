@@ -126,6 +126,14 @@ main.description {
   background-color: blue;
 }
 
+.edit-button:hover {
+  background-color: rgb(0, 0, 125);
+}
+
 .delete-button {
   background-color: red;
+}
+
+.delete-button:hover {
+  background-color: rgb(125, 0, 0);
 }
