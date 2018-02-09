@@ -1,46 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-
-// const convertMonthFormat = (shortMonth) => {
-//   switch(shortMonth) {
-//     case "Jan":
-//       return "January";
-//     case "Feb":
-//       return "February";
-//     case "Mar":
-//       return "March";
-//     case "Apr":
-//       return "April";
-//     case "May":
-//       return "May";
-//     case "Jun":
-//       return "June";
-//     case "Jul":
-//       return "July";
-//     case "Aug":
-//       return "August";
-//     case "Sep":
-//       return "September";
-//     case "Oct":
-//       return "October";
-//     case "Nov":
-//       return "November";
-//     case "Dec":
-//       return "December";
-//   }
-// };
-//
-// const displayDate = () => {
-//   let today = Date();
-//   let formattedOutput = "";
-//   let day = parseInt(today.slice(8,10), 10).toString();
-//
-//   formattedOutput = convertMonthFormat(today.slice(4,7)).concat(" ");
-//   formattedOutput = formattedOutput.concat(day).concat(", ");
-//   formattedOutput = formattedOutput.concat(today.slice(10, 15));
-//
-//   return formattedOutput;
-// };
+import { daysRemainingUntilEnd } from '../../utils/date_util';
 
 class ProjectShowPage extends React.Component {
   constructor(props) {
@@ -93,7 +53,7 @@ class ProjectShowPage extends React.Component {
             </span>
             <span className="two">funding goal</span>
             <span className="one">
-              {this.daysRemaining(this.props.project.funding_end_date)}
+              {daysRemainingUntilEnd(this.props.project.funding_end_date)}
             </span>
             <span className="two">days to go</span>
 

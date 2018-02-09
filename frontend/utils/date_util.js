@@ -56,6 +56,14 @@ export const convertMonthShortToNumStr = (shortMonth) => {
   }
 };
 
+export const daysRemainingUntilEnd = (endDate) => {
+  let today = new Date();
+  let end = new Date(endDate.slice(0, 10));
+  let diff = (end - today)/(1000*60*60*24);  // end - today [in ms]
+  // /1000 in s /60 min /60 hr /24 days
+  return Math.floor(diff);
+};
+
 export const formatAsMonthDDYYYY = inputDate => {
   // input format: Date()
   // target output format: "February 20, 2018"
