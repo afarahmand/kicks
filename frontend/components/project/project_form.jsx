@@ -21,7 +21,9 @@ class ProjectForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     let project = Object.assign({}, this.state);
-    this.props.processForm(project);
+    this.props.processForm(project).then(
+      project1 => this.props.history.push(`/projects/${project1.project.id}`)
+    );
   }
 
   renderErrors() {
@@ -48,7 +50,6 @@ class ProjectForm extends React.Component {
 
   update(field) {
     return e => this.setState({
-      // [field]: e.currentTarget.value === "" ? field : e.currentTarget.value
       [field]: e.currentTarget.value
     });
   }
@@ -63,7 +64,10 @@ class ProjectForm extends React.Component {
           project category.
         </div>
         <div className="project-form-container">
-          <form className="project-form" onSubmit={this.handleSubmit}>
+          <form
+            className="project-form"
+            onSubmit={this.handleSubmit}
+          >
             {this.renderErrors()}
             <ul>
               <li>
