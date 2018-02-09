@@ -8,7 +8,7 @@ const DiscoverIndex = ({ projects }) => {
       <ul>
       {
         Object.keys(projects).map(id => (
-          <li>
+          <li key={id}>
             <DiscoverIndexItem key={id} project={projects[id]} />
           </li>
         ))

@@ -35,8 +35,9 @@ class DiscoverPage extends React.Component {
             <select
               onChange={this.update('chosenCategory')}
               className="discover-input"
+              defaultValue="All"
             >
-            <option value="All" selected>All</option>
+            <option value="All">All</option>
               {
                 Object.keys(this.props.categories).map(
                   (id) => {
@@ -57,8 +58,9 @@ class DiscoverPage extends React.Component {
             <select
               onChange={this.update('sort')}
               className="discover-input"
+              defaultValue="Random"
             >
-              <option value="Random" selected>Random</option>
+              <option value="Random">Random</option>
               <option value="Funding Goal">Funding Goal</option>
               <option value="End Date">End Date</option>
               <option value="Newest">Newest</option>
