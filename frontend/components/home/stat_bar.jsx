@@ -1,51 +1,5 @@
 import React from 'react';
-
-// let today = new Date();
-// let end = new Date(endDate.slice(0, 10));
-// let diff = (end - today)/(1000*60*60*24);  // end - today [in ms]
-// // /1000 in s /60 min /60 hr /24 days
-// return diff;
-
-const convertMonthFormat = (shortMonth) => {
-  switch(shortMonth) {
-    case "Jan":
-      return "January";
-    case "Feb":
-      return "February";
-    case "Mar":
-      return "March";
-    case "Apr":
-      return "April";
-    case "May":
-      return "May";
-    case "Jun":
-      return "June";
-    case "Jul":
-      return "July";
-    case "Aug":
-      return "August";
-    case "Sep":
-      return "September";
-    case "Oct":
-      return "October";
-    case "Nov":
-      return "November";
-    case "Dec":
-      return "December";
-  }
-};
-
-const displayTodaysDate = () => {
-  let today = Date();
-  let formattedOutput = "";
-  let day = parseInt(today.slice(8,10), 10).toString();
-
-  formattedOutput = convertMonthFormat(today.slice(4,7)).concat(" ");
-  formattedOutput = formattedOutput.concat(day).concat(", ");
-  formattedOutput = formattedOutput.concat(today.slice(10, 15));
-
-  return formattedOutput;
-};
+import { formatAsMonthDDYYYY } from '../../utils/date_util';
 
 const StatBar = props => {
   return (
@@ -54,7 +8,7 @@ const StatBar = props => {
         <li>
           <div>
             <span className="stat-bar-title">
-              {displayTodaysDate()}
+              {formatAsMonthDDYYYY(Date())}
             </span>
             <span className="stat-bar-body">
               Bringing creative projects to life.

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { formatAsYYYYMMDD } from '../../utils/date_util';
 
 class ProjectForm extends React.Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class ProjectForm extends React.Component {
       description: "",
       category: "Art",
       funding_amount: 0,
-      funding_end_date: Date.now()
+      funding_end_date: formatAsYYYYMMDD(Date())
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
