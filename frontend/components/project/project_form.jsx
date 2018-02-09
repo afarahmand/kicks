@@ -116,7 +116,7 @@ class ProjectForm extends React.Component {
                   <textarea
                     maxLength="135"
                     onChange={this.update('short_blurb')}
-                    className="project-input short_blurb"
+                    className="project-input shortblurb"
                     value={this.state.short_blurb}
                   >
                   </textarea>
