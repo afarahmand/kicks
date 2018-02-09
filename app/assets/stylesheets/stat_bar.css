@@ -37,4 +37,8 @@ section.stat-bar li:nth-child(4) {
   color: rgb(150, 150, 150);
 }
 
+.stat-bar li:first-child .stat-bar-title {
+  text-transform: capitalize;
+}
+
 .stat-bar-body { font-weight: 400; }
