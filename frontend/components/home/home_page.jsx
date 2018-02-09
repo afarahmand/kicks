@@ -15,6 +15,7 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
+    // const preFocusedTab = document.getElementById("1").focus();
     this.props.fetchProjects();
   }
 
@@ -53,6 +54,7 @@ class HomePage extends React.Component {
                 Object.keys(this.props.categories).map(id => (
                   <li key={id}>
                     <button
+                      id={id}
                       onClick={this.selectCategory(this.props.categories[id])}
                     >
                       {this.props.categories[id]}
