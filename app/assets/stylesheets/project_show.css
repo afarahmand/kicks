@@ -35,6 +35,7 @@
 section.show-status {
   display: flex;
   justify-content: space-between;
+  margin-top: 30px;
 }
 
 .show-status img {
