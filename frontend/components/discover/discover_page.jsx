@@ -13,6 +13,14 @@ class DiscoverPage extends React.Component {
     };
   }
 
+  componentDidMount() {
+    fetchDiscoveryResults(this.state.chosenCategory, this.state.sort, 9).then(
+      projects => this.setState({
+        searchResults: projects
+      })
+    );
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
