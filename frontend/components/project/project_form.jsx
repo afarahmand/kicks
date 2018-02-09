@@ -6,17 +6,18 @@ class ProjectForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      title: "",
-      image_url: "https://i.imgur.com/wB6sCUA.jpg",
-      short_blurb: "",
-      description: "",
-      category: "Art",
-      funding_amount: 0,
-      funding_end_date: formatAsYYYYMMDD(Date())
-    };
-
+    this.state = this.props.project;
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    if (this.props.match.params.projectId) {
+      this.props.fetchProject(this.props.match.params.projectId);
+    }
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.setState(newProps.project);
   }
 
   handleSubmit(e) {
@@ -25,6 +26,42 @@ class ProjectForm extends React.Component {
     this.props.processForm(project).then(
       project1 => this.props.history.push(`/projects/${project1.project.id}`)
     );
+  }
+
+  renderEndDateInput() {
+    if(this.props.formType === 'update') {
+      return (
+        <div className="project-form-input-section">
+          <input
+            type="date"
+            value={this.state.funding_end_date.slice(0, 10)}
+            className="project-input"
+            disabled
+          />
+          <p>
+            Projects with shorter durations have higher success
+            rates. You won’t be able to adjust your duration
+            after you launch.
+          </p>
+        </div>
+      );
+    } else {
+      return (
+        <div className="project-form-input-section">
+          <input
+            type="date"
+            value={this.state.funding_end_date}
+            onChange={this.update('funding_end_date')}
+            className="project-input"
+          />
+          <p>
+            Projects with shorter durations have higher success
+            rates. You won’t be able to adjust your duration
+            after you launch.
+          </p>
+        </div>
+      );
+    }
   }
 
   renderErrors() {
@@ -49,6 +86,14 @@ class ProjectForm extends React.Component {
     );
   }
 
+  renderPageTitle() {
+    if(this.props.formType === 'new') {
+      return "Let's get started";
+    } else {
+      return "Edit project";
+    }
+  }
+
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
@@ -56,9 +101,22 @@ class ProjectForm extends React.Component {
   }
 
   render() {
+    if (this.props.project === undefined) {
+      return null;
+    }
+
+    if (this.props.formType === 'update') {
+      if (
+        this.props.project.user_id !==
+        this.props.currentUser.id
+      ) {
+        this.props.history.push("/");
+      }
+    }
+
     return (
       <div className="project-form-page">
-        <h2>Let's get started.</h2>
+        <h2>{this.renderPageTitle()}</h2>
         <div className="page-subtitle">
           Make a great first impression with your project’s title and
           image, and set your funding goal, campaign duration, and
@@ -172,19 +230,7 @@ class ProjectForm extends React.Component {
 
               <li>
                 {this.renderLabelSection("Funding end date")}
-                <div className="project-form-input-section">
-                  <input
-                    type="date"
-                    value={this.state.funding_end_date}
-                    onChange={this.update('funding_end_date')}
-                    className="project-input"
-                  />
-                  <p>
-                    Projects with shorter durations have higher success
-                    rates. You won’t be able to adjust your duration
-                    after you launch.
-                  </p>
-                </div>
+                {this.renderEndDateInput()}
               </li>
 
               <li>

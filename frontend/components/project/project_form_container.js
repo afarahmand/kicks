@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { formatAsYYYYMMDD } from '../../utils/date_util';
 
 import projectForm from './project_form';
 import {
@@ -8,11 +9,28 @@ import {
 } from '../../actions/project_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  let project = {
+    title: "",
+    image_url: "https://i.imgur.com/wB6sCUA.jpg",
+    short_blurb: "",
+    description: "",
+    category: "Art",
+    funding_amount: 0,
+    funding_end_date: formatAsYYYYMMDD(Date())
+  };
+  let formType = 'new';
+
+  if (ownProps.match.path == "/projects/:projectId/edit") {
+    project = state.entities.projects[ownProps.match.params.projectId];
+    formType = 'update';
+  }
+
   return {
     categories: state.entities.categories,
+    currentUser: state.session.currentUser,
     errors: state.errors.projects,
     formType: ownProps.location.pathname === '/projects/new' ? 'new' : 'update',
-    signedIn: state.session.currentUser !== null
+    project
   };
 };
 

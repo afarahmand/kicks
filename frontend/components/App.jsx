@@ -27,7 +27,12 @@ const App = () => (
       />
       <Route path="/discover" component={DiscoverContainer} />
       <Route path="/search" component={SearchPage} />
+      <ProtectedRoute
+        path="/projects/:projectId/edit"
+        component={ProjectFormContainer}
+      />
       <Route
+        exact
         path="/projects/:projectId"
         component={ProjectShowPageContainer}
       />

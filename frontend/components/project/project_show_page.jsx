@@ -19,12 +19,32 @@ class ProjectShowPage extends React.Component {
     }
   }
 
-  daysRemaining(endDate){
-    let today = new Date();
-    let end = new Date(endDate.slice(0, 10));
-    let diff = (end - today)/(1000*60*60*24);  // end - today [in ms]
-    // /1000 in s /60 min /60 hr /24 days
-    return Math.floor(diff);
+  renderButtons () {
+    if (
+      this.props.currentUser &&
+      (this.props.project.user_id === this.props.currentUser.id)
+    ) {
+      return (
+        <div className="buttons">
+          <button
+            className="edit-button"
+            onClick={() => this.props.history.push(
+              `/projects/${this.props.project.id}/edit`
+            )}>
+            EDIT
+          </button>
+          <button
+            className="delete-button"
+            onClick={() => this.props.deleteProject(
+              this.props.project.id
+            ).then(
+              project1 => this.props.history.push(`/`)
+          )}>
+            DELETE
+          </button>
+        </div>
+      );
+    }
   }
 
   render() {
@@ -64,6 +84,8 @@ class ProjectShowPage extends React.Component {
                 by {this.props.project.funding_end_date.slice(0, 10)}.
               </span>
             </div>
+
+            {this.renderButtons()}
           </div>
         </section>
 
