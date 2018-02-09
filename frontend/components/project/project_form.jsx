@@ -149,30 +149,19 @@ class ProjectForm extends React.Component {
                   <select
                     onChange={this.update('category')}
                     className="project-input"
+                    value={this.state.category}
                   >
                     {
                       Object.keys(this.props.categories).map(
                         (id) => {
-                          if (this.state.category === this.props.categories[id]) {
-                            return (
-                              <option
-                                key={id}
-                                value={this.props.categories[id]}
-                                selected
-                              >
-                                {this.props.categories[id]}
-                              </option>
-                            );
-                          } else {
-                            return (
-                              <option
-                                key={id}
-                                value={this.props.categories[id]}
-                              >
-                                {this.props.categories[id]}
-                              </option>
-                            );
-                          }
+                          return (
+                            <option
+                              key={id}
+                              value={this.props.categories[id]}
+                            >
+                              {this.props.categories[id]}
+                            </option>
+                          );
                         }
                       )
                     }
