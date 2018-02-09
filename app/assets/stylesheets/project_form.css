@@ -81,6 +81,7 @@ h4, .project-form-container p {
   min-height: 100px;
   max-width: 97%;
   min-width: 97%;
+  padding: 12px;
 }
 
 .project-form-input-section img {
