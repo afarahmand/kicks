@@ -1,8 +1,3 @@
-/* section.discover img {
-  width: 50px;
-  height: 50px;
-} */
-
 section.discover {
   font-family: Helvetica neue;
   height: auto;
@@ -69,13 +64,13 @@ section.project-index-display {
 .discover-item {
   font-family: Helvetica neue;
   font-weight: 200;
-  width: 300px;
+  width: 325px;
   border: 1px solid rgb(220,220,220);
 }
 
 .discover-item img {
-  width: 300px;
-  height: 170px;
+  width: 325px;
+  height: 250px;
 }
 
 .discover-item .category-link {
@@ -94,6 +89,40 @@ section.project-index-display {
   padding: 18px;
 }
 
-.discover-item .category-link a {
-  text-decoration: underline;
+.discover-item .project-title {
+  font-size: 24px;
+}
+
+.discover-item .discover-item-middle {
+  height: 96px;
+  padding-top: 24px;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.separating-bar {
+  border: 2px solid rgb(15,114,98);
+  margin-left: 18px;
+  margin-right: 18px;
+}
+
+.discover-item .discover-item-bottom {
+  font-size: 13px;
+  height: 96px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.discover-item span.goal {
+  color: rgb(15,114,98);
+}
+
+.discover-item .discover-item-bottom div {
+  margin-top: 3px;
+}
+
+.discover-item .discover-item-bottom .days-to-go {
+  margin-right: 2px;
 }
