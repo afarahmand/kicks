@@ -91,3 +91,40 @@ main.description {
   line-height: 2;
   margin-bottom: 80px;
 }
+
+.project-show-page .buttons {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.project-show-page button {
+  font-family: Helvetica neue;
+  border: 1px rgb(213,213,213) solid;
+  display: block;
+  width: 93.5%;
+  padding: 12px;
+  height: 16px;
+  color: white;
+  font-size: 16px;
+  height: 18px;
+  text-align: center;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  transition-duration: .25s;
+  transition-timing-function: ease-in-out;
+  transition-delay: initial;
+  border-radius: 50px;
+}
+
+.project-show-page button:nth-child(2) {
+  margin-top: 28px;
+}
+
+.edit-button {
+  background-color: blue;
+}
+
+.delete-button {
+  background-color: red;
+}
