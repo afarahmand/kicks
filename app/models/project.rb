@@ -2,11 +2,18 @@ class Project < ApplicationRecord
   validates :title, :short_blurb, :description, :funding_amount, presence: true
   validates :funding_end_date, :category, :user_id, presence: true
 
-  validates :title, length: { maximum: 60 }
-  validates :short_blurb, length: { maximum: 135 }
+  validates :title, length: { minimum: 5, maximum: 60 }
+  validates :short_blurb, length: { minimum: 20, maximum: 135 }
+  validates :description, length: { minimum: 200 }
 
   validates :funding_amount, numericality: { only_integer: true, greater_than: 0 }
   validates :category, inclusion: { in: %w(Art Fashion Film Food Games Technology) }
+
+  validates :funding_end_date, date: true
+  validates :funding_end_date, date: { after: Proc.new { Time.now } }
+  validates :funding_end_date, date: { before: Proc.new { Time.now + 12.month } }
+
+  # Testing area
 
   belongs_to :creator,
     primary_key: :id,
