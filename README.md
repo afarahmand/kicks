@@ -1,7 +1,7 @@
 # QUIKSTARTER
 [Quikstarter live app](https://quikstarter.herokuapp.com/#/)
 
-Quikstarter is a single-page app made to clone features from kickstarter.com.  It utilizes a React\Redux frontend and Ruby on Rails backend.
+Quikstarter is a single-page app made to clone features from kickstarter.com.  It utilizes a React\Redux frontend, Ruby on Rails backend, and a PostgreSQL database.  The app uses JS ES6, BCrypt for password salting and hashing, and Webpack for bundling.
 
 ![Home Page](https://raw.githubusercontent.com/afarahmand/kicks/master/Wireframes/screenshots/home_page.png)
 
