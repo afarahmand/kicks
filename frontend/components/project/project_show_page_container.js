@@ -3,9 +3,14 @@ import { fetchProject, deleteProject } from '../../actions/project_actions';
 import ProjectShowPage from './project_show_page';
 
 const mapStateToProps = (state, ownProps) => {
+  let project = state.entities.projects[ownProps.match.params.projectId];
+
+  if (project === undefined) { return {}; }
+
   return {
+    creator: state.entities.users[project.user_id].name,
     currentUser: state.session.currentUser,
-    project: state.entities.projects[ownProps.match.params.projectId]
+    project: project
   };
 };
 

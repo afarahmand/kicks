@@ -7,12 +7,14 @@ export const RECEIVE_PROJECT_ERRORS = "RECEIVE_PROJECT_ERRORS";
 
 const receiveAllProjects = projects => ({
   type: RECEIVE_ALL_PROJECTS,
-  projects
+  projects: projects.projects,
+  users: projects.users
 });
 
 const receiveProject = project => ({
   type: RECEIVE_PROJECT,
-  project
+  project: project.project,
+  user: project.user
 });
 
 const removeProject = projectId => ({
