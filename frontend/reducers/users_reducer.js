@@ -1,31 +1,24 @@
 import { merge } from 'lodash';
 import {
   RECEIVE_ALL_PROJECTS,
-  RECEIVE_PROJECT,
-  REMOVE_PROJECT
+  RECEIVE_PROJECT
 } from '../actions/project_actions';
 
-const projectsReducer = (oldState = {}, action) => {
+const usersReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState;
 
   switch(action.type) {
-
     case RECEIVE_ALL_PROJECTS:
       newState = merge({}, oldState);
-      action.projects.forEach(project => {
-        newState[project.id] = project;
+      action.users.forEach(user => {
+        newState[user.id] = user;
       });
       return newState;
 
     case RECEIVE_PROJECT:
       newState = merge({}, oldState);
-      newState[action.project.id] = action.project;
-      return newState;
-
-    case REMOVE_PROJECT:
-      newState = merge({}, oldState);
-      delete newState[action.projectId];  // newState.projects?
+      newState[action.user.id] = action.user;
       return newState;
 
     default:
@@ -33,7 +26,7 @@ const projectsReducer = (oldState = {}, action) => {
   }
 };
 
-export default projectsReducer;
+export default usersReducer;
 
 // export const RECEIVE_ALL_PROJECTS = "RECEIVE_ALL_PROJECTS";
 // export const RECEIVE_PROJECT = "RECEIVE_PROJECT";

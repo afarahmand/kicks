@@ -3,10 +3,6 @@ import { withRouter } from 'react-router-dom';
 import { daysRemainingUntilEnd } from '../../utils/date_util';
 
 class ProjectShowPage extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.fetchProject(this.props.match.params.projectId);
   }
@@ -48,7 +44,7 @@ class ProjectShowPage extends React.Component {
   }
 
   render() {
-    if (!this.props.project) {
+    if (!this.props.project && !this.props.creator) {
       return null;
     }
 
@@ -105,13 +101,3 @@ class ProjectShowPage extends React.Component {
 }
 
 export default withRouter(ProjectShowPage);
-
-
-// <span>THE PROJECT SHOW PAGE</span>
-// {this.props.project.title}
-// {this.props.project.image_url}
-// {this.props.project.description}
-// {this.props.project.short_blurb}
-// {this.props.project.funding_amount}
-// {this.props.project.funding_end_date}
-// {this.props.project.category}

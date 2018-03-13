@@ -10,9 +10,6 @@ class Api::ProjectsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def update
     @project = current_user.projects.find_by(id: params[:id])
 
@@ -29,11 +26,13 @@ class Api::ProjectsController < ApplicationController
 
   def show
     @project = Project.find_by(id: params[:id])
+    @user = User.find_by(id: @project.user_id)
     render "api/projects/show"
   end
 
   def index
     @projects = Project.all
+    @users = User.all
     render "api/projects/index"
   end
 
