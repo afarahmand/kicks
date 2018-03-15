@@ -1,5 +1,5 @@
-json.set! "project" do
-  json.extract! @project,
+json.array! @projects do |project|
+  json.extract! project,
     :id,
     :title,
     :short_blurb,
@@ -9,10 +9,4 @@ json.set! "project" do
     :image_url,
     :category,
     :user_id
-end
-
-json.set! "user" do
-  json.extract! @user,
-  :id,
-  :name
 end

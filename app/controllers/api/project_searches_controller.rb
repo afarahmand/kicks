@@ -9,7 +9,7 @@ class Api::ProjectSearchesController < ApplicationController
       ).limit(9)
     end
 
-    render "api/projects/index"
+    render "api/project_searches/index"
   end
 
   private

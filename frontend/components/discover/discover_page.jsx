@@ -30,8 +30,7 @@ class DiscoverPage extends React.Component {
           searchResults: projects
         })
       );
-    }
-  );
+    });
   }
 
   render() {

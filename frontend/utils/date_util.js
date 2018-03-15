@@ -56,7 +56,7 @@ export const convertMonthShortToNumStr = (shortMonth) => {
   }
 };
 
-export const daysRemainingUntilEnd = (endDate) => {
+export const daysRemainingUntilEnd = endDate => {
   let today = new Date();
   let end = new Date(endDate.slice(0, 10));
   let diff = (end - today)/(1000*60*60*24);  // end - today [in ms]
