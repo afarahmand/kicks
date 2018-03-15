@@ -9,7 +9,7 @@ class Api::ProjectDiscoveryController < ApplicationController
       ).limit(discovery_params[:numProjects])
     end
 
-    render "api/projects/index"
+    render "api/project_searches/index"
   end
 
   private
