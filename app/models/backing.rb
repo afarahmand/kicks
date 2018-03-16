@@ -5,12 +5,10 @@ class Backing < ApplicationRecord
     primary_key: :id,
     foreign_key: :user_id,
     class_name: 'User'
-    
+
   belongs_to :reward
 
   has_one :project,
     through: :reward,
     source: :project
-
-  # custom validation unique combo user_id and project_id
 end
