@@ -13,17 +13,19 @@ class Project < ApplicationRecord
   validates :funding_end_date, date: { after: Proc.new { Time.now } }
   validates :funding_end_date, date: { before: Proc.new { Time.now + 12.month } }
 
-  # Testing area
-
   belongs_to :creator,
     primary_key: :id,
     foreign_key: :user_id,
     class_name: 'User'
 
-  # has_many :backings
-  # has_many :rewards
-  # has_many :backers,
-  #   through: :backings
+  has_many :rewards#, dependent: :destroy
+
+  has_many :backings,
+    through: :rewards
+
+  has_many :backers,
+    through: :backings,
+    source: :backer
 
   def self.discovery_results(category, sort)
     currQuery = Project.all

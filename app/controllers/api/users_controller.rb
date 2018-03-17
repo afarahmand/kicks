@@ -5,9 +5,14 @@ class Api::UsersController < ApplicationController
     if @user.save
       render "api/users/show"
     else
-      #render json: ['Invalid name, email, or password'], status: 401
       render json: @user.errors.full_messages, status: 401
     end
+  end
+
+  def show
+    @user = User.find_by(id: params[:id])
+    @projects = @user.backed_projects
+    render "api/users/user_and_backed_projects"
   end
 
   private

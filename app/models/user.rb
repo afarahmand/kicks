@@ -7,7 +7,15 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  has_many :projects
+  has_many :backings
+  has_many :projects         # created projects
+
+  has_many :backed_projects, # backed projects
+    through: :backings,
+    source: :project
+
+  has_many :rewards,
+    through: :backings
 
   def password=(pw)
     @password = pw
