@@ -2,9 +2,12 @@ class Api::RewardsController < ApplicationController
   def create
     @reward = Reward.new(rewards_params)
     @project = current_user.projects.find_by(id: params[:project_id])
+    existing_project = Project.find_by(id: params[:project_id])
 
     if !signed_in?
       render json: ['Cannot create rewards without signing in'], status: 401
+    elsif !existing_project
+      render json: ['Cannot create rewards for projects that do not exist'], status: 404
     elsif !@project
       render json: ['Cannot create rewards for projects that were not created by you'], status: 403
     else

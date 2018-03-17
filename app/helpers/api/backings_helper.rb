@@ -1,2 +1,2 @@
-module Api::BackingscontrollerHelper
+module Api::BackingsHelper
 end
