@@ -43,3 +43,10 @@ I utilized a live search feature that automatically issues AJAX requests to rece
 ## Future Features
 * user profile
 * user can back projects and be eligible for rewards
+
+* user show page: shows backed projects
+* new reward page
+* backings controller [create, index?]
+* rewards controller [create]
+* Fix project show page img size
+* Fix some jbuilder views
