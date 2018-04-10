@@ -15,7 +15,6 @@ class HomePage extends React.Component {
   }
 
   componentDidMount() {
-    // const preFocusedTab = document.getElementById("1").focus();
     this.props.fetchProjects();
   }
 
@@ -51,7 +50,18 @@ class HomePage extends React.Component {
           <div className="tab-bar">
             <ul>
               {
-                Object.keys(this.props.categories).map(id => (
+                <li key="1">
+                  <button
+                    id="1"
+                    onClick={this.selectCategory(this.props.categories[1])}
+                    autoFocus
+                  >
+                    {this.props.categories[1]}
+                  </button>
+                </li>
+              }
+              {
+                Object.keys(this.props.categories).slice(1).map(id => (
                   <li key={id}>
                     <button
                       id={id}
