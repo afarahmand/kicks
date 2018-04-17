@@ -10,15 +10,15 @@ def new_datetime
   return Time.now.plus_with_duration(10345678+((rand*10).round*1000000))
 end
 
-User.create!(name: "Demo_User", email: "demo@quickstarter.com", password: "password");
-User.create!(name: "Ashil", email: "Ashil@ashil.com", password: "password");
-User.create!(name: "Andy", email: "andy@aa.com", password: "password");
-User.create!(name: "Okonzu", email: "Okonzu@hotmail.com", password: "password");
-User.create!(name: "Stacey", email: "Mustafa@hotmail.com", password: "password"); # 5
-User.create!(name: "Snoop Dogg", email: "snoop@bigblunt.com", password: "password");
-User.create!(name: "Alice", email: "alice@home.com", password: "password");
-User.create!(name: "Elon Musk", email: "elon@spacex.com", password: "password");
-User.create!(name: "Miles Dyson", email: "mdyson@cyberdyne.com", password: "password");
+User.create!(name: "Demo User", email: "demo@quickstarter.com", password: "password", image_url: "https://i.imgur.com/rfxjQeS.png");
+User.create!(name: "Ashil", email: "Ashil@ashil.com", password: "password", image_url: "https://i.imgur.com/rfxjQeS.png");
+User.create!(name: "Andy", email: "andy@aa.com", password: "password", image_url: "https://i.imgur.com/rfxjQeS.png");
+User.create!(name: "Okonzu", email: "Okonzu@hotmail.com", password: "password", image_url: "https://i.imgur.com/rfxjQeS.png");
+User.create!(name: "Stacey", email: "stacey@hotmail.com", password: "password", image_url: "https://i.imgur.com/64m6a68.jpg"); # 5
+User.create!(name: "Snoop Dogg", email: "snoop@bigblunt.com", password: "password", image_url: "https://i.imgur.com/zVXIPlX.png");
+User.create!(name: "Alice", email: "alice@home.com", password: "password", image_url: "https://i.imgur.com/rfxjQeS.png");
+User.create!(name: "Elon Musk", email: "elon@spacex.com", password: "password", image_url: "https://i.imgur.com/xUF2EjU.png");
+User.create!(name: "Miles Dyson", email: "mdyson@cyberdyne.com", password: "password", image_url: "https://i.imgur.com/WrSbVcw.jpg");
 
 Project.create!(title: "Let's Go To Mars",
   short_blurb: "We're putting together some funding for a manned mission to Mars...now, you too can
@@ -107,7 +107,7 @@ Project.create!(title: "Shadow Animals - Are Our Kids Learning a Popular Pasttim
 );
 Project.create!(title: "Help!, I Lost My Life Savings!",
   short_blurb: "I went to the casino with friends.  It hit red 8 times
-  n a row.  I knew it would hit black so I bet.",
+  in a row.  I knew it would hit black, so I bet.",
   description: "I know what I did was stupid but it was an honest mistake.  Ya'll
   got to help me out.  My wife would kill me if she found out.  I've gone
   broke only 3 times before when playing cards so it is not like this happens all of
