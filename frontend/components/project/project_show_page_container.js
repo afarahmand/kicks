@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
   if (project === undefined) { return {}; }
 
   return {
-    creator: state.entities.users[project.user_id].name,
+    creator: state.entities.users[project.user_id],
     currentUser: state.session.currentUser,
     project: project
   };

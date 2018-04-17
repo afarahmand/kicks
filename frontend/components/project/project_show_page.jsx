@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { daysRemainingUntilEnd } from '../../utils/date_util';
 
 class ProjectShowPage extends React.Component {
@@ -49,9 +49,13 @@ class ProjectShowPage extends React.Component {
     }
 
     return (
-      <div className="project-show-page">
-        <section className="title content-narrow">
+      <div className="content-narrow-project-show project-show-page">
+        <section className="title">
           <div className="creator">
+            <Link to="">
+              <img src={this.props.creator.image_url}></img>
+              <span>By {this.props.creator.name}</span>
+            </Link>
           </div>
           <div className="titles">
             <h2>{this.props.project.title}</h2>
@@ -59,9 +63,8 @@ class ProjectShowPage extends React.Component {
           </div>
         </section>
 
-        <section className="show-status content-narrow">
-          <img src={this.props.project.image_url}>
-          </img>
+        <section className="show-status">
+          <img src={this.props.project.image_url}></img>
 
           <div className="status">
             <span className="one goal">
@@ -85,7 +88,7 @@ class ProjectShowPage extends React.Component {
           </div>
         </section>
 
-        <section className="description-rewards content-narrow">
+        <section className="description-rewards">
           <main className="description">
             <h3>About</h3>
             {this.props.project.description}
