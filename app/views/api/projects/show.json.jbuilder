@@ -25,5 +25,6 @@ end
 json.set! "user" do
   json.extract! @user,
   :id,
-  :name
+  :name,
+  :image_url
 end
