@@ -30,29 +30,46 @@ class Api::RewardsController < ApplicationController
     end
   end
 
-  # def destroy
-  #   # if !current_user.projects.include?(params[:project_id])
-  #   #   render json: ['Cannot delete rewards for projects that were not created by you']
-  #   # end
-  #
-  #   @project = Project.find_by(id: params[:project_id])
-  #   @reward = Reward.find_by(id: params[:id])
-  #
-  #
-  #   @user = User.find_by(id: @project.creator)
-  #   # @user = current_user
-  #
-  #   if @reward
-  #     if @reward.destroy
-  #       @rewards = Reward.where(project_id: @project.id)
-  #       render "api/projects/show"
-  #     else
-  #       render json: @reward.errors.full_messages, status: 404
-  #     end
-  #   else
-  #     render json: @reward.errors.full_messages, status: 404
-  #   end
-  # end
+  def update
+    if !signed_in?
+      render json: ['Cannot update rewards without signing in'], status: 401
+    elsif !current_user.projects.include?(params[:project_id])
+      render json: ['Cannot update rewards for projects that were not created by you']
+    end
+
+    @reward = Reward.find_by(id: params[:id])
+
+    if @reward
+      if @reward.save
+        render "api/rewards/show"
+      else
+        render json: @reward.errors.full_messages, status: 404
+      end
+    else
+      render json: @reward.errors.full_messages, status: 404
+    end
+  end
+
+  def destroy
+    if !signed_in?
+      render json: ['Cannot delete rewards without signing in'], status: 401
+    elsif !current_user.projects.include?(params[:project_id])
+      render json: ['Cannot delete rewards for projects that were not created by you']
+    end
+
+    @reward = Reward.find_by(id: params[:id])
+
+    if @reward
+      if @reward.destroy
+        @rewards = Reward.where(project_id: params[:project_id])
+        render "api/rewards/index"
+      else
+        render json: @reward.errors.full_messages, status: 404
+      end
+    else
+      render json: @reward.errors.full_messages, status: 404
+    end
+  end
 
   private
 
