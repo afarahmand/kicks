@@ -15,10 +15,29 @@ class ProjectShowPage extends React.Component {
     }
   }
 
-  renderButtons () {
+  renderRewardButton () {
     if (
       this.props.currentUser &&
       (this.props.project.user_id === this.props.currentUser.id)
+    ) {
+      return (
+        <div>
+          <button
+            className="reward-button"
+            onClick={() => this.props.history.push(
+              `/projects/${this.props.project.id}/rewards/edit`
+          )}>
+            Edit Rewards
+          </button>
+        </div>
+      );
+    }
+  }
+
+  renderEditDeleteButtons () {
+    if (
+      this.props.currentUser &&
+      (this.props.currentUser.id === this.props.project.user_id)
     ) {
       return (
         <div className="buttons">
@@ -27,7 +46,7 @@ class ProjectShowPage extends React.Component {
             onClick={() => this.props.history.push(
               `/projects/${this.props.project.id}/edit`
             )}>
-            EDIT
+            Edit Project
           </button>
           <button
             className="delete-button"
@@ -36,7 +55,7 @@ class ProjectShowPage extends React.Component {
             ).then(
               project1 => this.props.history.push(`/`)
           )}>
-            DELETE
+            Delete Project
           </button>
         </div>
       );
@@ -76,6 +95,8 @@ class ProjectShowPage extends React.Component {
             </span>
             <span className="two">days to go</span>
 
+            {this.renderRewardButton()}
+
             <div className="all-nothing-container">
               <span className="all-nothing">All or nothing.</span>
               <span>
@@ -84,7 +105,7 @@ class ProjectShowPage extends React.Component {
               </span>
             </div>
 
-            {this.renderButtons()}
+            {this.renderEditDeleteButtons()}
           </div>
         </section>
 
@@ -95,6 +116,7 @@ class ProjectShowPage extends React.Component {
           </main>
 
           <aside className="rewards">
+            Placeholder
           </aside>
         </section>
 
