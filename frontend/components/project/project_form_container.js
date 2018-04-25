@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { formatAsYYYYMMDD } from '../../utils/date_util';
 
-import projectForm from './project_form';
+import ProjectForm from './project_form';
 import {
   fetchProject,
   createProject,
@@ -47,4 +47,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(projectForm);
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectForm);
