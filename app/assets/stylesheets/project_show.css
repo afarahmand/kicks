@@ -81,17 +81,21 @@ section.show-status {
 .project-show-page .status .two {
   font-size: 14px;
   font-weight: 300;
-  margin-bottom: 80px;
+  margin-bottom: 60px;
   color: rgb(165,165,165);
 }
 
 .project-show-page .status {
   border-top: 3px solid rgb(0,158,118);
-  padding-top: 80px;
+  padding-top: 40px;
 }
 
 .project-show-page .status .goal {
   color: rgb(0,158,118);
+}
+
+.project-show-page .reward-button {
+  margin-bottom: 20px;
 }
 
 .project-show-page .status .all-nothing {
@@ -143,6 +147,14 @@ main.description {
 
 .project-show-page button:nth-child(2) {
   margin-top: 28px;
+}
+
+.reward-button {
+  background-color: rgb(0,158,118);
+}
+
+.reward-button:hover {
+  background-color: rgb(15,115,98);
 }
 
 .edit-button {
