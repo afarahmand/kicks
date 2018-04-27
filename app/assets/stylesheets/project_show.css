@@ -11,7 +11,6 @@
 }
 
 .project-show-page img {
-  width: 700px;
   height: 500px;
 }
 
@@ -61,14 +60,6 @@ section.show-status {
   margin-top: 30px;
 }
 
-.show-status img {
-  padding-right: 18px;
-}
-
-.show-status > div {
-  margin-left: 18px;
-}
-
 .project-show-page .status {
   display: flex;
   flex-direction: column;
@@ -104,20 +95,23 @@ section.show-status {
 }
 
 .all-nothing-container span {
-  font-size: 12px;
   font-family: Helvetica neue;
+  font-size: 12px;
 }
 
 .project-show-page h3 {
-  font-family: Helvetica neue;
   font-size: 24px;
   font-weight: 200;
+  margin-top: 0px;
   margin-bottom: 30px;
 }
 
-main.description {
-  line-height: 2;
+.project-show-page div.description {
   margin-bottom: 80px;
+}
+
+.project-show-page div.description p {
+  line-height: 2;
 }
 
 .project-show-page .buttons {
@@ -171,4 +165,19 @@ main.description {
 
 .delete-button:hover {
   background-color: rgb(125, 0, 0);
+}
+
+.project-show-page .col-12 {
+  max-width: 68%;
+}
+
+.project-show-page .col-3 {
+  width: 32%;
+  margin-left: 36px;
+}
+
+.project-show-page .description-rewards {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
 }
