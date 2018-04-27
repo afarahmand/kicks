@@ -15,6 +15,9 @@ class ProjectShowPage extends React.Component {
     }
   }
 
+  renderBackingButton() {
+  }
+
   renderRewardButton () {
     if (
       this.props.currentUser &&
@@ -83,9 +86,9 @@ class ProjectShowPage extends React.Component {
         </section>
 
         <section className="show-status">
-          <img src={this.props.project.image_url}></img>
+          <img className="col-12" src={this.props.project.image_url}></img>
 
-          <div className="status">
+          <div className="col-3 status">
             <span className="one goal">
               ${this.props.project.funding_amount}
             </span>
@@ -96,6 +99,7 @@ class ProjectShowPage extends React.Component {
             <span className="two">days to go</span>
 
             {this.renderRewardButton()}
+            {this.renderBackingButton()}
 
             <div className="all-nothing-container">
               <span className="all-nothing">All or nothing.</span>
@@ -110,14 +114,16 @@ class ProjectShowPage extends React.Component {
         </section>
 
         <section className="description-rewards">
-          <main className="description">
+          <div className="col-12 description">
             <h3>About</h3>
-            {this.props.project.description}
-          </main>
+            <p>{this.props.project.description}</p>
+          </div>
 
-          <aside className="rewards">
-            Placeholder
-          </aside>
+          <div className="col-3 rewards">
+            <h3>Support</h3>
+
+            Placeholder for rewards index
+          </div>
         </section>
 
       </div>
