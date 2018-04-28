@@ -14,6 +14,7 @@ const receiveAllProjects = projects => ({
 const receiveProject = project => ({
   type: RECEIVE_PROJECT,
   project: project.project,
+  rewards: project.rewards,
   user: project.user
 });
 
