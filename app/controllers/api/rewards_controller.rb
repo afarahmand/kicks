@@ -20,7 +20,7 @@ class Api::RewardsController < ApplicationController
 
       if @reward.save
         @project = Project.find_by(id: @reward.project_id)
-        @rewards = Reward.where(project_id: @project.id)
+        @rewards = @project.rewards
         @user = current_user
 
         render "api/projects/show"
