@@ -26,7 +26,8 @@ class Api::ProjectsController < ApplicationController
 
   def show
     @project = Project.find_by(id: params[:id])
-    @user = User.find_by(id: @project.user_id)
+    @user = @project.creator
+    @rewards = @project.rewards
     render "api/projects/show"
   end
 
