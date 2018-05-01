@@ -2,6 +2,8 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { daysRemainingUntilEnd } from '../../utils/date_util';
 
+import RewardIndex from '../reward/reward_index';
+
 class ProjectShowPage extends React.Component {
   componentDidMount() {
     this.props.fetchProject(this.props.match.params.projectId);
@@ -19,8 +21,7 @@ class ProjectShowPage extends React.Component {
   }
 
   renderRewardButton () {
-    if (
-      this.props.currentUser &&
+    if (this.props.currentUser &&
       (this.props.project.user_id === this.props.currentUser.id)
     ) {
       return (
@@ -121,8 +122,7 @@ class ProjectShowPage extends React.Component {
 
           <div className="col-3 rewards">
             <h3>Support</h3>
-
-            Placeholder for rewards index
+            <RewardIndex rewards={this.props.projectRewards}/>
           </div>
         </section>
 
