@@ -181,3 +181,56 @@ section.show-status {
   display: flex;
   justify-content: space-between;
 }
+
+.project-show-page .rewards .reward {
+  border: 1px solid rgb(220, 220, 220);
+  margin-bottom: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-weight: 200;
+}
+
+.project-show-page .rewards .reward .amount {
+  font-size: 20px;
+}
+
+.project-show-page .rewards .reward .title {
+  font-size: 16px;
+}
+
+.project-show-page .rewards .reward .description {
+  font-size: 14px;
+  color: rgb(100, 100, 100);
+}
+
+.project-show-page .rewards .reward .reward-body-content {
+  margin-bottom: 20px;
+}
+
+.project-show-page .rewards .reward .reward-hover-overlay {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(0,158,118, 0);
+  color: white;
+  font-weight: 150;
+
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+}
+
+.project-show-page .rewards .reward:hover .reward-hover-overlay {
+  visibility: visible;
+  background-color: rgb(0,158,118, 0.9);
+}
