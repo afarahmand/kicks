@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { daysRemainingUntilEnd } from '../../utils/date_util';
 
-import RewardIndex from '../reward/reward_index';
+import RewardIndexDisplay from '../reward/reward_index_display';
 
 class ProjectShowPage extends React.Component {
   componentDidMount() {
@@ -122,7 +122,7 @@ class ProjectShowPage extends React.Component {
 
           <div className="col-3 rewards">
             <h3>Support</h3>
-            <RewardIndex rewards={this.props.projectRewards}/>
+            <RewardIndexDisplay rewards={this.props.projectRewards}/>
           </div>
         </section>
 

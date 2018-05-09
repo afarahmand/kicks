@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// Navlink
-
-const RewardIndexItem = ({ reward }) => {
+const RewardIndexDisplayItem = ({ reward }) => {
   return (
     <Link to='' className="reward">
         <span className="reward-body-content amount">
@@ -25,4 +23,4 @@ const RewardIndexItem = ({ reward }) => {
   );
 };
 
-export default RewardIndexItem;
+export default RewardIndexDisplayItem;
