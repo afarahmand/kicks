@@ -2,8 +2,12 @@ import React from 'react';
 import RewardIndexDisplayItem from './reward_index_display_item';
 
 const RewardIndexDisplay = ({ rewards }) => {
+  let sortedByAmount = rewards.slice().sort(function(x, y) {
+    return x.amount > y.amount;
+  });
+
   return (
-    rewards.map((reward, idx) => (
+    sortedByAmount.map((reward, idx) => (
       <RewardIndexDisplayItem key={idx} reward={reward}/>
     ))
   );
