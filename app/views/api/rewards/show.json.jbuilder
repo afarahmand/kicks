@@ -3,6 +3,6 @@ json.set! "reward" do
     :id,
     :amount,
     :description,
-    :reward,
+    :title,
     :project_id
 end
