@@ -123,7 +123,6 @@ section.show-status {
 .project-show-page button {
   font-family: Helvetica neue;
   border: 1px rgb(213,213,213) solid;
-  display: block;
   width: 93.5%;
   padding: 12px;
   height: 16px;
