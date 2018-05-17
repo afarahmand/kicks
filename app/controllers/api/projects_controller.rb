@@ -4,6 +4,8 @@ class Api::ProjectsController < ApplicationController
     @project.user_id = current_user.id
 
     if @project.save
+      @rewards = []
+      @user = current_user
       render "api/projects/show"
     else
       render json: @project.errors.full_messages, status: 401
@@ -15,6 +17,8 @@ class Api::ProjectsController < ApplicationController
 
     if @project
       if @project.update_attributes(project_params)
+        @rewards = @project.rewards
+        @user = @project.creator
         render "api/projects/show"
       else
         render json: @project.errors.full_messages, status: 401
@@ -28,6 +32,7 @@ class Api::ProjectsController < ApplicationController
     @project = Project.find_by(id: params[:id])
     @user = @project.creator
     @rewards = @project.rewards
+
     render "api/projects/show"
   end
 
@@ -42,6 +47,8 @@ class Api::ProjectsController < ApplicationController
 
     if @project
       if @project.destroy
+        @user = @project.creator
+        @rewards = @project.rewards
         render "api/projects/show"
       else
         render json: @project.errors.full_messages, status: 404
