@@ -5,7 +5,7 @@ class Api::RewardsController < ApplicationController
   end
 
   def create
-    @reward = Reward.new(rewards_params)
+    @reward = Reward.new(reward_params)
     @project = current_user.projects.find_by(id: params[:project_id])
     existing_project = Project.find_by(id: params[:project_id])
 
@@ -31,49 +31,51 @@ class Api::RewardsController < ApplicationController
   end
 
   def update
+    @project = current_user.projects.find_by(id: params[:project_id])
+    @reward = @project.rewards.find_by(id: params[:id])
+
     if !signed_in?
       render json: ['Cannot update rewards without signing in'], status: 401
-    elsif !current_user.projects.include?(params[:project_id])
-      render json: ['Cannot update rewards for projects that were not created by you']
-    end
-
-    @reward = Reward.find_by(id: params[:id])
-
-    if @reward
-      if @reward.save
-        render "api/rewards/show"
+    elsif !current_user.projects.include?(@project)
+      render json: ['Cannot update rewards for projects that were not created by you'], status: 401
+    else
+      if @reward
+        if @reward.update_attributes(reward_params)
+          render "api/rewards/show"
+        else
+          render json: @reward.errors.full_messages, status: 404
+        end
       else
         render json: @reward.errors.full_messages, status: 404
       end
-    else
-      render json: @reward.errors.full_messages, status: 404
     end
   end
 
   def destroy
+    @reward = Reward.find_by(id: params[:id])
+    @project = Project.find_by(id: params[:project_id])
+    @user = @project.creator
+
     if !signed_in?
       render json: ['Cannot delete rewards without signing in'], status: 401
-    elsif !current_user.projects.include?(params[:project_id])
-      render json: ['Cannot delete rewards for projects that were not created by you']
-    end
-
-    @reward = Reward.find_by(id: params[:id])
-
-    if @reward
-      if @reward.destroy
-        @rewards = Reward.where(project_id: params[:project_id])
-        render "api/rewards/index"
+    elsif !current_user.projects.include?(@project)
+      render json: ['Cannot delete rewards for projects that were not created by you'], status: 401
+    else
+      if @reward
+        if @reward.destroy
+          render "api/rewards/show"
+        else
+          render json: @reward.errors.full_messages, status: 404
+        end
       else
         render json: @reward.errors.full_messages, status: 404
       end
-    else
-      render json: @reward.errors.full_messages, status: 404
     end
   end
 
   private
 
-  def rewards_params
+  def reward_params
     params.require(:reward).permit(:amount, :description, :title)
   end
 end
