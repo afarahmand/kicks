@@ -522,13 +522,13 @@ Project.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 1
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 1
 );
 Reward.create!(
@@ -546,13 +546,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 2
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 2
 );
 Reward.create!(
@@ -570,13 +570,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 3
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 3
 );
 Reward.create!(
@@ -594,13 +594,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 4
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 4
 );
 Reward.create!(
@@ -618,13 +618,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 5
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 5
 );
 Reward.create!(
@@ -642,13 +642,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 6
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 6
 );
 Reward.create!(
@@ -666,13 +666,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 7
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 7
 );
 Reward.create!(
@@ -690,13 +690,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 8
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 8
 );
 Reward.create!(
@@ -714,13 +714,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 9
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 9
 );
 Reward.create!(
@@ -738,13 +738,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 10
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 10
 );
 Reward.create!(
@@ -762,13 +762,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 11
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 11
 );
 Reward.create!(
@@ -786,13 +786,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 12
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 12
 );
 Reward.create!(
@@ -810,13 +810,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 13
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 13
 );
 Reward.create!(
@@ -834,13 +834,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 14
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 14
 );
 Reward.create!(
@@ -858,13 +858,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 15
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 15
 );
 Reward.create!(
@@ -882,13 +882,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 16
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 16
 );
 Reward.create!(
@@ -906,13 +906,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 17
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 17
 );
 Reward.create!(
@@ -930,13 +930,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 18
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 18
 );
 Reward.create!(
@@ -954,13 +954,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 19
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 19
 );
 Reward.create!(
@@ -978,13 +978,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 20
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 20
 );
 Reward.create!(
@@ -1002,13 +1002,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 21
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 21
 );
 Reward.create!(
@@ -1026,13 +1026,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 22
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 22
 );
 Reward.create!(
@@ -1050,13 +1050,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 23
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 23
 );
 Reward.create!(
@@ -1074,13 +1074,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 24
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 24
 );
 Reward.create!(
@@ -1098,13 +1098,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 25
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 25
 );
 Reward.create!(
@@ -1122,13 +1122,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 26
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 26
 );
 Reward.create!(
@@ -1146,13 +1146,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 27
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 27
 );
 Reward.create!(
@@ -1170,13 +1170,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 28
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 28
 );
 Reward.create!(
@@ -1194,13 +1194,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 29
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 29
 );
 Reward.create!(
@@ -1218,13 +1218,13 @@ Reward.create!(
 Reward.create!(
   title: "A Pittance",
   amount: 1,
-  description: "You will a token thank you email to express appreciation for your token support.",
+  description: "You will receive a token thank you email to express appreciation for your token support.",
   project_id: 30
 );
 Reward.create!(
   title: "A Thank You Card",
   amount: 10,
-  description: "You will receive a thank you card signed by the creator of this project expressing their sincere appreciation for your support.",
+  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
   project_id: 30
 );
 Reward.create!(
