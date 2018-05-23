@@ -6,12 +6,12 @@ export const REMOVE_REWARD = "REMOVE_REWARD";
 
 const receiveReward = reward => ({
   type: RECEIVE_REWARD,
-  reward: reward
+  reward: reward.reward
 });
 
-const removeReward = rewardId => ({
+const removeReward = reward => ({
   type: REMOVE_REWARD,
-  rewardId
+  rewardId: reward.reward.id
 });
 
 const receiveRewardErrors = errors => ({
@@ -35,7 +35,7 @@ export const updateReward = reward => dispatch => (
 
 export const deleteReward = reward => dispatch => (
   RewardApiUtil.deleteReward(reward).then(
-    dbReward => dispatch(removeReward(dbReward.id)),
+    dbReward => dispatch(removeReward(dbReward)),
     err => dispatch(receiveRewardErrors(err))
   )
 );
