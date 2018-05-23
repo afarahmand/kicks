@@ -18,9 +18,9 @@ const receiveProject = project => ({
   user: project.user
 });
 
-const removeProject = projectId => ({
+const removeProject = project => ({
   type: REMOVE_PROJECT,
-  projectId
+  projectId: project.project.id
 });
 
 const receiveProjectErrors = errors => ({
