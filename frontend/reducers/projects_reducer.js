@@ -2,6 +2,7 @@ import { merge } from 'lodash';
 import {
   RECEIVE_ALL_PROJECTS,
   RECEIVE_PROJECT,
+  RECEIVE_PROJECT_ERRORS,
   REMOVE_PROJECT
 } from '../actions/project_actions';
 
@@ -28,14 +29,10 @@ const projectsReducer = (oldState = {}, action) => {
       delete newState[action.projectId];  // newState.projects?
       return newState;
 
+    case RECEIVE_PROJECT_ERRORS:
     default:
       return oldState;
   }
 };
 
 export default projectsReducer;
-
-// export const RECEIVE_ALL_PROJECTS = "RECEIVE_ALL_PROJECTS";
-// export const RECEIVE_PROJECT = "RECEIVE_PROJECT";
-// export const REMOVE_PROJECT = "REMOVE_PROJECT";
-// export const RECEIVE_PROJECT_ERRORS = "RECEIVE_PROJECT_ERRORS";
