@@ -1,6 +1,7 @@
 import { merge } from 'lodash';
 import {
   RECEIVE_REWARD,
+  RECEIVE_REWARD_ERRORS,
   REMOVE_REWARD
 } from '../actions/reward_actions';
 
@@ -28,6 +29,7 @@ const rewardsReducer = (oldState = {}, action) => {
       delete newState[action.rewardId];
       return newState;
 
+    case RECEIVE_REWARD_ERRORS:
     default:
       return oldState;
   }
