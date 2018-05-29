@@ -21,3 +21,40 @@
   padding-left: 36px;
   padding-right: 36px;
 }
+
+button {
+  border: 1px rgb(213,213,213) solid;
+  padding: 12px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  transition-duration: .25s;
+  transition-timing-function: ease-in-out;
+  transition-delay: initial;
+}
+
+button.blue {
+  background-color: blue;
+}
+
+button.blue:hover {
+  background-color: rgb(0, 0, 125);
+}
+
+button.green {
+  background-color: rgb(19, 159, 118);
+}
+
+button.green:hover {
+  background-color: rgb(15,115,98);
+}
+
+button.red {
+  background-color: red;
+}
+
+button.red:hover {
+  background-color: rgb(125, 0, 0);
+}
