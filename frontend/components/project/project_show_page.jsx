@@ -27,7 +27,7 @@ class ProjectShowPage extends React.Component {
       return (
         <div>
           <button
-            className="reward-button"
+            className="reward-button green"
             onClick={() => this.props.history.push(
               `/projects/${this.props.project.id}/rewards/edit`
           )}>
