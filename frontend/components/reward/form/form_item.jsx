@@ -12,8 +12,8 @@ class FormItem extends React.Component {
 
   handleDelete(e) {
     e.preventDefault();
-    console.log("handleDelete: ", this.state);
-    console.log("this.props: ", this.props);
+    // console.log("handleDelete: ", this.state);
+    // console.log("this.props: ", this.props);
     this.props.deleteReward(this.state);
   }
 

@@ -31,6 +31,7 @@ class RewardForm extends React.Component {
     console.log("this.state[i] === undefined: ", this.state[i] === undefined);
     let i = 0;
     while (this.state[i] !== undefined) {
+      // console.log("i: ", i, "|", this.state[i] === undefined);
       i++;
     }
 
@@ -45,14 +46,15 @@ class RewardForm extends React.Component {
   }
 
   removeReward(id) {
-    console.log("removeReward: ", id);
+    // console.log("removeReward: ", id);
     let newState = Object.assign({}, this.state);
     delete newState[id];
 
-    console.log("this.state: ", this.state)
-    this.setState({ newState }).then(
-      () => console.log(this.state)
-    );
+    // console.log("this.state: ", this.state);
+    this.setState({ newState });
+    // .then(
+    //   () => console.log(this.state)
+    // );
   }
 
   renderErrors() {
