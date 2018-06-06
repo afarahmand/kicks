@@ -14,12 +14,13 @@ const receiveAllProjects = projects => ({
 const receiveProject = project => ({
   type: RECEIVE_PROJECT,
   project: project.project,
+  rewards: project.rewards,
   user: project.user
 });
 
-const removeProject = projectId => ({
+const removeProject = project => ({
   type: REMOVE_PROJECT,
-  projectId
+  projectId: project.project.id
 });
 
 const receiveProjectErrors = errors => ({

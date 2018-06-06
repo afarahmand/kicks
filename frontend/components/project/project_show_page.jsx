@@ -1,6 +1,8 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { daysRemainingUntilEnd } from '../../utils/date_util';
+
+import RewardIndexDisplay from '../reward/reward_index_display';
 
 class ProjectShowPage extends React.Component {
   componentDidMount() {
@@ -15,10 +17,31 @@ class ProjectShowPage extends React.Component {
     }
   }
 
-  renderButtons () {
+  renderBackingButton() {
+  }
+
+  renderRewardButton () {
+    if (this.props.currentUser &&
+      (this.props.project.user_id === this.props.currentUser.id)
+    ) {
+      return (
+        <div>
+          <button
+            className="reward-button green"
+            onClick={() => this.props.history.push(
+              `/projects/${this.props.project.id}/rewards/edit`
+          )}>
+            Edit Rewards
+          </button>
+        </div>
+      );
+    }
+  }
+
+  renderEditDeleteButtons () {
     if (
       this.props.currentUser &&
-      (this.props.project.user_id === this.props.currentUser.id)
+      (this.props.currentUser.id === this.props.project.user_id)
     ) {
       return (
         <div className="buttons">
@@ -27,7 +50,7 @@ class ProjectShowPage extends React.Component {
             onClick={() => this.props.history.push(
               `/projects/${this.props.project.id}/edit`
             )}>
-            EDIT
+            Edit Project
           </button>
           <button
             className="delete-button"
@@ -36,7 +59,7 @@ class ProjectShowPage extends React.Component {
             ).then(
               project1 => this.props.history.push(`/`)
           )}>
-            DELETE
+            Delete Project
           </button>
         </div>
       );
@@ -49,9 +72,13 @@ class ProjectShowPage extends React.Component {
     }
 
     return (
-      <div className="project-show-page">
-        <section className="title content-narrow">
+      <div className="content-narrow-project-show project-show-page">
+        <section className="title">
           <div className="creator">
+            <Link to="">
+              <img src={this.props.creator.image_url}></img>
+              <span>By {this.props.creator.name}</span>
+            </Link>
           </div>
           <div className="titles">
             <h2>{this.props.project.title}</h2>
@@ -59,11 +86,10 @@ class ProjectShowPage extends React.Component {
           </div>
         </section>
 
-        <section className="show-status content-narrow">
-          <img src={this.props.project.image_url}>
-          </img>
+        <section className="show-status">
+          <img className="col-12" src={this.props.project.image_url}></img>
 
-          <div className="status">
+          <div className="col-3 status">
             <span className="one goal">
               ${this.props.project.funding_amount}
             </span>
@@ -73,6 +99,9 @@ class ProjectShowPage extends React.Component {
             </span>
             <span className="two">days to go</span>
 
+            {this.renderRewardButton()}
+            {this.renderBackingButton()}
+
             <div className="all-nothing-container">
               <span className="all-nothing">All or nothing.</span>
               <span>
@@ -81,18 +110,20 @@ class ProjectShowPage extends React.Component {
               </span>
             </div>
 
-            {this.renderButtons()}
+            {this.renderEditDeleteButtons()}
           </div>
         </section>
 
-        <section className="description-rewards content-narrow">
-          <main className="description">
+        <section className="description-rewards">
+          <div className="col-12 description">
             <h3>About</h3>
-            {this.props.project.description}
-          </main>
+            <p>{this.props.project.description}</p>
+          </div>
 
-          <aside className="rewards">
-          </aside>
+          <div className="col-3 rewards">
+            <h3>Support</h3>
+            <RewardIndexDisplay rewards={this.props.projectRewards}/>
+          </div>
         </section>
 
       </div>

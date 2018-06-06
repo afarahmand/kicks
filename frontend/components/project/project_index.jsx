@@ -3,10 +3,6 @@ import { Link } from 'react-router-dom';
 import ProjectIndexItem from './project_index_item';
 
 class ProjectIndex extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.fetchProjects();
   }
@@ -15,9 +11,6 @@ class ProjectIndex extends React.Component {
     if(Object.keys(this.props.projects).length === 0) {
       return null;
     }
-
-    // console.log("Should have data pulled now");
-    // console.log(this.props.projects);
 
     return (
       <section className="project-index">

@@ -17,13 +17,14 @@ json.set! "rewards" do
       :id,
       :amount,
       :description,
-      :reward,
+      :title,
       :project_id
   end
 end
 
 json.set! "user" do
   json.extract! @user,
-  :id,
-  :name
+    :id,
+    :name,
+    :image_url
 end
