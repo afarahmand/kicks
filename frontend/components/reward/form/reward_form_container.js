@@ -2,7 +2,9 @@ import { connect } from 'react-redux';
 
 import RewardForm from './reward_form';
 import { fetchProject } from '../../../actions/project_actions';
-import { createReward, updateReward, deleteReward } from '../../../actions/reward_actions';
+import {
+  createReward, updateReward, deleteReward
+} from '../../../actions/reward_actions';
 
 const mapStateToProps = (state, ownProps) => {
   let project = state.entities.projects[ownProps.match.params.projectId];
