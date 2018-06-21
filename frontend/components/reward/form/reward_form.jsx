@@ -26,6 +26,7 @@ class RewardForm extends React.Component {
 
   addNewReward() {
     // Generate new, unused rewardId
+    console.log("addNewReward");
     console.log("this.state: ", this.state);
     console.log("this.state[i]: ", this.state[i]);
     console.log("this.state[i] === undefined: ", this.state[i] === undefined);
@@ -39,7 +40,8 @@ class RewardForm extends React.Component {
       id: i,
       title: "",
       amount: 0,
-      description: ""
+      description: "",
+      project_id: this.props.match.params.projectId
     };
 
     this.setState({ id: newReward });
