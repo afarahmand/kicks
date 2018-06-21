@@ -23,7 +23,7 @@ class Api::RewardsController < ApplicationController
         @rewards = @project.rewards
         @user = current_user
 
-        render "api/projects/show"
+        render "api/rewards/show"
       else
         render json: @reward.errors.full_messages, status: 401
       end
