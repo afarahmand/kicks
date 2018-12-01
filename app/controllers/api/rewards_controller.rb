@@ -15,6 +15,8 @@ class Api::RewardsController < ApplicationController
       render json: ['Cannot create rewards for projects that do not exist'], status: 404
     elsif !@project
       render json: ['Cannot create rewards for projects that were not created by you'], status: 403
+    elsif @project.rewards.where(amount: reward_params["amount"])
+      render json: ['Cannot create multiple rewards with the same amount for one project'], status: 400
     else
       @reward.project_id = params[:project_id]
 
@@ -38,6 +40,8 @@ class Api::RewardsController < ApplicationController
       render json: ['Cannot update rewards without signing in'], status: 401
     elsif !current_user.projects.include?(@project)
       render json: ['Cannot update rewards for projects that were not created by you'], status: 401
+    elsif @project.rewards.where(amount: reward_params["amount"])
+      render json: ['Cannot have multiple rewards with the same amount for one project'], status: 400
     else
       if @reward
         if @reward.update_attributes(reward_params)
