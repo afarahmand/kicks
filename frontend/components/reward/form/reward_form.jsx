@@ -3,111 +3,64 @@ import { Link, withRouter } from 'react-router-dom';
 
 import { formatAsYYYYMMDD } from '../../../utils/date_util';
 
-import FormItem from './form_item';
+import RewardFormIndexItem from './reward_form_index_item';
+import NewRewardIndex from './new_reward_index';
 
 class RewardForm extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {};
-
-    this.addNewReward = this.addNewReward.bind(this);
-    this.removeReward = this.removeReward.bind(this);
   }
 
   componentDidMount() {
     if (this.props.match.params.projectId) {
       this.props.fetchProject(this.props.match.params.projectId);
-      // .then(
-      //   project => this.initState(project.rewards)
-      // );
     }
   }
 
-  addNewReward() {
-    // Generate new, unused rewardId
-    console.log("addNewReward");
-    console.log("this.state: ", this.state);
-    console.log("this.state[i]: ", this.state[i]);
-    console.log("this.state[i] === undefined: ", this.state[i] === undefined);
-    let i = 0;
-    while (this.state[i] !== undefined) {
-      // console.log("i: ", i, "|", this.state[i] === undefined);
-      i++;
-    }
-
-    let newReward = {
-      id: i,
-      title: "",
-      amount: 0,
-      description: "",
-      project_id: this.props.match.params.projectId
-    };
-
-    this.setState({ id: newReward });
-  }
-
-  removeReward(id) {
-    // console.log("removeReward: ", id);
-    let newState = Object.assign({}, this.state);
-    delete newState[id];
-
-    // console.log("this.state: ", this.state);
-    this.setState({ newState });
-    // .then(
-    //   () => console.log(this.state)
-    // );
-  }
-
-  renderErrors() {
-    return (
-      <div className="error-display">
-        <ul>
-          {this.props.errors.map((error, i) => (
-            <li key={`error-${i}`}> {error} </li>
-          ))}
-        </ul>
-      </div>
-    );
+  sortRewardIds(rewardsObject) {
+    return Object.keys(rewardsObject).sort(function(rewardId1, rewardId2) {
+      const one = rewardsObject[rewardId1].amount;
+      const two = rewardsObject[rewardId2].amount;
+      if (one < two) {
+        return -1;
+      } else if (one > two) {
+        return 1;
+      } else {
+        return 0;
+      }
+    });
   }
 
   render() {
+    let sortedRewardIds = this.sortRewardIds(this.props.projectRewards);
+
     return (
       <div className="reward-form-page">
-          <h2>Set your rewards and shipping costs.</h2>
-          <section className="page-subtitle">
-            Invite backers to be a part of the creative experience by
-            offering rewards like a copy of what you’re making, a special
-            experience, or a behind-the-scenes look into your process.
-          </section>
-          <section className="reward-form-container">
-            {
-              Object.keys(this.props.projectRewards).map(rewardId => (
-                <FormItem
-                  key={rewardId}
-                  reward={this.props.projectRewards[rewardId]}
-                  deleteReward={this.props.deleteReward}
-                  saveReward={this.props.updateReward}
-                />
-              ))
-            }
-            {
-              Object.keys(this.state).map(rewardId => (
-                <FormItem
-                  key={rewardId}
-                  reward={this.state[rewardId]}
-                  deleteReward={this.removeReward}
-                  saveReward={this.props.createReward}
-                />
-              ))
-            }
+        <h2>Set your rewards and shipping costs.</h2>
+        <section className="page-subtitle">
+          Invite backers to be a part of the creative experience by
+          offering rewards like a copy of what you’re making, a special
+          experience, or a behind-the-scenes look into your process.
+        </section>
+        <section className="reward-form-container">
+          {
+            sortedRewardIds.map(rewardId => (
+              <RewardFormIndexItem
+                key={rewardId}
+                reward={this.props.projectRewards[rewardId]}
+                deleteReward={this.props.deleteReward}
+                updateReward={this.props.updateReward}
+              />
+            ))
+          }
+          <NewRewardIndex
+            createReward={ this.props.createReward }
+            projectId={this.props.match.params.projectId}
+          />
 
-            <button
-              onClick={this.addNewReward}
-            >
-              Add New Reward +
-            </button>
-          </section>
+        </section>
       </div>
     );
   }

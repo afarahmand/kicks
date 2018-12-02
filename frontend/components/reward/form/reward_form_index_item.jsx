@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-class FormItem extends React.Component {
+class RewardFormIndexItem extends React.Component {
   constructor(props){
     super(props);
     this.state = props.reward;
@@ -12,19 +12,28 @@ class FormItem extends React.Component {
 
   handleDelete(e) {
     e.preventDefault();
-    // console.log("handleDelete: ", this.state);
-    // console.log("this.props: ", this.props);
-    this.props.deleteReward(this.state);
+
+    // Different behavior depending on whether a new reward or updating
+    //   an existing reward.  If creating a reward, must be removed from
+    //   local state in the index component after successful creation
+    if (this.props.removeReward === undefined) {
+      this.props.deleteReward(this.state);
+    } else {
+      this.props.removeReward(this.state);
+    }
   }
 
   handleSave(e) {
     e.preventDefault();
     let reward = Object.assign({}, this.state);
-    this.props.saveReward(reward);
-    // .then(
-    //   reward1 => {console.log("Success!!!")},
-    //   err => {console.log("Failure!!!")}
-    // );
+
+    if (this.props.createReward === undefined) {
+      this.props.updateReward(reward);
+    } else {
+      this.props.createReward(this.state).then(
+        createdReward => { this.props.removeReward(this.state); }
+      );
+    }
   }
 
   hasAnyFieldBeenEdited() {
@@ -113,4 +122,4 @@ class FormItem extends React.Component {
   }
 }
 
-export default FormItem;
+export default RewardFormIndexItem;
