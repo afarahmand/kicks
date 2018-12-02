@@ -2,8 +2,16 @@ import React from 'react';
 import RewardIndexDisplayItem from './reward_index_display_item';
 
 const RewardIndexDisplay = ({ rewards }) => {
-  let sortedByAmount = rewards.slice().sort(function(x, y) {
-    return x.amount > y.amount;
+  let sortedByAmount = rewards.slice().sort(function(reward1, reward2) {
+    const one = reward1.amount;
+    const two = reward2.amount;
+    if (one < two) {
+      return -1;
+    } else if (one > two) {
+      return 1;
+    } else {
+      return 0;
+    }
   });
 
   return (
