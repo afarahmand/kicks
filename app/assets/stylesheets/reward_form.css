@@ -48,10 +48,6 @@ th, td {
   border: 0;
 }
 
-.reward-form-container > button {
-  color: black;
-}
-
 .reward-form textarea {
   width: 50%;
   background-color: white;
@@ -76,4 +72,17 @@ th, td {
 
 .reward-form button {
   float: right;
+}
+
+div.button-container {
+  background-color: rgb(236,236,236);
+}
+
+div.button-container button {
+  background-color: white;
+  color: black;
+}
+
+.reward-form section {
+  background-color: rgb(236,236,236);
 }
