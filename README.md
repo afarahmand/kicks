@@ -42,9 +42,9 @@ I utilized a live search feature that automatically issues AJAX requests to rece
 
 ## Future Features
 * home page show by user and % funded
-* backings controller [create]
 * user show page: shows backed projects
-* user profile
+* backings controller [create]
 * user can back projects and be eligible for rewards
+* prevent user from backing a project more than once
 * host images
 * responsive
