@@ -1,8 +1,8 @@
 class Api::BackingsController < ApplicationController
   def create
     @backing = Backing.new
-    @project = Project.find_by(id: params[:project_id])
-    @reward = @project.rewards.find_by(id: params[:reward_id])
+    @reward = Reward.find_by(id: params[:reward_id])
+    @project = @reward.project
     @user = current_user
 
     if !signed_in?
