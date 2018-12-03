@@ -14,9 +14,7 @@ const projectsReducer = (oldState = {}, action) => {
 
     case RECEIVE_ALL_PROJECTS:
       newState = merge({}, oldState);
-      action.projects.forEach(project => {
-        newState[project.id] = project;
-      });
+      newState = action.projects;
       return newState;
 
     case RECEIVE_PROJECT:
@@ -26,7 +24,7 @@ const projectsReducer = (oldState = {}, action) => {
 
     case REMOVE_PROJECT:
       newState = merge({}, oldState);
-      delete newState[action.projectId];  // newState.projects?
+      delete newState[action.projectId];
       return newState;
 
     case RECEIVE_PROJECT_ERRORS:
