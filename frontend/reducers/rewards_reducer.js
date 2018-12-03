@@ -14,9 +14,7 @@ const rewardsReducer = (oldState = {}, action) => {
   switch(action.type) {
     case RECEIVE_PROJECT:
       newState = merge({}, oldState);
-      action.rewards.forEach(reward => {
-        newState[reward.id] = reward;
-      });
+      newState = action.rewards;
       return newState;
 
     case RECEIVE_REWARD:

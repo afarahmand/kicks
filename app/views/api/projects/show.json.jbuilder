@@ -12,13 +12,15 @@ json.set! "project" do
 end
 
 json.set! "rewards" do
-  json.array! @rewards do |reward|
-    json.extract! reward,
-      :id,
-      :amount,
-      :description,
-      :title,
-      :project_id
+  @rewards.each do |reward|
+    json.set! reward.id do
+      json.extract! reward,
+        :id,
+        :amount,
+        :description,
+        :title,
+        :project_id
+    end
   end
 end
 
