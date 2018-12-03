@@ -11,9 +11,7 @@ const usersReducer = (oldState = {}, action) => {
   switch(action.type) {
     case RECEIVE_ALL_PROJECTS:
       newState = merge({}, oldState);
-      action.users.forEach(user => {
-        newState[user.id] = user;
-      });
+      newState = action.users;
       return newState;
 
     case RECEIVE_PROJECT:
