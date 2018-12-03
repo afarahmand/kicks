@@ -6,10 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-def new_datetime
-  return Time.now.plus_with_duration(10345678+((rand*10).round*1000000))
-end
-
 User.create!(name: "Demo User", email: "demo@quickstarter.com", password: "password", image_url: "https://i.imgur.com/rfxjQeS.png");
 User.create!(name: "Ashil", email: "Ashil@ashil.com", password: "password", image_url: "https://i.imgur.com/rfxjQeS.png");
 User.create!(name: "Andy", email: "andy@aa.com", password: "password", image_url: "https://i.imgur.com/rfxjQeS.png");
@@ -19,6 +15,10 @@ User.create!(name: "Snoop Dogg", email: "snoop@bigblunt.com", password: "passwor
 User.create!(name: "Alice", email: "alice@home.com", password: "password", image_url: "https://i.imgur.com/rfxjQeS.png");
 User.create!(name: "Elon Musk", email: "elon@spacex.com", password: "password", image_url: "https://i.imgur.com/xUF2EjU.png");
 User.create!(name: "Miles Dyson", email: "mdyson@cyberdyne.com", password: "password", image_url: "https://i.imgur.com/WrSbVcw.jpg");
+# - - - - - - - - - - - - - - - - - -  PROJECTS - - - - - - - - - - - - - - - - - -
+def new_datetime
+  return Time.now.plus_with_duration(10345678+((rand*10).round*1000000))
+end
 
 Project.create!(title: "Let's Go To Mars",
   short_blurb: "We're putting together some funding for a manned mission to Mars...now, you too can
@@ -519,723 +519,69 @@ Project.create!(
   category: "Art",
   user_id: 5
 );
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 1
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 1
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 1
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 1
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 2
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 2
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 2
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 2
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 3
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 3
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 3
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 3
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 4
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 4
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 4
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 4
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 5
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 5
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 5
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 5
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 6
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 6
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 6
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 6
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 7
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 7
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 7
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 7
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 8
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 8
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 8
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 8
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 9
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 9
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 9
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 9
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 10
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 10
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 10
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 10
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 11
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 11
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 11
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 11
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 12
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 12
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 12
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 12
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 13
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 13
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 13
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 13
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 14
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 14
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 14
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 14
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 15
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 15
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 15
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 15
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 16
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 16
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 16
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 16
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 17
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 17
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 17
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 17
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 18
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 18
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 18
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 18
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 19
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 19
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 19
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 19
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 20
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 20
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 20
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 20
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 21
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 21
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 21
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 21
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 22
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 22
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 22
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 22
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 23
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 23
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 23
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 23
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 24
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 24
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 24
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 24
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 25
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 25
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 25
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 25
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 26
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 26
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 26
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 26
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 27
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 27
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 27
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 27
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 28
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 28
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 28
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 28
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 29
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 29
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 29
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 29
-);
-Reward.create!(
-  title: "A Pittance",
-  amount: 1,
-  description: "You will receive a token thank you email to express appreciation for your token support.",
-  project_id: 30
-);
-Reward.create!(
-  title: "A Thank You Card",
-  amount: 10,
-  description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-  project_id: 30
-);
-Reward.create!(
-  title: "Insider Tracking",
-  amount: 100,
-  description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-  project_id: 30
-);
-Reward.create!(
-  title: "Early Access",
-  amount: 1000,
-  description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-  project_id: 30
-);
+# - - - - - - - - - - - - - - - - - -  REWARDS - - - - - - - - - - - - - - - - - -
+project_idx = 1
+while project_idx <= 30
+  Reward.create!(
+    title: "A Pittance",
+    amount: 1,
+    description: "You will receive a token thank you email to express appreciation for your token support.",
+    project_id: project_idx
+  );
+  Reward.create!(
+    title: "A Thank You Card",
+    amount: 10,
+    description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
+    project_id: project_idx
+  );
+  Reward.create!(
+    title: "Insider Tracking",
+    amount: 100,
+    description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
+    project_id: project_idx
+  );
+  Reward.create!(
+    title: "Early Access",
+    amount: 1000,
+    description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
+    project_id: project_idx
+  );
+
+  project_idx+=1
+end
+
+# - - - - - - - - - - - - - - - - - -  BACKINGS - - - - - - - - - - - - - - - - - -
+def rand_funding_percentage
+  funding_level = (rand*3).floor
+
+  if funding_level == 2
+    return 0.7
+  elsif funding_level == 1
+    return 0.3
+  end
+
+  return 0.0
+end
+
+project_idx = 1
+while project_idx <= Project.count
+  # Determine random funding level [0%, 30%, 70%]
+  target_funding_perc = rand_funding_percentage
+  users_remaining = [*1..User.count].shuffle
+
+  target_funding_level = Project.find_by(id: project_idx).funding_amount*target_funding_perc
+  curr_funding_level = 0
+
+  # Until reach funding level (or all users have backed), keep adding random rewards, user in order
+  until users_remaining.empty? || curr_funding_level > target_funding_level
+    reward = (rand*4).floor
+    curr_funding_level+=10**reward
+
+    Backing.create!(
+      user_id: users_remaining.shift,
+      reward_id: (4 * (project_idx - 1)) + (reward + 1)
+    )
+  end
+
+  project_idx+=1
+end
