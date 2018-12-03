@@ -62,4 +62,14 @@ class Project < ApplicationRecord
 
     currQuery
   end
+
+  def percentage_funded
+    amount_funded = 0
+
+    self.rewards.each do |reward|
+      amount_funded+=Backing.where(reward_id: reward.id).count*reward.amount
+    end
+
+    (100*amount_funded.to_f/self.funding_amount.to_f).round
+  end
 end
