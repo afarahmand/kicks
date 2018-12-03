@@ -41,12 +41,10 @@ I utilized a live search feature that automatically issues AJAX requests to rece
 ![Search page](https://raw.githubusercontent.com/afarahmand/kicks/master/Wireframes/screenshots/search.png)
 
 ## Future Features
+* home page show by user and % funded
+* backings controller [create]
+* user show page: shows backed projects
 * user profile
 * user can back projects and be eligible for rewards
-
-* user show page: shows backed projects
-* new reward page
-* backings controller [create, index?]
-* rewards controller [create]
-* Fix project show page img size
-* Fix some jbuilder views
+* host images
+* responsive
