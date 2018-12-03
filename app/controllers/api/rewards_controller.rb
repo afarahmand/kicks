@@ -1,9 +1,4 @@
 class Api::RewardsController < ApplicationController
-  def index
-    @rewards = Reward.where(project_id: params[:id])
-    render "api/rewards/index"
-  end
-
   def create
     @reward = Reward.new(reward_params)
     @project = current_user.projects.find_by(id: params[:project_id])
