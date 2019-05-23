@@ -567,7 +567,7 @@ project_idx = 1
 while project_idx <= Project.count
   # Determine random funding level [0%, 30%, 70%]
   target_funding_perc = rand_funding_percentage
-  users_remaining = [*1..User.count].shuffle
+  users_remaining = ([*1..User.count] - [Project.find(project_idx).user_id]).shuffle
 
   target_funding_level = Project.find_by(id: project_idx).funding_amount*target_funding_perc
   curr_funding_level = 0
