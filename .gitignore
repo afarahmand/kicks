@@ -23,5 +23,6 @@ bundle.js
 bundle.js.map
 .byebug_history
 .DS_Store
+.ruby-version
 npm-debug.log
 how_to_dev.txt
