@@ -27,7 +27,7 @@ class ProjectShowPage extends React.Component {
     else if (this.props.alreadyBacked) {
       return (
         <div className="col-3 rewards">
-          <h3>Thank You for Backing this Project!!!</h3>
+          <h3>Thank You for Your Support!!!</h3>
         </div>
       );
     } else {
