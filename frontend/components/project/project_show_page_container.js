@@ -1,4 +1,5 @@
 import { connect } from 'react-redux';
+import { createBacking } from '../../actions/backing_actions';
 import { fetchProject, deleteProject } from '../../actions/project_actions';
 import ProjectShowPage from './project_show_page';
 
@@ -37,7 +38,7 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  // createBacking: () => dispatch(createBacking()),
+  createBacking: backing => dispatch(createBacking(backing)),
   fetchProject: id => dispatch(fetchProject(id)),
   deleteProject: () => dispatch(deleteProject(ownProps.match.params.projectId))
 });

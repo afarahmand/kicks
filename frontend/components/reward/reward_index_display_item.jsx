@@ -1,9 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const RewardIndexDisplayItem = ({ reward }) => {
+const RewardIndexDisplayItem = ({ reward, createBacking }) => {
+  const backing = { rewardId: reward.id, projectId: reward.project_id };
+  const href = `/projects/${reward.project_id}`;
+
   return (
-    <Link to='' className="reward">
+    <Link
+      to={href}
+      onClick={() => createBacking(backing)}
+      className="reward"
+    >
         <span className="reward-body-content amount">
           Pledge ${reward.amount}
         </span>

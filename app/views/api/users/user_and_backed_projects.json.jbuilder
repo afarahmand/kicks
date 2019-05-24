@@ -5,6 +5,10 @@ json.set! "user" do
     :name
 end
 
+json.set! "created_projects" do
+  json.partial! "api/partials/projects", projects: @user.projects
+end
+
 json.set! "backed_projects" do
   json.partial! "api/partials/projects", projects: @user.backed_projects
 end
