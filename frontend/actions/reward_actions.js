@@ -1,4 +1,4 @@
-import * as RewardApiUtil from '../utils/rewards_api_util';
+import * as RewardApiUtil from '../utils/reward_api_util';
 
 export const RECEIVE_REWARD = "RECEIVE_REWARD";
 export const RECEIVE_REWARD_ERRORS = "RECEIVE_REWARD_ERRORS";
