@@ -14,9 +14,11 @@ const mapStateToProps = (state, ownProps) => {
     // User's backing
     if (state.entities.backings[backingId].user_id === user.id) {
       let userRewardId = state.entities.backings[backingId].reward_id;
-      let userProjectId = state.entities.rewards[userRewardId].project_id;
 
-      backedProjects.push(state.entities.projects[userProjectId]);
+      if (state.entities.rewards[userRewardId]) {
+        let userProjectId = state.entities.rewards[userRewardId].project_id;
+        backedProjects.push(state.entities.projects[userProjectId]);
+      }
     }
   });
 

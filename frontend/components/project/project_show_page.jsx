@@ -90,7 +90,7 @@ class ProjectShowPage extends React.Component {
   }
 
   render() {
-    if (!this.props.project && !this.props.creator) {
+    if (!this.props.project || !this.props.creator) {
       return null;
     }
 
