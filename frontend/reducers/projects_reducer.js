@@ -6,6 +6,8 @@ import {
   REMOVE_PROJECT
 } from '../actions/project_actions';
 
+import { RECEIVE_USER } from '../actions/user_actions';
+
 const projectsReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState;
@@ -25,6 +27,13 @@ const projectsReducer = (oldState = {}, action) => {
     case REMOVE_PROJECT:
       newState = merge({}, oldState);
       delete newState[action.projectId];
+      return newState;
+
+    case RECEIVE_USER:
+      newState = merge({}, oldState);
+      Object.keys(action.backed_projects).forEach(projectId => {
+        newState[projectId] = action.backed_projects[projectId];
+      });
       return newState;
 
     case RECEIVE_PROJECT_ERRORS:

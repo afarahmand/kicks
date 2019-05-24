@@ -11,7 +11,6 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-    @projects = @user.backed_projects
     render "api/users/user_and_backed_projects"
   end
 

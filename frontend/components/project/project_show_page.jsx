@@ -17,9 +17,6 @@ class ProjectShowPage extends React.Component {
     }
   }
 
-  renderBackingButton() {
-  }
-
   renderRewardButton () {
     if (this.props.currentUser &&
       (this.props.project.user_id === this.props.currentUser.id)
@@ -75,7 +72,7 @@ class ProjectShowPage extends React.Component {
       <div className="content-narrow-project-show project-show-page">
         <section className="title">
           <div className="creator">
-            <Link to="">
+            <Link to={`/users/${this.props.creator.id}`}>
               <img src={this.props.creator.image_url}></img>
               <span>By {this.props.creator.name}</span>
             </Link>
@@ -100,7 +97,6 @@ class ProjectShowPage extends React.Component {
             <span className="two">days to go</span>
 
             {this.renderRewardButton()}
-            {this.renderBackingButton()}
 
             <div className="all-nothing-container">
               <span className="all-nothing">All or nothing.</span>

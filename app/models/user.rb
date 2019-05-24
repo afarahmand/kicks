@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :backings
   has_many :projects         # created projects
 
-  has_many :backed_projects, # backed projects
+  has_many :backed_projects,
     through: :backings,
     source: :project
 

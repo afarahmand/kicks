@@ -12,6 +12,7 @@ import ProjectShowPageContainer from './project/project_show_page_container';
 import RewardFormContainer from './reward/form/reward_form_container';
 import SearchPage from './search/search_page';
 import SessionFormContainer from './session/session_form_container';
+import UserShowPageContainer from './user/user_show_page_container';
 
 const App = () => (
   <div>
@@ -40,6 +41,11 @@ const App = () => (
         exact
         path="/projects/:projectId"
         component={ProjectShowPageContainer}
+      />
+      <Route
+        exact
+        path="/users/:userId"
+        component={UserShowPageContainer}
       />
       <Route path="/" component={HomePageContainer} />
     </Switch>

@@ -7,8 +7,8 @@ const ProjectIndexDisplay = ({ projects }) => {
     <section className="project-index-display">
       <ul>
       {
-        Object.keys(projects).map(id => (
-          <li>
+        Object.keys(projects).map((id, idx) => (
+          <li key={id}>
             <ProjectIndexDisplayItem key={id} project={projects[id]} />
           </li>
         ))
