@@ -34,16 +34,15 @@ class Project < ApplicationRecord
       currQuery = currQuery.where(category: category)
     end
 
-    if sort != "Random"
-      case sort
-      when "Funding Goal"
-        currQuery = currQuery.order(:funding_amount)
-      when "End Date"
-        currQuery = currQuery.order(:funding_end_date)
-      when "Newest"
-        currQuery = currQuery.order(:created_at)
-      when ""
-      end
+    case sort
+    when "Random"
+      currQuery = currQuery.order("random()")
+    when "Funding Goal"
+      currQuery = currQuery.order(:funding_amount)
+    when "End Date"
+      currQuery = currQuery.order(:funding_end_date)
+    when "Newest"
+      currQuery = currQuery.order(:created_at)
     end
 
     currQuery.limit(9)
