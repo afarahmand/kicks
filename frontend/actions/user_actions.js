@@ -7,6 +7,7 @@ const receiveUser = user => ({
   type: RECEIVE_USER,
   backings: user.backings,
   backed_projects: user.backed_projects,
+  created_projects: user.created_projects,
   rewards: user.rewards,
   user: user.user
 });

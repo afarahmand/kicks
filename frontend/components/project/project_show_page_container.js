@@ -28,6 +28,10 @@ const mapStateToProps = (state, ownProps) => {
     });
   }
 
+  if (alreadyBacked) {
+    projectRewards = [];
+  }
+
   return {
     alreadyBacked: alreadyBacked,
     creator: state.entities.users[project.user_id],

@@ -34,6 +34,9 @@ const projectsReducer = (oldState = {}, action) => {
       Object.keys(action.backed_projects).forEach(projectId => {
         newState[projectId] = action.backed_projects[projectId];
       });
+      Object.keys(action.created_projects).forEach(projectId => {
+        newState[projectId] = action.created_projects[projectId];
+      });
       return newState;
 
     case RECEIVE_PROJECT_ERRORS:

@@ -5,6 +5,7 @@ import UserShowPage from './user_show_page';
 const mapStateToProps = (state, ownProps) => {
   let user = state.entities.users[ownProps.match.params.userId];
   let backedProjects = [];
+  let createdProjects = [];
 
   if (user === undefined) { return {}; }
 
@@ -19,10 +20,17 @@ const mapStateToProps = (state, ownProps) => {
     }
   });
 
+  Object.keys(state.entities.projects).forEach(projectId => {
+    if (state.entities.projects[projectId].user_id === user.id) {
+      createdProjects.push(state.entities.projects[projectId]);
+    }
+  });
+
   return {
     creator: user,
     currentUser: state.session.currentUser,
-    backedProjects: backedProjects
+    backedProjects: backedProjects,
+    createdProjects: createdProjects
   };
 };
 
