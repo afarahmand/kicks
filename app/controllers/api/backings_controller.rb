@@ -20,9 +20,7 @@ class Api::BackingsController < ApplicationController
       @backing.reward_id = @reward.id
 
       if @backing.save
-        @user = User.find_by(id: @backing.user_id)
-        @projects = @user.backed_projects
-        render "api/users/user_and_backed_projects"
+        render "api/backings/show"
       else
         render json: @backing.errors.full_messages, status: 404
       end
