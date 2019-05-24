@@ -12,7 +12,7 @@ json.set! "project" do
 end
 
 json.set! "rewards" do
-  @rewards.each do |reward|
+  @project.rewards.each do |reward|
     json.set! reward.id do
       json.extract! reward,
         :id,
@@ -25,7 +25,7 @@ json.set! "rewards" do
 end
 
 json.set! "user" do
-  json.extract! @user,
+  json.extract! @project.creator,
     :id,
     :name,
     :image_url
