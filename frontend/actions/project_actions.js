@@ -13,6 +13,7 @@ const receiveAllProjects = projects => ({
 
 const receiveProject = project => ({
   type: RECEIVE_PROJECT,
+  backings: project.backings,
   project: project.project,
   rewards: project.rewards,
   user: project.user

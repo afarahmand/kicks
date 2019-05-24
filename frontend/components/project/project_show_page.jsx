@@ -17,6 +17,23 @@ class ProjectShowPage extends React.Component {
     }
   }
 
+  renderRewards () {
+    if (this.props.alreadyBacked) {
+      return (
+        <div className="col-3 rewards">
+          <h3>Thank You for Backing this Project!!!</h3>
+        </div>
+      );
+    } else {
+      return (
+        <div className="col-3 rewards">
+          <h3>Support</h3>
+          <RewardIndexDisplay rewards={this.props.projectRewards}/>
+        </div>
+      );
+    }
+  }
+
   renderRewardButton () {
     if (this.props.currentUser &&
       (this.props.project.user_id === this.props.currentUser.id)
@@ -116,10 +133,7 @@ class ProjectShowPage extends React.Component {
             <p>{this.props.project.description}</p>
           </div>
 
-          <div className="col-3 rewards">
-            <h3>Support</h3>
-            <RewardIndexDisplay rewards={this.props.projectRewards}/>
-          </div>
+          {this.renderRewards()}
         </section>
 
       </div>

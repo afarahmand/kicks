@@ -1,3 +1,14 @@
+json.set! "backings" do
+  @project.backings.each do |backing|
+    json.set! backing.id do
+      json.extract! backing,
+        :id,
+        :user_id,
+        :reward_id
+    end
+  end
+end
+
 json.set! "project" do
   json.extract! @project,
     :id,

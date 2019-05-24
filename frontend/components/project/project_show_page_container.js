@@ -5,16 +5,30 @@ import ProjectShowPage from './project_show_page';
 const mapStateToProps = (state, ownProps) => {
   let project = state.entities.projects[ownProps.match.params.projectId];
   let projectRewards = [];
+  let projectRewardIds = {};
+  let alreadyBacked = false;
 
   if (project === undefined) { return {}; }
 
   Object.keys(state.entities.rewards).forEach(rewardId => {
     if (state.entities.rewards[rewardId].project_id === project.id) {
       projectRewards.push(state.entities.rewards[rewardId]);
+      projectRewardIds[rewardId] = true;
     }
   });
 
+  if (state.session.currentUser) {
+    projectRewardIds = Object.keys(projectRewardIds);
+    Object.keys(state.entities.backings).forEach(backingId => {
+      if ((projectRewardIds.includes(state.entities.backings[backingId].reward_id.toString())) &&
+        (state.entities.backings[backingId].user_id === state.session.currentUser.id)) {
+        alreadyBacked = true;
+      }
+    });
+  }
+
   return {
+    alreadyBacked: alreadyBacked,
     creator: state.entities.users[project.user_id],
     currentUser: state.session.currentUser,
     project: project,
