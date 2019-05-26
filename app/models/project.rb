@@ -27,7 +27,7 @@ class Project < ApplicationRecord
     through: :backings,
     source: :backer
 
-  def self.discovery_results(category, sort)
+  def self.discovery_results(category: "All", sort: "Random")
     currQuery = Project.all
 
     if category != "All"
