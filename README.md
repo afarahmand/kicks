@@ -44,3 +44,4 @@ I utilized a live search feature that automatically issues AJAX requests to rece
 * home page show by user and % funded
 * host images
 * responsive
+* replace auth w/Devise gem
