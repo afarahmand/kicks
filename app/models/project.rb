@@ -27,6 +27,24 @@ class Project < ApplicationRecord
     through: :backings,
     source: :backer
 
+  def percentage_funded
+    amount_funded = ActiveRecord::Base.connection.execute("
+      SELECT SUM(backings_per_reward) AS amount_funded
+      FROM (
+        SELECT COUNT(backings.id)*rewards.amount AS backings_per_reward
+        FROM backings
+        INNER JOIN rewards
+        ON backings.reward_id=rewards.id
+        INNER JOIN projects
+        ON rewards.project_id=projects.id
+        GROUP BY rewards.id
+        HAVING project_id=#{self.id}
+      ) AS derivedTable
+    ").first["amount_funded"];
+
+    (100*amount_funded.to_f/self.funding_amount.to_f).round
+  end
+
   def self.discovery_results(category: "All", sort: "Random")
     currQuery = Project.all
 
@@ -60,15 +78,5 @@ class Project < ApplicationRecord
     end
 
     currQuery
-  end
-
-  def percentage_funded
-    amount_funded = 0
-
-    self.rewards.each do |reward|
-      amount_funded+=Backing.where(reward_id: reward.id).count*reward.amount
-    end
-
-    (100*amount_funded.to_f/self.funding_amount.to_f).round
   end
 end
