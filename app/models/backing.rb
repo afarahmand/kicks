@@ -1,5 +1,6 @@
 class Backing < ApplicationRecord
   validates :user_id, :reward_id, presence: true
+  # validate that backer is not same as creator
 
   belongs_to :backer,
     primary_key: :id,

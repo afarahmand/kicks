@@ -61,6 +61,24 @@ class Project < ApplicationRecord
       currQuery = currQuery.order(:funding_end_date)
     when "Newest"
       currQuery = currQuery.order(:created_at)
+    # when "% Backed"
+    #   currQuery = currQuery.order(&:percentage_funded)
+    #
+    #   Amount funded
+    #
+    #   query = ActiveRecord::Base.connection.execute("
+    #     SELECT SUM(backings_per_reward) AS amount_funded
+    #     FROM (
+    #       SELECT COUNT(backings.id)*rewards.amount AS backings_per_reward
+    #       FROM backings
+    #       INNER JOIN rewards
+    #       ON backings.reward_id=rewards.id
+    #       INNER JOIN projects
+    #       ON rewards.project_id=projects.id
+    #       GROUP BY rewards.id
+    #       HAVING project_id=1
+    #     ) AS derivedTable
+    #   ");
     end
 
     currQuery.limit(9)
