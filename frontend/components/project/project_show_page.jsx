@@ -18,18 +18,20 @@ class ProjectShowPage extends React.Component {
   }
 
   renderRewards () {
-    if (this.props.currentUser.id === this.props.project.user_id) {
-      return (
-        <div className="col-3 rewards">
-        </div>
-      );
-    }
-    else if (this.props.alreadyBacked) {
-      return (
-        <div className="col-3 rewards">
-          <h3>Thank You for Your Support!!!</h3>
-        </div>
-      );
+    if (this.props.currentUser) {
+      if (this.props.currentUser.id === this.props.project.user_id) {
+        return (
+          <div className="col-3 rewards">
+          </div>
+        );
+      }
+      else if (this.props.alreadyBacked) {
+        return (
+          <div className="col-3 rewards">
+            <h3>Thank You for Your Support!!!</h3>
+          </div>
+        );
+      }
     } else {
       return (
         <div className="col-3 rewards">
