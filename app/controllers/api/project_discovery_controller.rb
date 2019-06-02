@@ -3,10 +3,10 @@ class Api::ProjectDiscoveryController < ApplicationController
     if (discovery_params[:category] == "")
       @projects = Project.all.limit(discovery_params[:numProjects])
     else
-      @projects = Project.discovery_results(
-        discovery_params[:category],
-        discovery_params[:sort]
-      ).limit(discovery_params[:numProjects])
+      @projects = Project.discovery_results({
+        category: discovery_params[:category],
+        sort: discovery_params[:sort]
+      }).limit(discovery_params[:numProjects])
     end
 
     render "api/project_searches/index"
