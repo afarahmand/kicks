@@ -32,17 +32,16 @@ class ProjectShowPage extends React.Component {
           </div>
         );
       }
-    } else {
-      return (
-        <div className="col-3 rewards">
-          <h3>Support</h3>
-          <RewardIndexDisplay
-            rewards={this.props.projectRewards}
-            createBacking={this.props.createBacking}
-          />
-        </div>
-      );
     }
+    return (
+      <div className="col-3 rewards">
+        <h3>Support</h3>
+        <RewardIndexDisplay
+          rewards={this.props.projectRewards}
+          createBacking={this.props.createBacking}
+        />
+      </div>
+    );
   }
 
   renderRewardButton () {
