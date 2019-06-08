@@ -28,10 +28,10 @@ class Project < ApplicationRecord
     source: :backer
 
   def percentage_funded
-    amount_funded = ActiveRecord::Base.connection.execute("
+    project_amount_funded = ActiveRecord::Base.connection.execute("
       SELECT SUM(backings_per_reward) AS amount_funded
       FROM (
-        SELECT COUNT(backings.id)*rewards.amount AS backings_per_reward
+        SELECT project_id, COUNT(backings.id)*rewards.amount AS backings_per_reward
         FROM backings
         INNER JOIN rewards
         ON backings.reward_id=rewards.id
@@ -40,9 +40,32 @@ class Project < ApplicationRecord
         GROUP BY rewards.id
         HAVING project_id=#{self.id}
       ) AS derivedTable
-    ").first["amount_funded"];
+    ");
 
-    (100*amount_funded.to_f/self.funding_amount.to_f).round
+    (100*project_amount_funded[0]["amount_funded"].to_f/self.funding_amount.to_f).round(2)
+  end
+
+  def self.percentage_funded
+    projects_amount_funded = ActiveRecord::Base.connection.execute("
+      SELECT SUM(backings_per_reward) AS amount_funded
+      FROM (
+        SELECT project_id, COUNT(backings.id)*rewards.amount AS backings_per_reward
+        FROM backings
+        INNER JOIN rewards
+        ON backings.reward_id=rewards.id
+        INNER JOIN projects
+        ON rewards.project_id=projects.id
+        GROUP BY rewards.id
+      ) AS derivedTable
+      GROUP BY project_id
+      ORDER BY project_id
+    ");
+
+    result = {}
+    Project.order("id ASC").pluck(:id, :funding_amount).each_with_index do |project, idx|
+      result[project[0]] = (100*projects_amount_funded[idx]["amount_funded"].to_f/project[1]).round(2)
+    end
+    result
   end
 
   def self.discovery_results(category: "All", sort: "Random")

@@ -110,6 +110,70 @@ RSpec.describe Project do
     end
   end
 
+  describe "self.percentage_funded" do
+    it "returns the % of the funding_amount that has been backed via rewards for all projects" do
+      n = 30
+      creator = create(:user)
+      backers = create_list(:user, n)
+      backer_ids = User.pluck(:id) - [creator.id]
+
+      project1 = create(:project, user_id: creator.id, funding_amount: 10)
+      project2 = create(:project, user_id: creator.id, funding_amount: 100)
+      project3 = create(:project, user_id: creator.id, funding_amount: 1000)
+
+      project1_reward1 = create(:reward, project_id: project1.id, amount: 1)
+      project1_reward2 = create(:reward, project_id: project1.id, amount: 10)
+      project2_reward1 = create(:reward, project_id: project2.id, amount: 1)
+      project2_reward2 = create(:reward, project_id: project2.id, amount: 10)
+      project3_reward1 = create(:reward, project_id: project3.id, amount: 1)
+      project3_reward2 = create(:reward, project_id: project3.id, amount: 10)
+
+      (n*rand).ceil.times do |backing|
+        backer_id = backer_ids.sample
+
+        create(:backing,
+          user_id: backer_id,
+          reward_id: [project1_reward1.id, project1_reward2.id].sample
+        )
+        create(:backing,
+          user_id: backer_id,
+          reward_id: [project2_reward1.id, project2_reward2.id].sample
+        )
+        create(:backing,
+          user_id: backer_id,
+          reward_id: [project3_reward1.id, project3_reward2.id].sample
+        )
+
+        backer_ids-=[backer_id]
+      end
+
+      total_amount_raised = {
+        project1.id => (
+          (Backing.where(reward_id: project1_reward1.id).count * project1_reward1.amount) +
+          (Backing.where(reward_id: project1_reward2.id).count * project1_reward2.amount)
+        ),
+        project2.id => (
+          (Backing.where(reward_id: project2_reward1.id).count * project2_reward1.amount) +
+          (Backing.where(reward_id: project2_reward2.id).count * project2_reward2.amount)
+        ),
+        project3.id => (
+          (Backing.where(reward_id: project3_reward1.id).count * project3_reward1.amount) +
+          (Backing.where(reward_id: project3_reward2.id).count * project3_reward2.amount)
+        )
+      }
+
+      expected = {
+        project1.id => (100*total_amount_raised[project1.id].to_f/project1.funding_amount).round(2),
+        project2.id => (100*total_amount_raised[project2.id].to_f/project2.funding_amount).round(2),
+        project3.id => (100*total_amount_raised[project3.id].to_f/project3.funding_amount).round(2)
+      }
+
+      expect(Project.percentage_funded[project1.id]).to eq(expected[project1.id])
+      expect(Project.percentage_funded[project2.id]).to eq(expected[project2.id])
+      expect(Project.percentage_funded[project3.id]).to eq(expected[project3.id])
+    end
+  end
+
   describe "self.discovery_results" do
     it "returns a maximum of 9 projects" do
       user = create(:user)
