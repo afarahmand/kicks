@@ -1,3 +1,5 @@
+percentage_funded = Project.percentage_funded
+
 json.set! "user" do
   json.extract! @user,
     :id,
@@ -6,11 +8,11 @@ json.set! "user" do
 end
 
 json.set! "created_projects" do
-  json.partial! "api/partials/projects", projects: @user.projects
+  json.partial! "api/partials/projects", projects: @user.projects, percentage_funded: percentage_funded
 end
 
 json.set! "backed_projects" do
-  json.partial! "api/partials/projects", projects: @user.backed_projects
+  json.partial! "api/partials/projects", projects: @user.backed_projects, percentage_funded: percentage_funded
 end
 
 json.set! "rewards" do

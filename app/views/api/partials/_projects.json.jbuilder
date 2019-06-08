@@ -10,6 +10,6 @@ projects.each do |project|
       :image_url,
       :category,
       :user_id
-    json.percentage_funded project.percentage_funded
+    json.percentage_funded percentage_funded[project.id]
   end
 end
