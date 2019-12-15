@@ -219,7 +219,7 @@ section.show-status {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(0,158,118, 0);
+  background-color: rgba(0,158,118,0);
   color: white;
   font-weight: 150;
 
@@ -231,5 +231,5 @@ section.show-status {
 
 .project-show-page .rewards .reward:hover .reward-hover-overlay {
   visibility: visible;
-  background-color: rgb(0,158,118, 0.9);
+  background-color: rgba(0,158,118,0.9);
 }
