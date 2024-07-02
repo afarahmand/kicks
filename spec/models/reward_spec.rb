@@ -10,6 +10,6 @@ RSpec.describe Reward do
 
   describe "Associations" do
     it { should belong_to(:project) }
-    it { should have_many(:backings) }
+    it { should have_many(:backings).dependent(:destroy) }
   end
 end

@@ -18,7 +18,7 @@ class Project < ApplicationRecord
     foreign_key: :user_id,
     class_name: 'User'
 
-  has_many :rewards#, dependent: :destroy
+  has_many :rewards, dependent: :destroy
 
   has_many :backings,
     through: :rewards

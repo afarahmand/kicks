@@ -8,7 +8,7 @@ class User < ApplicationRecord
   attr_reader :password
 
   has_many :backings
-  has_many :projects         # created projects
+  has_many :projects, dependent: :destroy         # created projects
 
   has_many :backed_projects,
     through: :backings,

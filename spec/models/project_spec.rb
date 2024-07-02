@@ -82,7 +82,7 @@ RSpec.describe Project do
 
   describe "Associations" do
     it { should belong_to(:creator) }
-    it { should have_many(:rewards) }
+    it { should have_many(:rewards).dependent(:destroy) }
     it { should have_many(:backings) }
     it { should have_many(:backers) }
   end

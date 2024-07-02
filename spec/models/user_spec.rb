@@ -42,7 +42,7 @@ RSpec.describe User do
 
   describe "Associations" do
     it { should have_many(:backings) }
-    it { should have_many(:projects) }
+    it { should have_many(:projects).dependent(:destroy) }
     it { should have_many(:backed_projects) }
     it { should have_many(:rewards) }
   end
