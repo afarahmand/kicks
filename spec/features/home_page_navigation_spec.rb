@@ -25,6 +25,8 @@ RSpec.feature "navigation from home page", js: true do
     scenario "user navigates to the new project page when signed in" do
       user = create(:user)
       sign_in
+      sleep(0.5)
+      expect(page).to have_link 'Start a project'
       click_on "Start a project"
       expect(page).to have_content("Let's get started")
       expect(page).to have_content("Make a great first impression")
