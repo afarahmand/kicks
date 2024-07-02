@@ -1,0 +1,3 @@
+rails s
+npm run webpack
+bundle exec guard
