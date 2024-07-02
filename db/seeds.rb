@@ -20,6 +20,8 @@ def new_datetime
   return Time.now.plus_with_duration(10345678+((rand*10).round*1000000))
 end
 
+user_ids = User.ids
+
 Project.create!(title: "Let's Go To Mars",
   short_blurb: "We're putting together some funding for a manned mission to Mars...now, you too can
   contribute, exclusively, through Quikstarter!",
@@ -35,7 +37,7 @@ Project.create!(title: "Let's Go To Mars",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/c1VXFGK.jpg",
   category: "Technology",
-  user_id: 7
+  user_id: user_ids[7]
 );
 Project.create!(title: "What Happened to Mario?",
   short_blurb: "Mario had disappeared and is nowhere to be found! We
@@ -54,7 +56,7 @@ Project.create!(title: "What Happened to Mario?",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/lqPBmM1.jpg",
   category: "Games",
-  user_id: 6
+  user_id: user_ids[6]
 );
 Project.create!(title: "We Need a Security System to Watch Over and Protect Us",
   short_blurb: "In today's world, we need a secure surveillance system
@@ -69,7 +71,7 @@ Project.create!(title: "We Need a Security System to Watch Over and Protect Us",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/0DKWCB6.jpg",
   category: "Technology",
-  user_id: 9
+  user_id: user_ids[8]
 );
 Project.create!(title: "California Regional Bullet Train",
   short_blurb: "California roads are often ranked most congested in the nation.
@@ -85,7 +87,7 @@ Project.create!(title: "California Regional Bullet Train",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/lz3zq0m.jpg",
   category: "Technology",
-  user_id: 6
+  user_id: user_ids[6]
 );
 Project.create!(title: "Shadow Animals - Are Our Kids Learning a Popular Pasttime?",
   short_blurb: "Technological advances have expanded leisure options.
@@ -103,7 +105,7 @@ Project.create!(title: "Shadow Animals - Are Our Kids Learning a Popular Pasttim
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/H4vNtw4.jpg",
   category: "Games",
-  user_id: 1
+  user_id: user_ids[1]
 );
 Project.create!(title: "Help!, I Lost My Life Savings!",
   short_blurb: "I went to the casino with friends.  It hit red 8 times
@@ -120,7 +122,7 @@ Project.create!(title: "Help!, I Lost My Life Savings!",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/edmsdAz.jpg",
   category: "Games",
-  user_id: 1
+  user_id: user_ids[1]
 );
 Project.create!(title: "A 100-Sided Dice",
   short_blurb: "We have 4-sided, 6-sided, 8-sided, and 20-sided.  Why
@@ -138,7 +140,7 @@ Project.create!(title: "A 100-Sided Dice",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/6z0REeH.jpg",
   category: "Games",
-  user_id: 1
+  user_id: user_ids[1]
 );
 Project.create!(title: "Wind Turbines - Protection from Volatile Energy Prices",
   short_blurb: "We must use our natural resources to power our nation to ensure
@@ -158,7 +160,7 @@ Project.create!(title: "Wind Turbines - Protection from Volatile Energy Prices",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/Pus158W.jpg",
   category: "Technology",
-  user_id: 1
+  user_id: user_ids[1]
 );
 Project.create!(title: "Teleworking - An Answer to The Commuting Nightmare?",
   short_blurb: "Ever since the Internet, a future of teleworking
@@ -175,7 +177,7 @@ Project.create!(title: "Teleworking - An Answer to The Commuting Nightmare?",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/Imj3DzA.jpg",
   category: "Technology",
-  user_id: 3
+  user_id: user_ids[3]
 );
 Project.create!(title: "Architectural Improvements to Beautify Urban Areas",
   short_blurb: "You ever seen a nice waterway and thought, 'Couldn't I make
@@ -194,7 +196,7 @@ Project.create!(title: "Architectural Improvements to Beautify Urban Areas",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/D9y1ZRs.jpg",
   category: "Film",
-  user_id: 5
+  user_id: user_ids[5]
 );
 Project.create!(title: "Colorful Buildings: Let's Paint the Rest of the City!!!",
   short_blurb: "Bright colorful buildings will help revitalize our locale.",
@@ -206,7 +208,7 @@ Project.create!(title: "Colorful Buildings: Let's Paint the Rest of the City!!!"
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/YQ2VUTa.jpg",
   category: "Art",
-  user_id: 7
+  user_id: user_ids[7]
 );
 Project.create!(title: "Zombie Milkshake",
   short_blurb: "In this artistic masterpiece, Okonzu illustrates zombies in opposition to the conventional view.",
@@ -223,7 +225,7 @@ Project.create!(title: "Zombie Milkshake",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/I7bCa2d.jpg",
   category: "Art",
-  user_id: 2
+  user_id: user_ids[2]
 );
 Project.create!(title: "Art is Change!: A Movement to Uplift our People",
   short_blurb: "Over the last several years, funding for art programs
@@ -241,7 +243,7 @@ Project.create!(title: "Art is Change!: A Movement to Uplift our People",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/4Lf4FrU.jpg",
   category: "Art",
-  user_id: 2
+  user_id: user_ids[2]
 );
 Project.create!(title: "Body Art: A Celebration of Tattooing Through the Years",
   short_blurb: "Tattooing has gone from a subculture to gaining widespread
@@ -258,7 +260,7 @@ Project.create!(title: "Body Art: A Celebration of Tattooing Through the Years",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/a0STbkn.jpg",
   category: "Art",
-  user_id: 2
+  user_id: user_ids[2]
 );
 Project.create!(title: "Jungle Style: Sharing Fashions from Exotic Locales",
   short_blurb: "So you just take a picture of me, post it on Quikstarter and people give you money?",
@@ -271,7 +273,7 @@ Project.create!(title: "Jungle Style: Sharing Fashions from Exotic Locales",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/Mn6MhFI.jpg",
   category: "Fashion",
-  user_id: 2
+  user_id: user_ids[2]
 );
 Project.create!(title: "Why Is He Ignoring Me..",
   short_blurb: "A book describing what is fashionable and what is not, and you can bet that it is not the Lakers!",
@@ -288,7 +290,7 @@ Project.create!(title: "Why Is He Ignoring Me..",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/G3THkWb.jpg",
   category: "Fashion",
-  user_id: 7
+  user_id: user_ids[7]
 );
 Project.create!(title: "Sunglasses",
   short_blurb: "The perfect accessory whether rain or shine!",
@@ -304,7 +306,7 @@ Project.create!(title: "Sunglasses",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/d46h9tP.jpg",
   category: "Fashion",
-  user_id: 5
+  user_id: user_ids[5]
 );
 Project.create!(title: "Compact Makeup Kit: A Posh Girl's Perfect Travel Accessory!",
   short_blurb: "A makeup kit for girls on the go...stores all of your brushes and balms in a compact case",
@@ -322,7 +324,7 @@ Project.create!(title: "Compact Makeup Kit: A Posh Girl's Perfect Travel Accesso
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/b6IpulA.jpg",
   category: "Fashion",
-  user_id: 3
+  user_id: user_ids[3]
 );
 Project.create!(title: "Fashionable Futbol",
   short_blurb: "The first soccer cleat that is designed to look pretty",
@@ -337,7 +339,7 @@ Project.create!(title: "Fashionable Futbol",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/oZFMpPE.jpg",
   category: "Fashion",
-  user_id: 3
+  user_id: user_ids[3]
 );
 Project.create!(title: "On the Catwalk: All Secrets About Modeling, Revealed",
   short_blurb: "This book includes exclusive one-on-one interviews with the world's top models",
@@ -351,7 +353,7 @@ Project.create!(title: "On the Catwalk: All Secrets About Modeling, Revealed",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/pp5GHXJ.jpg",
   category: "Fashion",
-  user_id: 2
+  user_id: user_ids[2]
 );
 Project.create!(title: "Clean and Simple Beachwear",
   short_blurb: "Sand repellent tote bag and shoes",
@@ -367,7 +369,7 @@ Project.create!(title: "Clean and Simple Beachwear",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/HR0fAn0.jpg",
   category: "Fashion",
-  user_id: 1
+  user_id: user_ids[1]
 );
 Project.create!(title: "Deforestation: The Epidemic Infecting our Rainforests",
   short_blurb: "Despite numerous international treaties, worldwide logging continues at an accelerating pace",
@@ -383,7 +385,7 @@ Project.create!(title: "Deforestation: The Epidemic Infecting our Rainforests",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/3ocrXKM.jpg",
   category: "Film",
-  user_id: 1
+  user_id: user_ids[1]
 );
 Project.create!(title: "Not So Primitive Technology",
   short_blurb: "All of the things you wish the Primitive Technology guy
@@ -400,7 +402,7 @@ Project.create!(title: "Not So Primitive Technology",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/hta71xA.jpg",
   category: "Film",
-  user_id: 6
+  user_id: user_ids[6]
 );
 Project.create!(title: "Emu Eggs - If You Haven't Seen These Before, Check Them Out",
   short_blurb: "You may not believe me but you can actually eat these.  You should
@@ -417,7 +419,7 @@ Project.create!(title: "Emu Eggs - If You Haven't Seen These Before, Check Them 
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/YfTvRdi.jpg",
   category: "Food",
-  user_id: 1
+  user_id: user_ids[1]
 );
 Project.create!(title: "Pineapples",
   short_blurb: "Why did we give them that name? I mean they are nothing like apples.
@@ -432,7 +434,7 @@ Project.create!(title: "Pineapples",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/13wfBJZ.jpg",
   category: "Food",
-  user_id: 7
+  user_id: user_ids[7]
 );
 Project.create!(title: "Mmmm....How About a Nice Juicy Steak...",
   short_blurb: "We raise organic, free-range, antibiotic-free beef cattle.
@@ -448,7 +450,7 @@ Project.create!(title: "Mmmm....How About a Nice Juicy Steak...",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/8IapLUy.jpg",
   category: "Food",
-  user_id: 3
+  user_id: user_ids[3]
 );
 
 
@@ -469,7 +471,7 @@ Project.create!(title: "Yotel",
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/4gPJoG6.jpg",
   category: "Technology",
-  user_id: 2
+  user_id: user_ids[2]
 );
 Project.create!(
   title: "Snowball Maker",
@@ -487,7 +489,7 @@ Project.create!(
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/sD7KdpV.jpg",
   category: "Technology",
-  user_id: 3
+  user_id: user_ids[3]
 );
 Project.create!(
   title: "Giant Candy",
@@ -504,7 +506,7 @@ Project.create!(
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/DckXqBn.jpg",
   category: "Food",
-  user_id: 3
+  user_id: user_ids[3]
 );
 Project.create!(
   title: "An Investigation Into Hidden Art on San Francisco Streets",
@@ -517,37 +519,35 @@ Project.create!(
   funding_end_date: new_datetime(),
   image_url: "https://i.imgur.com/2gbqrPn.jpg",
   category: "Art",
-  user_id: 5
+  user_id: user_ids[5]
 );
 # - - - - - - - - - - - - - - - - - -  REWARDS - - - - - - - - - - - - - - - - - -
-project_idx = 1
-while project_idx <= 30
+projects = Project.includes(:rewards)
+projects.pluck(:id).each do |project_id|
   Reward.create!(
     title: "A Pittance",
     amount: 1,
     description: "You will receive a token thank you email to express appreciation for your token support.",
-    project_id: project_idx
+    project_id: project_id
   );
   Reward.create!(
     title: "A Thank You Card",
     amount: 10,
     description: "You will receive a signed thank you card expressing our sincere appreciation for your support.",
-    project_id: project_idx
+    project_id: project_id
   );
   Reward.create!(
     title: "Insider Tracking",
     amount: 100,
     description: "You will receive personalized updates about our progress as well as an inside view of our initiatives before public release.",
-    project_id: project_idx
+    project_id: project_id
   );
   Reward.create!(
     title: "Early Access",
     amount: 1000,
     description: "You will earn priority access upon completion.  We want you to be able to appreciate the results of our work before we share it with the public because of your generous support.",
-    project_id: project_idx
+    project_id: project_id
   );
-
-  project_idx+=1
 end
 
 # - - - - - - - - - - - - - - - - - -  BACKINGS - - - - - - - - - - - - - - - - - -
@@ -563,25 +563,23 @@ def rand_funding_percentage
   return 0.0
 end
 
-project_idx = 1
-while project_idx <= Project.count
+projects.each do |project|
+  project_reward_ids = project.rewards.pluck(:id)
   # Determine random funding level [0%, 30%, 70%]
   target_funding_perc = rand_funding_percentage
-  users_remaining = ([*1..User.count] - [Project.find(project_idx).user_id]).shuffle
+  users_remaining = (user_ids - [project.user_id]).shuffle
 
-  target_funding_level = Project.find_by(id: project_idx).funding_amount*target_funding_perc
+  target_funding_level = project.funding_amount * target_funding_perc
   curr_funding_level = 0
 
   # Until reach funding level (or all users have backed), keep adding random rewards, user in order
   until users_remaining.empty? || curr_funding_level > target_funding_level
-    reward = (rand*4).floor
-    curr_funding_level+=10**reward
+    reward_idx = [*0..3].sample
+    curr_funding_level+=10**reward_idx
 
     Backing.create!(
       user_id: users_remaining.shift,
-      reward_id: (4 * (project_idx - 1)) + (reward + 1)
+      reward_id: project_reward_ids[reward_idx]
     )
   end
-
-  project_idx+=1
 end
