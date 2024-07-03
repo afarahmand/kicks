@@ -80,6 +80,7 @@ test:
 #
 production:
   <<: *default
-  database: kicks_production
-  username: kicks
-  password: <%= ENV['KICKS_DATABASE_PASSWORD'] %>
+  database: kicks
+  url: <%= ENV['DATABASE_URL'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
