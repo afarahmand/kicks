@@ -315,8 +315,6 @@ GEM
       rspec-mocks (~> 3.13)
       rspec-support (~> 3.13)
     rspec-support (3.13.1)
-    rspec-wait (1.0.1)
-      rspec (>= 3.4)
     rubyzip (2.3.2)
     sassc (2.4.0)
       ffi (~> 1.9)
@@ -413,7 +411,6 @@ DEPENDENCIES
   rb-readline
   rspec
   rspec-rails
-  rspec-wait
   sassc-rails
   selenium-webdriver
   shoulda-matchers
