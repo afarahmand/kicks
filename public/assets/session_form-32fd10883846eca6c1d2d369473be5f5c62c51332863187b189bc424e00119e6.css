@@ -1,0 +1,82 @@
+.signin-form-container {
+  padding-top: 60px;
+  padding-bottom: 150px;
+  background-color: rgb(240, 240, 240);
+}
+
+.signin-form {
+  font-family: Helvetica neue;
+  font-weight: 200;
+  padding: 20px;
+  margin: 0 auto;
+  width: 400px;
+  background-color: white;
+}
+
+form.signin-form {
+  background-color: white;
+}
+
+.signin-form-top-text {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+#div-above-signin-form {
+  padding: 20px;
+  margin: 0 auto;
+  background-color: rgb(251, 251, 251);
+  text-align: center;
+  font-size: 14px;
+}
+
+.signin-form-container a {
+  color: rgb(29,51,253);
+}
+
+.signin-input,
+.signin-input button,
+input,
+.signin-input textarea,
+select {
+  border: 1px rgb(213,213,213) solid;
+  display: block;
+  width: 93.5%;
+  padding: 12px;
+  height: 16px;
+}
+
+.signin-form li {
+  margin-bottom: 18px;
+}
+
+.signin-form input[type="submit"],
+.signin-form button {
+  background-color: rgb(19, 159, 118);
+  color: white;
+  font-size: 16px;
+  height: 18px;
+  text-align: center;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  transition-duration: .25s;
+  transition-timing-function: ease-in-out;
+  transition-delay: initial;
+}
+
+.signin-form  input[type="submit"]:hover {
+  background-color: rgb(15,115,98);
+}
+
+.signin-form button {
+  background-color: rgb(59, 85, 152);
+}
+
+.signin-form button:hover {
+  background-color: rgb(0, 0, 128);
+}
+
+.signin-form input:focus {
+  border: 1px solid rgb(18, 143, 96);
+}

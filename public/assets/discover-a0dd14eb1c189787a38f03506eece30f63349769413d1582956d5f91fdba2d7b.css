@@ -1,0 +1,128 @@
+section.discover {
+  font-family: Helvetica neue;
+  height: auto;
+}
+
+section.discover-form {
+  width: 670px;
+  margin: 0 auto;
+  font-size: 24px;
+  font-weight: 300;
+  padding-top: 60px;
+  padding-bottom: 47px;
+}
+
+section.discover hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+section.discover-form select {
+  display: inline-block;
+  height: auto;
+  padding: 30px;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 20px;
+  border-radius: 0px;
+  box-shadow: 3px 3px 5px rgb(230,230,230);
+  color: rgb(150,150,150);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+section.discover-form select:first-child {
+  width: auto;
+}
+
+section.discover-form select:last-child {
+  width: auto;
+}
+
+section.discover-results ul {
+  padding-left: 40px;
+}
+
+section.discover-results ul li {
+  display: inline-block;
+}
+
+section.discover-results ul li:hover {
+  box-shadow: none;
+}
+
+section.project-index-display {
+  margin: 0 auto;
+}
+
+.discover-item {
+  font-family: Helvetica neue;
+  font-weight: 200;
+  width: 325px;
+  border: 1px solid rgb(220,220,220);
+}
+
+.discover-item img {
+  width: 325px;
+  height: 250px;
+}
+
+.discover-item .category-link {
+  margin-top: 10px;
+}
+
+.discover-item a {
+  margin-bottom: 18px;
+}
+
+.discover-item a:first-child:hover {
+  text-decoration: underline;
+}
+
+.discover-item .discover-item-detail {
+  padding: 18px;
+}
+
+.discover-item .project-title {
+  font-size: 24px;
+}
+
+.discover-item .discover-item-middle {
+  height: 96px;
+  padding-top: 24px;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.separating-bar {
+  border: 2px solid rgb(15,114,98);
+  margin-left: 18px;
+  margin-right: 18px;
+}
+
+.discover-item .discover-item-bottom {
+  font-size: 13px;
+  height: 96px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.discover-item span.goal {
+  color: rgb(15,114,98);
+}
+
+.discover-item .discover-item-bottom div {
+  margin-top: 3px;
+}
+
+.discover-item .discover-item-bottom .days-to-go {
+  margin-right: 2px;
+}

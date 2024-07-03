@@ -1,0 +1,88 @@
+.reward-form-page {
+  background-color: rgb(236,236,236);
+  padding-top: 50px;
+  font-family: Helvetica neue;
+}
+
+.reward-form-page h2 {
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+.reward-form-page .page-subtitle {
+  color: rgb(60,60,60);
+  text-align: center;
+  font-size: 22px;
+  font-weight: 400;
+  width: 960px;
+  margin: 0 auto;
+  margin-bottom: 70px;
+}
+
+.reward-form-container {
+  background-color: white;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  margin: 12px auto;
+}
+
+.reward-form {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.reward-form-container table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th, td {
+  border: 1px solid black;
+}
+
+.reward-form-container input {
+  border: 0;
+}
+
+.reward-form textarea {
+  width: 50%;
+  background-color: white;
+  margin: 0 auto;
+}
+
+.reward-form textarea.description {
+  border: 0px;
+  width: 90%;
+  min-height: 100px;
+  max-width: 90%;
+  min-width: 90%;
+  padding: 4%;
+  resize: none;
+}
+
+.reward-form .reward-bottom {
+  background-color: rgb(236,236,236);
+  overflow: hidden;
+  padding-bottom: 40px;
+}
+
+.reward-form button {
+  float: right;
+}
+
+div.button-container {
+  background-color: rgb(236,236,236);
+}
+
+div.button-container button {
+  background-color: white;
+  color: black;
+}
+
+.reward-form section {
+  background-color: rgb(236,236,236);
+}

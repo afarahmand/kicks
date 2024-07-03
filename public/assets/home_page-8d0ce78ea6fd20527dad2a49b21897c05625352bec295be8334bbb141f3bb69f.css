@@ -1,0 +1,124 @@
+body { font-family: "lucida grande"; }
+h2 {font-size: 32px;}
+.error-display { color: red; }
+
+section.home-main {
+  margin-top: 60px;
+  font-family: Helvetica neue;
+  margin-bottom: 100px;
+}
+
+section.home-main a { color: rgb(47, 47, 47); }
+
+section.home-main a:hover {
+  text-decoration: underline;
+  color: rgb(0, 115, 98);
+}
+
+section.home-main .featured-content img {
+  max-width: 600px;
+  max-height: 600px;
+  width: 100%;
+  height: 100%;
+}
+
+section.home-main img {
+  width: 120px;
+  height: 70px;
+}
+
+section.home-main .title-bar {
+  margin-top: 50px;
+}
+
+section.home-main .category-title {
+  font-size: 30px;
+  font-weight: 300;
+  margin-right: 10px;
+}
+
+section.title-bar a span {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.fa-long-arrow-alt-right {
+  margin-left: 10px;
+}
+
+div.content-header-text {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.main-aside-title {
+  margin-top: 30px;
+}
+
+section.home-main div.content {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+section.home-main main {
+  padding-right: 18px;
+  position: relative;
+}
+
+main.featured-content div.project-detail a,
+main.featured-content div.project-detail span {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  background-color: white;
+  padding: 6px;
+}
+
+main.featured-content div.project-detail span {
+  top: 60px;
+}
+
+section.home-main aside {
+  padding-left: 18px;
+}
+
+aside { width: 500px; }
+
+aside li {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  border-top: 1px solid rgb(220, 220, 220);
+}
+
+aside li:last-child {
+  border-bottom: 1px solid rgb(220, 220, 220);
+}
+
+aside li > div {
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+}
+
+aside li > div > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+aside li > div > a { margin-right: 24px; }
+
+aside span.project-funding {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgb(180, 180, 180);
+  padding-top: 8px;
+}
+
+aside button {
+  border: 1px solid rgb(180, 180, 180);
+  padding: 10px;
+  color: rgb(120, 120, 120);
+  font-size: 14px;
+}

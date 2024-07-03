@@ -1,0 +1,151 @@
+.project-form-page {
+  background-color: rgb(236,236,236);
+  padding-top: 50px;
+  font-family: Helvetica neue;
+}
+
+.project-form-page h2 {
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+.project-form-page .page-subtitle {
+  color: rgb(60,60,60);
+  text-align: center;
+  font-size: 22px;
+  font-weight: 400;
+  width: 960px;
+  margin: 0 auto;
+  margin-bottom: 70px;
+}
+
+h4, .project-form-container p {
+  margin: 0;
+  padding: 10px;
+  padding-right: 5px;
+}
+
+.project-form-container p {
+  font-size: 12px;
+}
+
+.project-form-container {
+  background-color: white;
+  width: 960px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 16px;
+  margin: 12px auto;
+}
+
+.project-form-container li {
+  background-color: rgb(248, 249, 253);
+  width: 960px;
+  margin-bottom: 18px;
+  display: flex;
+}
+
+.project-form .error-display ul {
+  margin-bottom: 20px;
+}
+
+.project-form .error-display li {
+  background-color: white;
+  margin: 0;
+}
+
+.project-form-label-section {
+  width: 300px;
+  font-size: 13px;
+}
+
+.project-form-input-section {
+  width: 650px;
+  padding: 10px;
+}
+
+.project-input, textarea {
+  width: 97%;
+  background-color: white;
+  margin: 0 auto;
+  border: 1px solid rgb(213,213,213);
+}
+
+.project-form textarea.shortblurb {
+  height: 35px;
+  resize: none;
+  padding: 12px;
+}
+
+.project-form textarea.description {
+  min-height: 100px;
+  max-width: 97%;
+  min-width: 97%;
+  padding: 12px;
+}
+
+.project-form-input-section img {
+  width: 500px;
+  height: 350px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.project-form-container input[type="submit"] {
+  width: 97%;
+  margin: 0 auto;
+}
+
+.project-form-input-section select {
+  font-size: 14px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding: 10px;
+  width: 98%;
+  border-radius: 0px;
+}
+
+.project-form input,
+.project-form textarea,
+.project-form select {
+  -webkit-transition-property: border;
+  transition-property: border;
+  transition-duration: 1s;
+  transition-timing-function: ease-in-out;
+  transition-delay: initial;
+}
+
+.project-form input:focus,
+.project-form textarea:focus,
+.project-form select:focus {
+  border: 1px solid black;
+}
+
+input[type="date"]:disabled {
+  color: rgb(200,200,200);
+}
+
+.project-form input[type="submit"] {
+  border: 1px rgb(213,213,213) solid;
+  display: block;
+  width: 93.5%;
+  padding: 12px;
+  height: 16px;
+  background-color: rgb(19, 159, 118);
+  color: white;
+  font-size: 16px;
+  height: 18px;
+  text-align: center;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  transition-duration: .25s;
+  transition-timing-function: ease-in-out;
+  transition-delay: initial;
+}
+
+.project-form input[type="submit"]:hover {
+  background-color: rgb(15,115,98);
+}

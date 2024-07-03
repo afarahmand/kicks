@@ -1,0 +1,44 @@
+section.stat-bar {
+  border-bottom: 1px solid black;
+  text-align: left;
+}
+
+section.stat-bar ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+section.stat-bar li {
+  text-align: left;
+  padding-top: 27px;
+  padding-bottom: 27px;
+  padding-left: 36px;
+  padding-right: 36px;
+  font-family: Helvetica Neue;
+  font-weight: 300;
+}
+
+section.stat-bar li:first-child { padding-left: 0px;}
+
+section.stat-bar li div {
+  display: flex;
+  flex-direction: column;
+}
+
+section.stat-bar li:nth-child(2),
+section.stat-bar li:nth-child(3),
+section.stat-bar li:nth-child(4) {
+  border-left: 2px solid rgb(220,220,220);
+}
+
+.stat-bar-title {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: rgb(150, 150, 150);
+}
+
+.stat-bar li:first-child .stat-bar-title {
+  text-transform: capitalize;
+}
+
+.stat-bar-body { font-weight: 400; }

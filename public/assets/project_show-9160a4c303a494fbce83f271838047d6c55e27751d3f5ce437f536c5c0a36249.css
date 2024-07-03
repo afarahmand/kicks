@@ -1,0 +1,235 @@
+.content-narrow-project-show {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.project-show-page {
+  margin-top: 64px;
+  font-family: Helvetica neue;
+}
+
+.project-show-page img {
+  height: 500px;
+}
+
+.project-show-page .title {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.project-show-page div.creator {
+  width: 200px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-show-page div.creator img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  margin-bottom: 12px;
+}
+
+.project-show-page div.creator span {
+  font-weight: 200;
+}
+
+.project-show-page div.creator a:last-child {
+  color: rgb(115,115,115);
+  margin-top: 5px;
+}
+
+.project-show-page h2 {
+  font-weight: 300;
+  font-size: 36px;
+  margin-bottom: 18px;
+}
+
+.project-show-page .subtitle {
+  font-size: 20px;
+  font-weight: 200;
+  color: rgb(115,115,115);
+}
+
+section.show-status {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.project-show-page .status {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-show-page .status .one {
+  font-size: 24px;
+}
+
+.project-show-page .status .two {
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 60px;
+  color: rgb(165,165,165);
+}
+
+.project-show-page .status {
+  border-top: 3px solid rgb(0,158,118);
+  padding-top: 40px;
+}
+
+.project-show-page .status .goal {
+  color: rgb(0,158,118);
+}
+
+.project-show-page .reward-button {
+  margin-bottom: 20px;
+}
+
+.project-show-page .status .all-nothing {
+  text-decoration: underline;
+  margin-right: 5px;
+}
+
+.all-nothing-container span {
+  font-family: Helvetica neue;
+  font-size: 12px;
+}
+
+.project-show-page h3 {
+  font-size: 24px;
+  font-weight: 200;
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+
+.project-show-page div.description {
+  margin-bottom: 80px;
+}
+
+.project-show-page div.description p {
+  line-height: 2;
+}
+
+.project-show-page .buttons {
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.project-show-page button {
+  font-family: Helvetica neue;
+  border: 1px rgb(213,213,213) solid;
+  width: 93.5%;
+  padding: 12px;
+  height: 16px;
+  color: white;
+  font-size: 16px;
+  height: 18px;
+  text-align: center;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  transition-duration: .25s;
+  transition-timing-function: ease-in-out;
+  transition-delay: initial;
+  border-radius: 50px;
+}
+
+.project-show-page button:nth-child(2) {
+  margin-top: 28px;
+}
+
+.reward-button {
+  background-color: rgb(0,158,118);
+}
+
+.reward-button:hover {
+  background-color: rgb(15,115,98);
+}
+
+.edit-button {
+  background-color: blue;
+}
+
+.edit-button:hover {
+  background-color: rgb(0, 0, 125);
+}
+
+.delete-button {
+  background-color: red;
+}
+
+.delete-button:hover {
+  background-color: rgb(125, 0, 0);
+}
+
+.project-show-page .col-12 {
+  max-width: 68%;
+}
+
+.project-show-page .col-3 {
+  width: 32%;
+  margin-left: 36px;
+}
+
+.project-show-page .description-rewards {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.project-show-page .rewards .reward {
+  border: 1px solid rgb(220, 220, 220);
+  margin-bottom: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-weight: 200;
+}
+
+.project-show-page .rewards .reward .amount {
+  font-size: 20px;
+}
+
+.project-show-page .rewards .reward .title {
+  font-size: 16px;
+}
+
+.project-show-page .rewards .reward .description {
+  font-size: 14px;
+  color: rgb(100, 100, 100);
+}
+
+.project-show-page .rewards .reward .reward-body-content {
+  margin-bottom: 20px;
+}
+
+.project-show-page .rewards .reward .reward-hover-overlay {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0,158,118,0);
+  color: white;
+  font-weight: 150;
+
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+}
+
+.project-show-page .rewards .reward:hover .reward-hover-overlay {
+  visibility: visible;
+  background-color: rgba(0,158,118,0.9);
+}
