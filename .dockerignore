@@ -1,0 +1,10 @@
+.git
+.gitignore
+README.md
+Dockerfile
+.dockerignore
+log/*
+tmp/*
+node_modules
+coverage
+.nyc_output
