@@ -12,7 +12,7 @@
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
-    "redux": "^3.7.2",
+    "redux": "^4.0.0",
     "redux-thunk": "^2.2.0",
     "webpack": "^3.10.0"
   },
@@ -20,8 +20,8 @@
     "redux-logger": "^3.0.6"
   },
   "engines": {
-    "node": "6.10.1",
-    "npm": "6.9.0"
+    "node": "22.0.0",
+    "npm": "10.5.1"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",
   "version": "1.0.0",
