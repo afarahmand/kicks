@@ -25,6 +25,7 @@ WORKDIR /app
 # Copy Gemfile and package.json first for better layer caching
 COPY Gemfile Gemfile.lock ./
 COPY package.json package-lock.json ./
+COPY webpack.config.js ./
 
 # Install Ruby gems
 RUN bundle config --global frozen 1 \
@@ -34,7 +35,7 @@ RUN bundle config --global frozen 1 \
     && bundle clean --force
 
 # Install Node.js dependencies (postinstall will run webpack -p automatically)
-RUN npm ci --only=production
+RUN npm ci --omit=dev
 
 # Copy application code
 COPY . .
