@@ -22,10 +22,8 @@ RUN apk add --no-cache \
 # Set working directory
 WORKDIR /app
 
-# Copy Gemfile and package.json first for better layer caching
+# Copy Gemfile first for better layer caching
 COPY Gemfile Gemfile.lock ./
-COPY package.json package-lock.json ./
-COPY webpack.config.js ./
 
 # Install Ruby gems
 RUN bundle config --global frozen 1 \
@@ -34,11 +32,14 @@ RUN bundle config --global frozen 1 \
     && bundle install --jobs 4 --retry 3 \
     && bundle clean --force
 
-# Install Node.js dependencies (postinstall will run webpack -p automatically)
-RUN npm ci --omit=dev
+# Copy package.json for better layer caching
+COPY package.json package-lock.json ./
 
 # Copy application code
 COPY . .
+
+# Install Node.js dependencies (postinstall will run webpack -p automatically)
+RUN npm ci --omit=dev
 
 # Precompile assets (this will run Webpack)
 RUN bundle exec rake assets:precompile
