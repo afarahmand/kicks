@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-ruby "3.4.3"
+ruby "3.4.4"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -19,14 +19,12 @@ gem "sassc-rails"
 # Use Uglifier as compressor for JavaScript assets
 gem "uglifier"
 # See https://github.com/rails/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem "jbuilder"
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 gem "bcrypt"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
