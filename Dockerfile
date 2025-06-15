@@ -1,5 +1,5 @@
-# Use Ruby 3.1.4 Alpine image for smaller size and ARM64 compatibility
-FROM ruby:3.1.4-alpine
+# Use Ruby 3.4.3 Alpine image for smaller size and ARM64 compatibility
+FROM ruby:3.4.3-alpine
 
 # Set production environment
 ENV RAILS_ENV=production
