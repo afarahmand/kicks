@@ -16,6 +16,7 @@ RUN apk add --no-cache \
     npm \
     git \
     tzdata \
+    yaml-dev \
     && rm -rf /var/cache/apk/*
 
 # Set working directory
