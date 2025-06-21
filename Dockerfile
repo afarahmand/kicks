@@ -17,6 +17,7 @@ RUN apk add --no-cache \
     git \
     tzdata \
     yaml-dev \
+    curl \
     && rm -rf /var/cache/apk/*
 
 # Set working directory
@@ -42,7 +43,7 @@ COPY . .
 RUN npm ci --omit=dev
 
 # Precompile assets (this will run Webpack)
-RUN bundle exec rake assets:precompile
+# RUN bundle exec rake assets:precompile (already run by npm ci step above)
 
 # Create a non-root user
 RUN addgroup -g 1000 -S appgroup \
